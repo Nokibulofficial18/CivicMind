@@ -1,3 +1,5 @@
+"""CivicMind Streamlit dashboard application."""
+
 from __future__ import annotations
 
 from pathlib import Path
@@ -5,6 +7,8 @@ from pathlib import Path
 import pandas as pd
 import plotly.express as px
 import streamlit as st
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.preprocessing import LabelEncoder
 
 from data.generate_data import generate_complaints
 from models.escalation import (
@@ -18,6 +22,65 @@ from utils.map_utils import add_area_markers, generate_heatmap
 
 
 st.set_page_config(page_title="CivicMind — Dhaka Urban Intelligence", layout="wide")
+
+APP_TITLE = "CivicMind — Dhaka Urban Intelligence Dashboard"
+DATE_WINDOW_OPTIONS = [7, 14, 30, 60]
+RISK_COLORS = {"High": "#D7263D", "Medium": "#F18F01", "Low": "#2A9D8F"}
+PLOT_TEMPLATE = "plotly_white"
+
+
+AREAS = ["Mirpur", "Dhanmondi", "Uttara", "Farmgate", "Demra", "Gulshan", "Mohammadpur"]
+CATEGORIES = ["road", "waste", "water", "traffic"]
+PRIORITIES = ["low", "medium", "high"]
+
+DEPARTMENT_MAP = {
+	"road": "City Corporation",
+	"waste": "City Corporation",
+	"water": "WASA",
+	"traffic": "Traffic Police",
+}
+
+
+def _empty_like(df: pd.DataFrame) -> pd.DataFrame:
+	"""Return an empty DataFrame with same schema."""
+	return df.iloc[0:0].copy()
+
+
+def _inject_custom_styles() -> None:
+	"""Inject custom CSS for a polished, demo-ready dashboard appearance."""
+	st.markdown(
+		"""
+		<style>
+			.block-container {padding-top: 1.5rem; padding-bottom: 2rem;}
+			h1 {font-size: 2.1rem !important; font-weight: 800 !important; letter-spacing: 0.2px;}
+			h2, h3 {font-size: 1.35rem !important; font-weight: 700 !important;}
+			[data-testid="stMetricValue"] {font-size: 1.7rem !important;}
+			[data-testid="stMetricLabel"] {font-size: 1rem !important;}
+			div[data-testid="stDataFrame"] div[role="table"] {font-size: 0.95rem;}
+			section[data-testid="stSidebar"] h2 {font-size: 1.1rem !important;}
+		</style>
+		""",
+		unsafe_allow_html=True,
+	)
+
+
+def _style_figure(
+	fig,
+	x_title: str,
+	y_title: str,
+	legend_title: str | None = None,
+) -> None:
+	"""Apply consistent Plotly styling across dashboard charts."""
+	fig.update_layout(
+		template=PLOT_TEMPLATE,
+		font={"size": 14},
+		title={"font": {"size": 22}},
+		xaxis_title=x_title,
+		yaxis_title=y_title,
+		legend_title_text=legend_title,
+		hoverlabel={"font_size": 13},
+		margin={"l": 20, "r": 20, "t": 60, "b": 40},
+	)
 
 
 @st.cache_data(show_spinner=False)
@@ -37,13 +100,169 @@ def load_data() -> pd.DataFrame:
 	return df
 
 
-@st.cache_data(show_spinner=False)
-def train_escalation_pipeline(df: pd.DataFrame):
+@st.cache_resource(show_spinner=False)
+def train_escalation_pipeline(
+	df: pd.DataFrame,
+) -> tuple[RandomForestClassifier, dict[str, LabelEncoder], list[str]]:
 	"""Prepare features and train escalation model with cached results."""
 	X, y, encoders = prepare_features(df)
 	model = train_model(X, y)
 	feature_names = list(X.columns)
 	return model, encoders, feature_names
+
+
+def _init_session_state() -> None:
+	"""Initialize session containers for submissions and prediction feedback."""
+	if "submitted_complaints" not in st.session_state:
+		st.session_state["submitted_complaints"] = []
+	if "last_submission_result" not in st.session_state:
+		st.session_state["last_submission_result"] = None
+
+
+def _build_current_dataset(base_df: pd.DataFrame) -> pd.DataFrame:
+	"""Merge base dataset with in-session submitted complaints."""
+	submitted = st.session_state.get("submitted_complaints", [])
+	if not submitted:
+		return base_df.copy()
+
+	new_df = pd.DataFrame(submitted)
+	merged = pd.concat([base_df, new_df], ignore_index=True)
+	if "date" in merged.columns:
+		merged["date"] = pd.to_datetime(merged["date"], errors="coerce")
+	return merged
+
+
+def _normalize_dates(df: pd.DataFrame) -> pd.DataFrame:
+	"""Ensure `date` column is datetime when available."""
+	out = df.copy()
+	if "date" in out.columns:
+		out["date"] = pd.to_datetime(out["date"], errors="coerce")
+	return out
+
+
+def _risk_insight(prob: float, priority: str, days_to_resolve: int) -> str:
+	"""Generate a short AI insight for escalation risk explanation."""
+	if prob >= 0.6:
+		return (
+			"This complaint is likely to escalate due to severity signals "
+			"and delayed expected resolution."
+		)
+	if prob >= 0.3:
+		if priority == "high" or days_to_resolve >= 10:
+			return "Moderate escalation risk detected; close monitoring is recommended."
+		return "Risk is moderate and may increase if response is delayed."
+	return "Current escalation risk is low with timely intervention potential."
+
+
+def render_submit_complaint(
+	base_df: pd.DataFrame,
+	model: RandomForestClassifier,
+	encoders: dict[str, LabelEncoder],
+) -> None:
+	"""Render complaint submission UI and persist submission in session state."""
+	st.sidebar.markdown("---")
+	st.sidebar.subheader("📝 Submit New Complaint")
+
+	with st.sidebar.form("submit_complaint_form", clear_on_submit=False):
+		area = st.selectbox("Area", options=AREAS, index=0)
+		category = st.selectbox("Category", options=CATEGORIES, index=0)
+		priority = st.selectbox("Priority", options=PRIORITIES, index=1)
+		days_to_resolve = st.slider("Days to Resolve", min_value=1, max_value=20, value=7)
+		text = st.text_area(
+			"Complaint description",
+			placeholder="Describe the issue briefly (location, impact, urgency).",
+		)
+		submitted = st.form_submit_button("🚀 Analyze & Submit", use_container_width=True)
+
+	if not submitted:
+		return
+
+	complaint_text = text.strip() if text and text.strip() else f"Reported {category} issue in {area}."
+	current_dt = pd.Timestamp.now()
+	base_count = len(base_df)
+	sub_count = len(st.session_state.get("submitted_complaints", [])) + 1
+	new_row = {
+		"complaint_id": f"SUB-{base_count + sub_count:05d}",
+		"date": current_dt,
+		"area": area,
+		"category": category,
+		"priority": priority,
+		"resolved": 0,
+		"status": "unresolved",
+		"days_to_resolve": int(days_to_resolve),
+		"complaint_text": complaint_text,
+		"text": complaint_text,
+	}
+
+	one_row_df = pd.DataFrame([new_row])
+	try:
+		pred_one = predict_escalation(one_row_df, model, encoders)
+		prob = float(pred_one.loc[pred_one.index[0], "escalation_prob"])
+		risk = str(pred_one.loc[pred_one.index[0], "risk_level"])
+	except Exception as ex:
+		st.sidebar.error(f"Prediction failed for submitted complaint: {ex}")
+		return
+
+	dept = DEPARTMENT_MAP.get(category, "City Operations")
+	insight = _risk_insight(prob, priority, int(days_to_resolve))
+
+	st.session_state["submitted_complaints"].append(new_row)
+	st.session_state["last_submission_result"] = {
+		"area": area,
+		"category": category,
+		"priority": priority,
+		"days_to_resolve": int(days_to_resolve),
+		"escalation_prob": prob,
+		"risk_level": risk,
+		"department": dept,
+		"insight": insight,
+	}
+	st.rerun()
+
+
+def render_submission_result() -> None:
+	"""Render latest submission result card and recently submitted table."""
+	result = st.session_state.get("last_submission_result")
+	if not result:
+		return
+
+	risk = str(result["risk_level"])
+	prob_pct = float(result["escalation_prob"]) * 100
+	dept = result["department"]
+	insight = result["insight"]
+
+	if risk == "High":
+		st.error(
+			f"⚠ HIGH RISK\n\nEscalation Probability: {prob_pct:.1f}%\n\n"
+			f"Suggested Department: {dept}\n\nAI Insight: {insight}"
+		)
+	elif risk == "Medium":
+		st.warning(
+			f"🟠 MEDIUM RISK\n\nEscalation Probability: {prob_pct:.1f}%\n\n"
+			f"Suggested Department: {dept}\n\nAI Insight: {insight}"
+		)
+	else:
+		st.success(
+			f"✅ LOW RISK\n\nEscalation Probability: {prob_pct:.1f}%\n\n"
+			f"Suggested Department: {dept}\n\nAI Insight: {insight}"
+		)
+
+	recent = st.session_state.get("submitted_complaints", [])
+	if recent:
+		recent_df = pd.DataFrame(recent).copy()
+		show_cols = [
+			"date",
+			"area",
+			"category",
+			"priority",
+			"days_to_resolve",
+			"status",
+			"complaint_text",
+		]
+		show_cols = [c for c in show_cols if c in recent_df.columns]
+		recent_df = recent_df[show_cols].sort_values("date", ascending=False).head(8)
+		st.markdown("#### 🧾 Recent Submissions")
+		st.dataframe(recent_df, width="stretch", hide_index=True)
 
 
 def apply_filters(df: pd.DataFrame) -> pd.DataFrame:
@@ -59,21 +278,17 @@ def apply_filters(df: pd.DataFrame) -> pd.DataFrame:
 	)
 	selected_days = st.sidebar.select_slider(
 		"Date range",
-		options=[7, 14, 30, 60],
+		options=DATE_WINDOW_OPTIONS,
 		value=60,
 		format_func=lambda x: f"Last {x} days",
 	)
 
-	filtered = df.copy()
-	if selected_areas:
-		filtered = filtered[filtered["area"].isin(selected_areas)]
-	else:
-		filtered = filtered.iloc[0:0]
+	if not selected_areas or not selected_categories:
+		return _empty_like(df)
 
-	if selected_categories:
-		filtered = filtered[filtered["category"].isin(selected_categories)]
-	else:
-		filtered = filtered.iloc[0:0]
+	filtered = df[
+		df["area"].isin(selected_areas) & df["category"].isin(selected_categories)
+	].copy()
 
 	if not filtered.empty and "date" in filtered.columns:
 		max_date = filtered["date"].max()
@@ -86,41 +301,386 @@ def apply_filters(df: pd.DataFrame) -> pd.DataFrame:
 
 def style_risk(val: str) -> str:
 	"""Return color style for risk_level values."""
-	color_map = {
-		"High": "#ff4d4f",
-		"Medium": "#ffa940",
-		"Low": "#73d13d",
-	}
-	color = color_map.get(str(val), "#d9d9d9")
-	return f"background-color: {color}; color: #111; font-weight: 600;"
+	color = RISK_COLORS.get(str(val), "#d9d9d9")
+	text_color = "#ffffff" if str(val) in {"High", "Medium"} else "#111111"
+	return f"background-color: {color}; color: {text_color}; font-weight: 700;"
 
 
 def build_department_columns(df: pd.DataFrame) -> pd.DataFrame:
 	"""Map complaint categories to responsible departments."""
-	dept_map = {
-		"road": "City Corp",
-		"waste": "City Corp",
-		"water": "WASA",
-		"traffic": "Traffic Police",
-	}
 	out = df.copy()
-	out["department"] = out["category"].astype(str).str.lower().map(dept_map).fillna("Other")
+	out["department"] = out["category"].astype(str).str.lower().map(DEPARTMENT_MAP).fillna("Other")
 	return out
 
 
-def main() -> None:
-	st.title("CivicMind — Dhaka Urban Intelligence Dashboard")
+def _render_metrics(df: pd.DataFrame) -> None:
+	"""Render the top KPI metric cards."""
+	st.markdown("### 📊 City Operations Snapshot")
+	total_complaints = int(len(df))
+	high_risk_count = int((df["risk_level"] == "High").sum())
+	areas_monitored = int(df["area"].nunique())
+	avg_resolution_days = float(pd.to_numeric(df["days_to_resolve"], errors="coerce").mean())
 
-	df = load_data()
-	if df.empty:
+	col_1, col_2, col_3, col_4 = st.columns(4)
+	col_1.metric("Total Complaints", f"{total_complaints}")
+	col_2.metric("High Risk Complaints", f"{high_risk_count}")
+	col_3.metric("Areas Monitored", f"{areas_monitored}")
+	col_4.metric("Avg Resolution Days", f"{avg_resolution_days:.2f}")
+	st.markdown(" ")
+
+
+def _render_hotspot_tab(df: pd.DataFrame, hotspots: pd.DataFrame) -> None:
+	"""Render map and hotspot ranking visuals."""
+	st.subheader("🗺️ Dhaka Complaint Hotspots")
+
+	try:
+		map_obj = generate_heatmap(df)
+		map_obj = add_area_markers(map_obj, hotspots)
+		st.components.v1.html(map_obj.get_root().render(), height=560)
+	except Exception as exc:
+		st.warning(f"Map rendering unavailable: {exc}")
+
+	hotspot_plot = hotspots.sort_values("hotspot_score", ascending=True)
+	fig_hotspot = px.bar(
+		hotspot_plot,
+		x="hotspot_score",
+		y="area",
+		orientation="h",
+		title="Hotspot Score by Area",
+		color="hotspot_score",
+		color_continuous_scale="Reds",
+		labels={"hotspot_score": "Hotspot Score", "area": "Area"},
+		hover_data={"hotspot_score": ":.2f", "area": True},
+	)
+	_style_figure(fig_hotspot, x_title="Hotspot Score", y_title="Area")
+	fig_hotspot.update_traces(hovertemplate="Area: %{y}<br>Hotspot Score: %{x:.2f}<extra></extra>")
+	st.plotly_chart(fig_hotspot, width="stretch")
+
+
+def _render_escalation_tab(
+	df: pd.DataFrame,
+	model: RandomForestClassifier,
+	feature_names: list[str],
+) -> None:
+	"""Render escalation risk table, area-level risk chart, and feature importance."""
+	st.subheader("⚠️ Escalation Risk Overview")
+
+	top_risk_df = df.sort_values("escalation_prob", ascending=False).head(10).copy()
+	visible_columns = ["area", "category", "priority", "days_ago", "escalation_prob", "risk_level"]
+	top_risk_df = top_risk_df[visible_columns]
+	top_risk_df["escalation_prob"] = top_risk_df["escalation_prob"].round(3)
+
+	st.dataframe(
+		top_risk_df.style.applymap(style_risk, subset=["risk_level"]),
+		width="stretch",
+		hide_index=True,
+	)
+
+	area_risk_df = (
+		df.groupby("area", as_index=False)["escalation_prob"]
+		.mean()
+		.sort_values("escalation_prob", ascending=False)
+	)
+	area_risk_df["risk_level"] = pd.cut(
+		area_risk_df["escalation_prob"],
+		bins=[-0.001, 0.3, 0.6, 1.0],
+		labels=["Low", "Medium", "High"],
+	).astype(str)
+	fig_prob = px.bar(
+		area_risk_df,
+		x="area",
+		y="escalation_prob",
+		title="Average Escalation Probability by Area",
+		color="risk_level",
+		color_discrete_map=RISK_COLORS,
+		labels={
+			"area": "Area",
+			"escalation_prob": "Avg Escalation Probability",
+			"risk_level": "Risk Level",
+		},
+		hover_data={"escalation_prob": ":.2%", "risk_level": True},
+	)
+	_style_figure(fig_prob, x_title="Area", y_title="Avg Escalation Probability", legend_title="Risk")
+	fig_prob.update_traces(
+		hovertemplate="Area: %{x}<br>Escalation Prob: %{y:.2%}<br>Risk: %{fullData.name}<extra></extra>"
+	)
+	st.plotly_chart(fig_prob, width="stretch")
+
+	try:
+		feature_importance_df = get_feature_importance(model, feature_names)
+		fig_feature_importance = px.bar(
+			feature_importance_df,
+			x="importance",
+			y="feature",
+			orientation="h",
+			title="Model Feature Importance",
+			labels={"importance": "Importance Score", "feature": "Feature"},
+			hover_data={"importance": ":.4f", "feature": True},
+		)
+		_style_figure(fig_feature_importance, x_title="Importance Score", y_title="Feature")
+		fig_feature_importance.update_traces(
+			hovertemplate="Feature: %{y}<br>Importance: %{x:.4f}<extra></extra>"
+		)
+		st.plotly_chart(fig_feature_importance, width="stretch")
+	except Exception:
+		pass
+
+
+def _resolve_unresolved_mask(df: pd.DataFrame) -> pd.Series:
+	"""Build unresolved mask using available schema variants."""
+	if "status" in df.columns:
+		return df["status"].astype(str).str.lower().eq("unresolved")
+	if "resolved" in df.columns:
+		return pd.to_numeric(df["resolved"], errors="coerce").fillna(0).eq(0)
+	return pd.Series([False] * len(df), index=df.index)
+
+
+def _render_department_tab(df: pd.DataFrame) -> None:
+	"""Render department workload charts."""
+	st.subheader("🏛️ Department Workload")
+	department_df = build_department_columns(df)
+
+	department_share_df = department_df["department"].value_counts().reset_index()
+	department_share_df.columns = ["department", "count"]
+	department_colors = {
+		"City Corporation": "#457B9D",
+		"WASA": "#2A9D8F",
+		"Traffic Police": "#F4A261",
+		"Other": "#8D99AE",
+	}
+	fig_pie = px.pie(
+		department_share_df,
+		values="count",
+		names="department",
+		title="Complaint Share by Department",
+		hole=0.35,
+		color="department",
+		color_discrete_map=department_colors,
+		labels={"count": "Complaints", "department": "Department"},
+	)
+	_style_figure(fig_pie, x_title="", y_title="", legend_title="Department")
+	fig_pie.update_traces(hovertemplate="%{label}: %{value} complaints (%{percent})<extra></extra>")
+	st.plotly_chart(fig_pie, width="stretch")
+
+	unresolved_mask = _resolve_unresolved_mask(department_df)
+	unresolved_df = department_df[unresolved_mask]["department"].value_counts().reset_index()
+	unresolved_df.columns = ["department", "unresolved_count"]
+	fig_unresolved = px.bar(
+		unresolved_df,
+		x="department",
+		y="unresolved_count",
+		title="Unresolved Complaints per Department",
+		color="unresolved_count",
+		color_continuous_scale="Sunsetdark",
+		labels={"department": "Department", "unresolved_count": "Unresolved Complaints"},
+		hover_data={"unresolved_count": ":.0f", "department": True},
+	)
+	_style_figure(fig_unresolved, x_title="Department", y_title="Unresolved Complaints")
+	fig_unresolved.update_traces(
+		hovertemplate="Department: %{x}<br>Unresolved: %{y}<extra></extra>"
+	)
+	st.plotly_chart(fig_unresolved, width="stretch")
+
+
+def _render_trends_tab(df: pd.DataFrame) -> None:
+	"""Render trend and category distribution charts."""
+	st.subheader("📈 Complaint Trends")
+
+	trend_df = get_trend(df)
+	if not trend_df.empty:
+		fig_trend = px.line(
+			trend_df,
+			x="date",
+			y="count",
+			color="area",
+			title="Daily Complaints by Area",
+			markers=True,
+			labels={"date": "Date", "count": "Complaint Count", "area": "Area"},
+			hover_data={"count": ":.0f", "area": True},
+		)
+		_style_figure(fig_trend, x_title="Date", y_title="Complaint Count", legend_title="Area")
+		fig_trend.update_traces(
+			hovertemplate="Date: %{x|%Y-%m-%d}<br>Area: %{fullData.name}<br>Count: %{y}<extra></extra>"
+		)
+		st.plotly_chart(fig_trend, width="stretch")
+	else:
+		st.info("Trend data not available for current filters.")
+
+	category_distribution_df = get_category_distribution(df).reset_index()
+	category_melt_df = category_distribution_df.melt(
+		id_vars="area", var_name="category", value_name="count"
+	)
+	fig_stack = px.bar(
+		category_melt_df,
+		x="area",
+		y="count",
+		color="category",
+		title="Category Distribution by Area",
+		labels={"area": "Area", "count": "Complaint Count", "category": "Category"},
+		hover_data={"count": ":.0f", "category": True},
+	)
+	fig_stack.update_layout(barmode="stack")
+	_style_figure(fig_stack, x_title="Area", y_title="Complaint Count", legend_title="Category")
+	fig_stack.update_traces(
+		hovertemplate="Area: %{x}<br>Category: %{fullData.name}<br>Count: %{y}<extra></extra>"
+	)
+	st.plotly_chart(fig_stack, width="stretch")
+
+	st.markdown("### 📊 Growth Rate & Smart Insights")
+
+	trend_base = df.copy()
+	trend_base["date"] = pd.to_datetime(trend_base["date"], errors="coerce")
+	trend_base = trend_base.dropna(subset=["date"])
+
+	if trend_base.empty:
+		st.info("Insufficient date data to compute growth trends.")
+		return
+
+	max_date = trend_base["date"].max().normalize()
+	current_start = max_date - pd.Timedelta(days=6)
+	previous_start = current_start - pd.Timedelta(days=7)
+	previous_end = current_start - pd.Timedelta(days=1)
+
+	current_week = trend_base[(trend_base["date"] >= current_start) & (trend_base["date"] <= max_date)]
+	previous_week = trend_base[
+		(trend_base["date"] >= previous_start) & (trend_base["date"] <= previous_end)
+	]
+
+	curr_counts = current_week.groupby("area").size().rename("current_count")
+	prev_counts = previous_week.groupby("area").size().rename("previous_count")
+	growth_df = (
+		pd.concat([curr_counts, prev_counts], axis=1)
+		.fillna(0)
+		.reset_index()
+		.rename(columns={"index": "area"})
+	)
+	growth_df["current_count"] = growth_df["current_count"].astype(int)
+	growth_df["previous_count"] = growth_df["previous_count"].astype(int)
+	growth_df["growth_rate_pct"] = growth_df.apply(
+		lambda r: ((r["current_count"] - r["previous_count"]) / r["previous_count"] * 100)
+		if r["previous_count"] > 0
+		else (100.0 if r["current_count"] > 0 else 0.0),
+		axis=1,
+	)
+	growth_df = growth_df.sort_values("growth_rate_pct", ascending=False)
+
+	fig_growth = px.bar(
+		growth_df,
+		x="area",
+		y="growth_rate_pct",
+		color="growth_rate_pct",
+		color_continuous_scale="RdYlGn_r",
+		title="Weekly Complaint Growth Rate by Area",
+		labels={"area": "Area", "growth_rate_pct": "Growth Rate (%)"},
+		hover_data={
+			"current_count": True,
+			"previous_count": True,
+			"growth_rate_pct": ":.1f",
+		},
+	)
+	_style_figure(fig_growth, x_title="Area", y_title="Growth Rate (%)")
+	fig_growth.update_traces(
+		hovertemplate=(
+			"Area: %{x}<br>Growth: %{y:.1f}%<br>Current Week: %{customdata[0]}"
+			"<br>Previous Week: %{customdata[1]}<extra></extra>"
+		)
+	)
+	st.plotly_chart(fig_growth, width="stretch")
+
+	insights: list[str] = []
+	positive_growth = growth_df[growth_df["growth_rate_pct"] > 0].head(2)
+	for _, row in positive_growth.iterrows():
+		insights.append(
+			f"{row['area']} shows a {row['growth_rate_pct']:.1f}% increase in complaints this week "
+			f"({int(row['previous_count'])} → {int(row['current_count'])})."
+		)
+
+	high_volume = growth_df.sort_values("current_count", ascending=False).head(1)
+	if not high_volume.empty:
+		r = high_volume.iloc[0]
+		insights.append(
+			f"{r['area']} has the highest current weekly complaint load with {int(r['current_count'])} cases."
+		)
+
+	insights = insights[:3]
+	if insights:
+		for text in insights:
+			st.info(f"💡 {text}")
+	else:
+		st.info("💡 No significant week-over-week growth detected across selected filters.")
+
+
+def _render_action_brief(df: pd.DataFrame) -> None:
+	"""Render top-3 risk action brief cards."""
+	st.markdown("---")
+	st.subheader("🔥 Today's Action Brief")
+
+	action_brief_df = (
+		df.groupby("area", as_index=False)
+		.agg(
+			complaint_count=("area", "size"),
+			avg_escalation_prob=("escalation_prob", "mean"),
+		)
+		.sort_values(["avg_escalation_prob", "complaint_count"], ascending=[False, False])
+		.head(3)
+	)
+
+	if action_brief_df.empty:
+		st.info("No action brief available for current filters.")
+		return
+
+	for _, row in action_brief_df.iterrows():
+		st.error(
+			f"{row['area']}: {int(row['complaint_count'])} complaints | "
+			f"Avg escalation risk: {row['avg_escalation_prob'] * 100:.1f}%"
+		)
+
+
+def _render_tabs(
+	predicted_df: pd.DataFrame,
+	hotspot_df: pd.DataFrame,
+	model: RandomForestClassifier,
+	feature_names: list[str],
+) -> None:
+	"""Render all dashboard tabs in a modular way."""
+	tab_hotspot, tab_escalation, tab_department, tab_trends = st.tabs(
+		["🗺️ Hotspot Map", "⚠️ Escalation Predictor", "🏛️ Department Workload", "📈 Trends"]
+	)
+
+	with tab_hotspot:
+		_render_hotspot_tab(predicted_df, hotspot_df)
+
+	with tab_escalation:
+		_render_escalation_tab(predicted_df, model, feature_names)
+
+	with tab_department:
+		_render_department_tab(predicted_df)
+
+	with tab_trends:
+		_render_trends_tab(predicted_df)
+
+
+def main() -> None:
+	"""Application entrypoint for CivicMind dashboard."""
+	_inject_custom_styles()
+	st.title(APP_TITLE)
+	_init_session_state()
+
+	base_df = load_data()
+	if base_df.empty:
 		st.error("No complaint data available.")
 		return
 
 	try:
-		model, encoders, feature_names = train_escalation_pipeline(df)
+		model, encoders, feature_names = train_escalation_pipeline(base_df)
 	except Exception as ex:
 		st.error(f"Model training failed: {ex}")
 		return
+
+	render_submit_complaint(base_df, model, encoders)
+	render_submission_result()
+
+	df = _normalize_dates(_build_current_dataset(base_df))
 
 	filtered_df = apply_filters(df)
 	if filtered_df.empty:
@@ -134,170 +694,9 @@ def main() -> None:
 		return
 
 	hotspot_df = get_area_hotspots(pred_df)
-
-	total_complaints = int(len(pred_df))
-	high_risk_count = int((pred_df["risk_level"] == "High").sum())
-	areas_monitored = int(pred_df["area"].nunique())
-	avg_resolution_days = float(pd.to_numeric(pred_df["days_to_resolve"], errors="coerce").mean())
-
-	c1, c2, c3, c4 = st.columns(4)
-	c1.metric("Total Complaints", f"{total_complaints}")
-	c2.metric("High Risk Complaints", f"{high_risk_count}")
-	c3.metric("Areas Monitored", f"{areas_monitored}")
-	c4.metric("Avg Resolution Days", f"{avg_resolution_days:.2f}")
-
-	tab1, tab2, tab3, tab4 = st.tabs(
-		["Hotspot Map", "Escalation Predictor", "Department Workload", "Trends"]
-	)
-
-	with tab1:
-		st.subheader("Dhaka Complaint Hotspots")
-		map_obj = generate_heatmap(pred_df)
-		map_obj = add_area_markers(map_obj, hotspot_df)
-		st.components.v1.html(map_obj.get_root().render(), height=560)
-
-		hotspot_plot = hotspot_df.sort_values("hotspot_score", ascending=True)
-		fig_hotspot = px.bar(
-			hotspot_plot,
-			x="hotspot_score",
-			y="area",
-			orientation="h",
-			title="Hotspot Score by Area",
-			color="hotspot_score",
-			color_continuous_scale="Reds",
-		)
-		st.plotly_chart(fig_hotspot, use_container_width=True)
-
-	with tab2:
-		st.subheader("Escalation Risk Overview")
-
-		top_risk = pred_df.sort_values("escalation_prob", ascending=False).head(10).copy()
-		cols = ["area", "category", "priority", "days_ago", "escalation_prob", "risk_level"]
-		top_risk = top_risk[cols]
-		top_risk["escalation_prob"] = top_risk["escalation_prob"].round(3)
-
-		st.dataframe(
-			top_risk.style.applymap(style_risk, subset=["risk_level"]),
-			use_container_width=True,
-			hide_index=True,
-		)
-
-		area_prob = (
-			pred_df.groupby("area", as_index=False)["escalation_prob"].mean().sort_values(
-				"escalation_prob", ascending=False
-			)
-		)
-		fig_prob = px.bar(
-			area_prob,
-			x="area",
-			y="escalation_prob",
-			title="Average Escalation Probability by Area",
-			color="escalation_prob",
-			color_continuous_scale="OrRd",
-		)
-		st.plotly_chart(fig_prob, use_container_width=True)
-
-		try:
-			fi_df = get_feature_importance(model, feature_names)
-			fig_fi = px.bar(
-				fi_df,
-				x="importance",
-				y="feature",
-				orientation="h",
-				title="Model Feature Importance",
-			)
-			st.plotly_chart(fig_fi, use_container_width=True)
-		except Exception:
-			pass
-
-	with tab3:
-		st.subheader("Department Workload")
-		dept_df = build_department_columns(pred_df)
-
-		dept_share = dept_df["department"].value_counts().reset_index()
-		dept_share.columns = ["department", "count"]
-		fig_pie = px.pie(
-			dept_share,
-			values="count",
-			names="department",
-			title="Complaint Share by Department",
-			hole=0.35,
-		)
-		st.plotly_chart(fig_pie, use_container_width=True)
-
-		if "status" in dept_df.columns:
-			unresolved_mask = dept_df["status"].astype(str).str.lower().eq("unresolved")
-		elif "resolved" in dept_df.columns:
-			unresolved_mask = pd.to_numeric(dept_df["resolved"], errors="coerce").fillna(0).eq(0)
-		else:
-			unresolved_mask = pd.Series([False] * len(dept_df), index=dept_df.index)
-
-		unresolved_dept = (
-			dept_df[unresolved_mask]["department"].value_counts().reset_index()
-		)
-		unresolved_dept.columns = ["department", "unresolved_count"]
-		fig_unresolved = px.bar(
-			unresolved_dept,
-			x="department",
-			y="unresolved_count",
-			title="Unresolved Complaints per Department",
-			color="unresolved_count",
-			color_continuous_scale="Sunsetdark",
-		)
-		st.plotly_chart(fig_unresolved, use_container_width=True)
-
-	with tab4:
-		st.subheader("Complaint Trends")
-
-		trend_df = get_trend(pred_df)
-		if not trend_df.empty:
-			fig_trend = px.line(
-				trend_df,
-				x="date",
-				y="count",
-				color="area",
-				title="Daily Complaints by Area",
-				markers=True,
-			)
-			st.plotly_chart(fig_trend, use_container_width=True)
-		else:
-			st.info("Trend data not available for current filters.")
-
-		category_dist = get_category_distribution(pred_df).reset_index()
-		category_melt = category_dist.melt(
-			id_vars="area", var_name="category", value_name="count"
-		)
-		fig_stack = px.bar(
-			category_melt,
-			x="area",
-			y="count",
-			color="category",
-			title="Category Distribution by Area",
-		)
-		fig_stack.update_layout(barmode="stack")
-		st.plotly_chart(fig_stack, use_container_width=True)
-
-	st.markdown("---")
-	st.subheader("Today's Action Brief")
-
-	brief_df = (
-		pred_df.groupby("area", as_index=False)
-		.agg(
-			complaint_count=("area", "size"),
-			avg_escalation_prob=("escalation_prob", "mean"),
-		)
-		.sort_values(["avg_escalation_prob", "complaint_count"], ascending=[False, False])
-		.head(3)
-	)
-
-	if brief_df.empty:
-		st.info("No action brief available for current filters.")
-	else:
-		for _, row in brief_df.iterrows():
-			st.error(
-				f"{row['area']}: {int(row['complaint_count'])} complaints | "
-				f"Avg escalation risk: {row['avg_escalation_prob'] * 100:.1f}%"
-			)
+	_render_metrics(pred_df)
+	_render_tabs(pred_df, hotspot_df, model, feature_names)
+	_render_action_brief(pred_df)
 
 
 if __name__ == "__main__":

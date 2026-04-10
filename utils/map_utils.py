@@ -61,14 +61,33 @@ def generate_heatmap(df: pd.DataFrame) -> folium.Map:
 		weight = float(np.clip(row["escalation_prob"], 0.0, 1.0))
 		heat_data.append([lat, lon, weight])
 
-	map_obj = folium.Map(location=[23.8103, 90.4125], zoom_start=12, tiles="cartodbpositron")
+	map_obj = folium.Map(
+		location=[23.8103, 90.4125],
+		zoom_start=12,
+		tiles="CartoDB positron",
+		control_scale=True,
+	)
+
+	# Keep the map visually balanced around known Dhaka monitoring zones.
+	area_lats = [coords[0] for coords in AREA_COORDINATES.values()]
+	area_lons = [coords[1] for coords in AREA_COORDINATES.values()]
+	map_obj.fit_bounds(
+		[
+			[min(area_lats) - 0.01, min(area_lons) - 0.01],
+			[max(area_lats) + 0.01, max(area_lons) + 0.01],
+		]
+	)
 
 	HeatMap(
 		data=heat_data,
 		radius=15,
 		blur=20,
 		max_zoom=13,
+		min_opacity=0.25,
+		gradient={0.2: "#2A9D8F", 0.5: "#F4D35E", 0.8: "#F18F01", 1.0: "#D7263D"},
 	).add_to(map_obj)
+
+	folium.LayerControl(position="topright", collapsed=True).add_to(map_obj)
 
 	legend_html = """
 	<div style="
@@ -132,11 +151,11 @@ def add_area_markers(map_obj: folium.Map, hotspot_df: pd.DataFrame) -> folium.Ma
 		)
 
 		if score > 70:
-			color = "red"
+			color = "#D7263D"
 		elif score > 40:
-			color = "orange"
+			color = "#F18F01"
 		else:
-			color = "green"
+			color = "#2A9D8F"
 
 		lat, lon = AREA_COORDINATES[area]
 		popup_text = (
@@ -147,12 +166,14 @@ def add_area_markers(map_obj: folium.Map, hotspot_df: pd.DataFrame) -> folium.Ma
 
 		folium.CircleMarker(
 			location=[lat, lon],
-			radius=8,
+			radius=9,
 			color=color,
 			fill=True,
 			fill_color=color,
-			fill_opacity=0.7,
+			fill_opacity=0.85,
+			weight=2,
 			popup=folium.Popup(popup_text, max_width=260),
+			tooltip=f"{area} | Score: {score:.1f}",
 		).add_to(map_obj)
 
 	return map_obj

@@ -1,3 +1,5 @@
+"""Synthetic complaint data generation for CivicMind dashboard."""
+
 from __future__ import annotations
 
 from datetime import datetime, timedelta
@@ -74,6 +76,7 @@ CATEGORY_PRIORITY_SCORE = {
 
 
 def weighted_choice(rng: np.random.Generator, options: dict[str, float]) -> str:
+	"""Return a random key sampled by the provided probability weights."""
 	keys = list(options.keys())
 	probs = np.array(list(options.values()), dtype=float)
 	probs = probs / probs.sum()
@@ -87,6 +90,7 @@ def choose_priority(
 	population_min: int,
 	population_max: int,
 ) -> str:
+	"""Assign priority level using area population, category baseline, and random noise."""
 	pop_score = (AREA_POPULATION[area] - population_min) / (population_max - population_min)
 	base = CATEGORY_PRIORITY_SCORE[category]
 	noise = rng.normal(0.0, 0.08)
@@ -100,6 +104,15 @@ def choose_priority(
 
 
 def generate_complaints(num_rows: int = NUM_ROWS, seed: int = 42) -> pd.DataFrame:
+	"""Generate synthetic urban complaint records with realistic Dhaka patterns.
+
+	Args:
+		num_rows: Number of complaint records to generate.
+		seed: Random seed for deterministic reproducibility.
+
+	Returns:
+		DataFrame containing complaint fields used by CivicMind analytics.
+	"""
 	rng = np.random.default_rng(seed)
 	today = datetime.now().date()
 
@@ -149,6 +162,7 @@ def generate_complaints(num_rows: int = NUM_ROWS, seed: int = 42) -> pd.DataFram
 
 
 def print_summary(df: pd.DataFrame) -> None:
+	"""Print high-level summary statistics for generated complaint data."""
 	print("\n=== CivicMind Complaint Data Summary ===")
 	print(f"Total rows: {len(df)}")
 	print(f"Date range: {df['date'].min()} to {df['date'].max()}")
@@ -170,6 +184,7 @@ def print_summary(df: pd.DataFrame) -> None:
 
 
 def main() -> None:
+	"""Generate complaints, save CSV artifact, and print dataset summary."""
 	df = generate_complaints(num_rows=NUM_ROWS, seed=42)
 
 	output_path = Path(__file__).resolve().parent / "complaints.csv"

@@ -1,7 +1,8 @@
+"""Escalation risk modeling utilities for CivicMind."""
+
 from __future__ import annotations
 
 from datetime import datetime
-from typing import Any
 
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
