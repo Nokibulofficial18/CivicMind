@@ -203,3 +203,75 @@ def get_hotspot_root_causes(df: pd.DataFrame, hotspot_df: pd.DataFrame) -> pd.Da
 		)
 
 	return pd.DataFrame(results)
+
+
+def get_predicted_high_risk_areas(df: pd.DataFrame, top_n: int = 3) -> pd.DataFrame:
+	"""Forecast likely high-risk areas for the next 7 days.
+
+	Forecast signal combines:
+	- trend growth (recent 7 days vs previous 7 days)
+	- unresolved complaint ratio
+
+	Args:
+		df: Input complaints DataFrame.
+		top_n: Number of top forecasted high-risk areas to return.
+
+	Returns:
+		DataFrame with columns:
+		`area`, `growth_rate_pct`, `unresolved_ratio`, `prediction_score`.
+	"""
+	if df.empty:
+		return pd.DataFrame(
+			columns=["area", "growth_rate_pct", "unresolved_ratio", "prediction_score"]
+		)
+
+	working = df.copy()
+	working["date"] = pd.to_datetime(working["date"], errors="coerce")
+	working = working.dropna(subset=["date", "area"])
+	if working.empty:
+		return pd.DataFrame(
+			columns=["area", "growth_rate_pct", "unresolved_ratio", "prediction_score"]
+		)
+
+	if "status" in working.columns:
+		unresolved_mask = working["status"].astype(str).str.lower().eq("unresolved")
+	elif "resolved" in working.columns:
+		unresolved_mask = pd.to_numeric(working["resolved"], errors="coerce").fillna(0).eq(0)
+	else:
+		unresolved_mask = pd.Series([False] * len(working), index=working.index)
+
+	max_date = working["date"].max().normalize()
+	recent_start = max_date - pd.Timedelta(days=6)
+	prior_start = recent_start - pd.Timedelta(days=7)
+	prior_end = recent_start - pd.Timedelta(days=1)
+
+	recent_df = working[(working["date"] >= recent_start) & (working["date"] <= max_date)]
+	prior_df = working[(working["date"] >= prior_start) & (working["date"] <= prior_end)]
+
+	recent_counts = recent_df.groupby("area").size().rename("recent_count")
+	prior_counts = prior_df.groupby("area").size().rename("prior_count")
+	total_counts = working.groupby("area").size().rename("total_count")
+	unresolved_counts = working[unresolved_mask].groupby("area").size().rename("unresolved_count")
+
+	forecast = pd.concat([recent_counts, prior_counts, total_counts, unresolved_counts], axis=1).fillna(0)
+	forecast = forecast.reset_index().rename(columns={"index": "area"})
+
+	forecast["growth_rate_pct"] = forecast.apply(
+		lambda r: ((r["recent_count"] - r["prior_count"]) / r["prior_count"] * 100)
+		if r["prior_count"] > 0
+		else (100.0 if r["recent_count"] > 0 else 0.0),
+		axis=1,
+	)
+	forecast["unresolved_ratio"] = forecast.apply(
+		lambda r: (r["unresolved_count"] / r["total_count"]) if r["total_count"] > 0 else 0.0,
+		axis=1,
+	)
+
+	# Simple weighted forecasting score.
+	forecast["prediction_score"] = (
+		(forecast["growth_rate_pct"].clip(lower=0) * 0.45) + (forecast["unresolved_ratio"] * 100 * 0.55)
+	)
+
+	return forecast[["area", "growth_rate_pct", "unresolved_ratio", "prediction_score"]].sort_values(
+		"prediction_score", ascending=False
+	).head(top_n)

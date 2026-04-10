@@ -17,7 +17,13 @@ from models.escalation import (
 	prepare_features,
 	train_model,
 )
-from models.hotspot import get_area_hotspots, get_category_distribution, get_hotspot_root_causes, get_trend
+from models.hotspot import (
+	get_area_hotspots,
+	get_category_distribution,
+	get_hotspot_root_causes,
+	get_predicted_high_risk_areas,
+	get_trend,
+)
 from utils.map_utils import add_area_markers, generate_heatmap
 
 
@@ -825,6 +831,24 @@ def _render_ai_insights(df: pd.DataFrame) -> None:
 		st.info(item)
 
 
+def _render_predicted_risk_areas(df: pd.DataFrame) -> None:
+	"""Render simple 7-day forecast of high-risk areas."""
+	st.markdown("---")
+	st.subheader("Predicted High Risk Areas in Next 7 Days")
+
+	forecast_df = get_predicted_high_risk_areas(df, top_n=3)
+	if forecast_df.empty:
+		st.info("No forecast available for the current filter selection.")
+		return
+
+	for _, row in forecast_df.iterrows():
+		st.warning(
+			f"{row['area']}: score {row['prediction_score']:.1f} | "
+			f"trend {row['growth_rate_pct']:.1f}% | "
+			f"unresolved {row['unresolved_ratio'] * 100:.1f}%"
+		)
+
+
 def _render_tabs(
 	full_df: pd.DataFrame,
 	predicted_df: pd.DataFrame,
@@ -1073,6 +1097,7 @@ def main() -> None:
 	_render_metrics(pred_df)
 	_render_tabs(df, pred_df, hotspot_df, trend_df, category_distribution_df, model, feature_names)
 	_render_ai_insights(pred_df)
+	_render_predicted_risk_areas(pred_df)
 	_render_action_brief(action_brief_df)
 
 
