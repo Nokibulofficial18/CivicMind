@@ -33,6 +33,10 @@ CATEGORICAL_COLUMNS = ["area", "category", "priority", "status"]
 AREAS = ["Mirpur", "Dhanmondi", "Uttara", "Farmgate", "Demra", "Gulshan", "Mohammadpur"]
 CATEGORIES = ["road", "waste", "water", "traffic"]
 PRIORITIES = ["low", "medium", "high"]
+USERS = {
+	"user1": {"password": "1234", "role": "user"},
+	"admin": {"password": "admin123", "role": "admin"},
+}
 
 DEPARTMENT_MAP = {
 	"road": "City Corporation",
@@ -144,19 +148,82 @@ def _init_session_state() -> None:
 		st.session_state["submitted_complaints"] = []
 	if "last_submission_result" not in st.session_state:
 		st.session_state["last_submission_result"] = None
+	if "logged_in" not in st.session_state:
+		st.session_state["logged_in"] = False
+	if "username" not in st.session_state:
+		st.session_state["username"] = None
+	if "role" not in st.session_state:
+		st.session_state["role"] = None
+	if "master_df" not in st.session_state:
+		st.session_state["master_df"] = load_data()
+
+
+def _authenticate(username: str, password: str) -> tuple[bool, str | None]:
+	"""Validate credentials against the hardcoded user store."""
+	user_config = USERS.get(username)
+	if not user_config:
+		return False, None
+	if user_config["password"] != password:
+		return False, None
+	return True, str(user_config["role"])
+
+
+def _save_dataset(df: pd.DataFrame) -> None:
+	"""Persist current complaint dataset to CSV."""
+	output_path = Path("data") / "complaints.csv"
+	output_path.parent.mkdir(parents=True, exist_ok=True)
+	df.to_csv(output_path, index=False)
+
+
+def _render_login() -> None:
+	"""Render login form and update session auth state."""
+	st.title("🔐 CivicMind Login")
+	st.caption("Please sign in to access the Urban Intelligence Dashboard.")
+
+	with st.form("login_form", clear_on_submit=False):
+		username = st.text_input("Username", placeholder="Enter username")
+		password = st.text_input("Password", type="password", placeholder="Enter password")
+		login_clicked = st.form_submit_button("Login", use_container_width=True)
+
+	if not login_clicked:
+		return
+
+	is_valid, role = _authenticate(username.strip(), password)
+	if not is_valid or role is None:
+		st.error("Invalid username or password.")
+		return
+
+	st.session_state["logged_in"] = True
+	st.session_state["username"] = username.strip()
+	st.session_state["role"] = role
+	st.success("Login successful.")
+	st.rerun()
+
+
+def _logout() -> None:
+	"""Clear authentication session and return user to login view."""
+	st.session_state["logged_in"] = False
+	st.session_state["username"] = None
+	st.session_state["role"] = None
+	st.rerun()
+
+
+def _render_user_header() -> None:
+	"""Render active user identity, role badge, and logout action."""
+	username = st.session_state.get("username", "unknown")
+	role = st.session_state.get("role", "user")
+	role_badge = "Admin" if role == "admin" else "User"
+
+	header_col_1, header_col_2, header_col_3 = st.columns([3, 2, 1])
+	header_col_1.markdown(f"**👤 Logged in user:** {username}")
+	header_col_2.markdown(f"**🏷️ Logged in as {role_badge}**")
+	if header_col_3.button("Logout", use_container_width=True):
+		_logout()
 
 
 def _build_current_dataset(base_df: pd.DataFrame) -> pd.DataFrame:
-	"""Merge base dataset with in-session submitted complaints."""
-	submitted = st.session_state.get("submitted_complaints", [])
-	if not submitted:
-		return _optimize_dataframe_memory(base_df)
-
-	new_df = pd.DataFrame(submitted)
-	merged = pd.concat([base_df, new_df], ignore_index=True)
-	if "date" in merged.columns:
-		merged["date"] = pd.to_datetime(merged["date"], errors="coerce")
-	return _optimize_dataframe_memory(merged)
+	"""Return current master dataset snapshot."""
+	return _optimize_dataframe_memory(base_df.copy())
 
 
 def _normalize_dates(df: pd.DataFrame) -> pd.DataFrame:
@@ -267,6 +334,10 @@ def render_submit_complaint(
 	insight = _risk_insight(prob, priority, int(days_to_resolve))
 
 	st.session_state["submitted_complaints"].append(new_row)
+	master_df = st.session_state.get("master_df", base_df).copy()
+	master_df = pd.concat([master_df, pd.DataFrame([new_row])], ignore_index=True)
+	st.session_state["master_df"] = _optimize_dataframe_memory(master_df)
+	_save_dataset(st.session_state["master_df"])
 	st.session_state["last_submission_result"] = {
 		"submitted_at": current_dt,
 		"area": area,
@@ -749,6 +820,7 @@ def _render_ai_insights(df: pd.DataFrame) -> None:
 
 
 def _render_tabs(
+	full_df: pd.DataFrame,
 	predicted_df: pd.DataFrame,
 	hotspot_df: pd.DataFrame,
 	trend_df: pd.DataFrame,
@@ -756,31 +828,214 @@ def _render_tabs(
 	model: RandomForestClassifier,
 	feature_names: list[str],
 ) -> None:
-	"""Render all dashboard tabs in a modular way."""
-	tab_hotspot, tab_escalation, tab_department, tab_trends = st.tabs(
-		["🗺️ Hotspot Map", "⚠️ Escalation Predictor", "🏛️ Department Workload", "📈 Trends"]
-	)
+	"""Render role-based tabs and isolate admin functionality."""
+	is_admin = st.session_state.get("role") == "admin"
 
-	with tab_hotspot:
-		_render_hotspot_tab(predicted_df, hotspot_df)
+	if is_admin:
+		dashboard_tab, hotspots_tab, trends_tab, admin_tab = st.tabs(
+			["📊 Dashboard", "🔥 Hotspots", "📈 Trends", "🛠 Admin Panel"]
+		)
+	else:
+		dashboard_tab, hotspots_tab, trends_tab = st.tabs(
+			["📊 Dashboard", "🔥 Hotspots", "📈 Trends"]
+		)
 
-	with tab_escalation:
+	with dashboard_tab:
+		st.markdown("### ⚠️ Escalation Intelligence")
 		_render_escalation_tab(predicted_df, model, feature_names)
-
-	with tab_department:
+		st.markdown("---")
 		_render_department_tab(predicted_df)
 
-	with tab_trends:
+	with hotspots_tab:
+		_render_hotspot_tab(predicted_df, hotspot_df)
+
+	with trends_tab:
 		_render_trends_tab(predicted_df, trend_df, category_distribution_df)
+
+	if is_admin:
+		with admin_tab:
+			_render_admin_panel(full_df)
+
+
+def _render_admin_panel(df: pd.DataFrame) -> None:
+	"""Render admin controls for full dataset view and complaint resolution updates."""
+	if st.session_state.get("role") != "admin":
+		return
+
+	st.subheader("🛠 Admin Panel")
+	st.markdown("### Admin Control Dashboard")
+	st.caption("Filter complaints, identify unresolved cases, and resolve them in one click.")
+
+	admin_df = df.copy()
+	if "resolved" not in admin_df.columns:
+		admin_df["resolved"] = 0
+
+	admin_df["resolved"] = pd.to_numeric(admin_df["resolved"], errors="coerce").fillna(0).astype(int)
+	admin_df["status"] = admin_df["resolved"].map({1: "resolved", 0: "unresolved"})
+	admin_df["resolution_state"] = admin_df["resolved"].map({1: "🟢 Resolved", 0: "🔴 Unresolved"})
+
+	filter_col_1, filter_col_2, filter_col_3 = st.columns([1.2, 1.2, 1])
+	all_areas = sorted(admin_df["area"].astype(str).unique().tolist()) if "area" in admin_df.columns else []
+	all_categories = (
+		sorted(admin_df["category"].astype(str).unique().tolist()) if "category" in admin_df.columns else []
+	)
+
+	selected_areas = filter_col_1.multiselect(
+		"Filter by Area",
+		options=all_areas,
+		default=all_areas,
+		key="admin_filter_areas",
+	)
+	selected_categories = filter_col_2.multiselect(
+		"Filter by Category",
+		options=all_categories,
+		default=all_categories,
+		key="admin_filter_categories",
+	)
+	status_filter = filter_col_3.selectbox(
+		"Filter by Status",
+		options=["all", "unresolved", "resolved"],
+		index=0,
+		key="admin_filter_status",
+	)
+
+	search_text = st.text_input(
+		"Search by Complaint ID or Text",
+		placeholder="Type complaint ID or keywords...",
+		key="admin_filter_search",
+	)
+
+	filtered_df = admin_df.copy()
+	if selected_areas:
+		filtered_df = filtered_df[filtered_df["area"].astype(str).isin(selected_areas)]
+	if selected_categories:
+		filtered_df = filtered_df[filtered_df["category"].astype(str).isin(selected_categories)]
+	if status_filter != "all":
+		filtered_df = filtered_df[filtered_df["status"].astype(str).str.lower().eq(status_filter)]
+	if search_text.strip():
+		search_value = search_text.strip().lower()
+		id_match = filtered_df["complaint_id"].astype(str).str.lower().str.contains(search_value, na=False)
+		text_col = "complaint_text" if "complaint_text" in filtered_df.columns else "text"
+		text_match = filtered_df[text_col].astype(str).str.lower().str.contains(search_value, na=False)
+		filtered_df = filtered_df[id_match | text_match]
+
+	filtered_total = int(len(filtered_df))
+	filtered_unresolved = int(filtered_df["resolved"].eq(0).sum()) if "resolved" in filtered_df.columns else 0
+	filtered_resolved = int(filtered_total - filtered_unresolved)
+
+	badge_col_1, badge_col_2, badge_col_3 = st.columns(3)
+	badge_col_1.metric("Filtered Complaints", filtered_total)
+	badge_col_2.metric("🔴 Unresolved", filtered_unresolved)
+	badge_col_3.metric("🟢 Resolved", filtered_resolved)
+
+	table_columns = [
+		"complaint_id",
+		"date",
+		"area",
+		"category",
+		"priority",
+		"days_to_resolve",
+		"resolution_state",
+		"complaint_text",
+	]
+	table_columns = [col for col in table_columns if col in filtered_df.columns]
+	view_df = filtered_df[table_columns].copy()
+
+	def _highlight_unresolved_rows(row: pd.Series) -> list[str]:
+		if str(row.get("resolution_state", "")).startswith("🔴"):
+			return ["background-color: rgba(215, 38, 61, 0.16);"] * len(row)
+		return [""] * len(row)
+
+	st.dataframe(
+		view_df.style.apply(_highlight_unresolved_rows, axis=1),
+		width="stretch",
+		hide_index=True,
+	)
+
+	action_df = filtered_df[filtered_df["resolved"].eq(0)].copy()
+	if action_df.empty:
+		st.success("No unresolved complaints in the current filtered view.")
+		return
+
+	action_columns = [
+		"complaint_id",
+		"date",
+		"area",
+		"category",
+		"priority",
+		"days_to_resolve",
+		"complaint_text",
+	]
+	action_columns = [col for col in action_columns if col in action_df.columns]
+	action_editor_df = action_df[action_columns].copy()
+	action_editor_df["mark_resolved"] = False
+
+	st.markdown("#### Mark as Resolved")
+	edited_action_df = st.data_editor(
+		action_editor_df,
+		width="stretch",
+		hide_index=True,
+		disabled=[col for col in action_editor_df.columns if col != "mark_resolved"],
+		column_config={
+			"mark_resolved": st.column_config.CheckboxColumn(
+				"Mark as Resolved",
+				help="Tick one or more unresolved complaints.",
+				default=False,
+			)
+		},
+		key="admin_mark_resolved_editor",
+	)
+
+	action_col_1, action_col_2 = st.columns(2)
+	mark_selected = action_col_1.button("✅ Apply Selected", use_container_width=True)
+	mark_all_filtered = action_col_2.button(
+		"⚡ Resolve All Filtered", use_container_width=True
+	)
+
+	if mark_selected or mark_all_filtered:
+		if mark_all_filtered:
+			ids_to_resolve = action_editor_df["complaint_id"].astype(str).tolist()
+		else:
+			ids_to_resolve = (
+				edited_action_df.loc[edited_action_df["mark_resolved"].astype(bool), "complaint_id"]
+				.astype(str)
+				.tolist()
+			)
+		if not ids_to_resolve:
+			st.warning("No complaints selected for resolution.")
+			return
+
+		master_df = st.session_state.get("master_df", df).copy()
+		if "resolved" not in master_df.columns:
+			master_df["resolved"] = 0
+		if "status" not in master_df.columns:
+			master_df["status"] = "unresolved"
+
+		selection_mask = master_df["complaint_id"].astype(str).isin(ids_to_resolve)
+		master_df.loc[selection_mask, "resolved"] = 1
+		master_df.loc[selection_mask, "status"] = "resolved"
+
+		st.session_state["master_df"] = _optimize_dataframe_memory(master_df)
+		_save_dataset(st.session_state["master_df"])
+		st.success(f"Updated {int(selection_mask.sum())} complaints as resolved.")
+		if hasattr(st, "experimental_rerun"):
+			st.experimental_rerun()
+		st.rerun()
 
 
 def main() -> None:
 	"""Application entrypoint for CivicMind dashboard."""
 	_inject_custom_styles()
-	st.title(APP_TITLE)
 	_init_session_state()
 
-	base_df = load_data()
+	if not st.session_state.get("logged_in", False):
+		_render_login()
+		return
+
+	st.title(APP_TITLE)
+	_render_user_header()
+
+	base_df = st.session_state.get("master_df", load_data())
 	if base_df.empty:
 		st.error("No complaint data available.")
 		return
@@ -810,7 +1065,7 @@ def main() -> None:
 	pred_df = _optimize_dataframe_memory(pred_df)
 	hotspot_df, trend_df, category_distribution_df, action_brief_df = _compute_cached_views(pred_df)
 	_render_metrics(pred_df)
-	_render_tabs(pred_df, hotspot_df, trend_df, category_distribution_df, model, feature_names)
+	_render_tabs(df, pred_df, hotspot_df, trend_df, category_distribution_df, model, feature_names)
 	_render_ai_insights(pred_df)
 	_render_action_brief(action_brief_df)
 

@@ -1,601 +1,601 @@
-complaint_id,date,area,category,priority,status,days_to_resolve,complaint_text
-CM-0001,2026-03-16,Gulshan,water,low,resolved,7,Intermittent water supply disruption observed in Gulshan.
-CM-0002,2026-02-11,Gulshan,traffic,low,unresolved,13,Signal light malfunction causing long queues in Gulshan.
-CM-0003,2026-03-17,Mohammadpur,waste,low,resolved,6,Garbage has not been collected for several days in Mohammadpur.
-CM-0004,2026-03-08,Mirpur,water,medium,resolved,5,Residents in Mirpur report muddy tap water during morning hours.
-CM-0005,2026-03-01,Mohammadpur,traffic,medium,unresolved,17,Unauthorized roadside parking worsening traffic flow in Mohammadpur.
-CM-0006,2026-04-08,Mirpur,water,medium,resolved,3,Residents in Mirpur report muddy tap water during morning hours.
-CM-0007,2026-02-22,Dhanmondi,water,low,unresolved,8,Residents in Dhanmondi report muddy tap water during morning hours.
-CM-0008,2026-03-28,Demra,waste,low,resolved,1,Overflowing community bin in Demra is causing foul smell.
-CM-0009,2026-02-19,Mohammadpur,water,medium,unresolved,11,Leakage from underground supply line in Mohammadpur wasting clean water.
-CM-0010,2026-04-02,Mirpur,road,high,resolved,4,"Road repair work is incomplete in Mirpur, creating traffic bottlenecks."
-CM-0011,2026-03-11,Gulshan,water,low,unresolved,14,Intermittent water supply disruption observed in Gulshan.
-CM-0012,2026-03-01,Uttara,water,low,resolved,4,Intermittent water supply disruption observed in Uttara.
-CM-0013,2026-03-05,Farmgate,waste,low,unresolved,5,Overflowing community bin in Farmgate is causing foul smell.
-CM-0014,2026-03-17,Mohammadpur,road,medium,unresolved,19,Broken pavement and uneven road surface reported in Mohammadpur.
-CM-0015,2026-03-11,Demra,waste,low,resolved,6,Illegal dumping spotted beside a residential lane in Demra.
-CM-0016,2026-02-21,Mirpur,road,medium,unresolved,16,Drain cover is missing on a busy road in Mirpur.
-CM-0017,2026-02-13,Mirpur,waste,high,unresolved,7,Garbage has not been collected for several days in Mirpur.
-CM-0018,2026-03-19,Mirpur,waste,medium,unresolved,10,Garbage has not been collected for several days in Mirpur.
-CM-0019,2026-03-12,Mohammadpur,traffic,medium,unresolved,16,Signal light malfunction causing long queues in Mohammadpur.
-CM-0020,2026-02-23,Demra,waste,low,unresolved,12,Blocked drain in Demra due to accumulated plastic waste.
-CM-0021,2026-02-26,Uttara,road,low,unresolved,9,Drain cover is missing on a busy road in Uttara.
-CM-0022,2026-02-18,Gulshan,traffic,low,unresolved,7,Unauthorized roadside parking worsening traffic flow in Gulshan.
-CM-0023,2026-02-24,Demra,road,medium,unresolved,11,Large pothole near the main road in Demra causing bike accidents.
-CM-0024,2026-03-22,Mirpur,road,medium,resolved,3,Street section in Mirpur is flooded after rain due to damaged road drainage.
-CM-0025,2026-03-05,Farmgate,waste,low,unresolved,14,Illegal dumping spotted beside a residential lane in Farmgate.
-CM-0026,2026-03-13,Gulshan,road,medium,resolved,4,Street section in Gulshan is flooded after rain due to damaged road drainage.
-CM-0027,2026-02-21,Farmgate,water,low,unresolved,9,No municipal water available in part of Farmgate since last night.
-CM-0028,2026-03-15,Mirpur,water,medium,resolved,3,Intermittent water supply disruption observed in Mirpur.
-CM-0029,2026-04-03,Mirpur,water,high,resolved,2,No municipal water available in part of Mirpur since last night.
-CM-0030,2026-02-23,Mirpur,traffic,medium,unresolved,7,Unauthorized roadside parking worsening traffic flow in Mirpur.
-CM-0031,2026-03-14,Dhanmondi,traffic,low,unresolved,17,Frequent gridlock near bus stop reported in Dhanmondi.
-CM-0032,2026-03-24,Uttara,waste,low,resolved,4,Garbage has not been collected for several days in Uttara.
-CM-0033,2026-04-01,Uttara,traffic,medium,resolved,7,Signal light malfunction causing long queues in Uttara.
-CM-0034,2026-02-16,Uttara,waste,low,resolved,3,Overflowing community bin in Uttara is causing foul smell.
-CM-0035,2026-03-19,Mirpur,water,medium,resolved,2,Low water pressure reported in multiple households in Mirpur.
-CM-0036,2026-04-03,Mohammadpur,road,medium,unresolved,16,Street section in Mohammadpur is flooded after rain due to damaged road drainage.
-CM-0037,2026-02-10,Mirpur,road,high,resolved,6,Drain cover is missing on a busy road in Mirpur.
-CM-0038,2026-04-02,Mirpur,road,high,unresolved,20,Large pothole near the main road in Mirpur causing bike accidents.
-CM-0039,2026-02-24,Uttara,traffic,medium,unresolved,14,Severe traffic congestion at peak hour in Uttara intersection.
-CM-0040,2026-02-27,Demra,road,low,unresolved,6,Broken pavement and uneven road surface reported in Demra.
-CM-0041,2026-03-11,Mirpur,waste,medium,resolved,5,Blocked drain in Mirpur due to accumulated plastic waste.
-CM-0042,2026-02-14,Mirpur,waste,medium,unresolved,16,Garbage has not been collected for several days in Mirpur.
-CM-0043,2026-04-01,Uttara,traffic,medium,resolved,5,Unauthorized roadside parking worsening traffic flow in Uttara.
-CM-0044,2026-03-13,Gulshan,road,low,unresolved,9,"Road repair work is incomplete in Gulshan, creating traffic bottlenecks."
-CM-0045,2026-02-24,Mirpur,waste,high,resolved,5,Overflowing community bin in Mirpur is causing foul smell.
-CM-0046,2026-03-17,Dhanmondi,waste,low,resolved,2,Illegal dumping spotted beside a residential lane in Dhanmondi.
-CM-0047,2026-02-10,Mirpur,road,high,resolved,6,Street section in Mirpur is flooded after rain due to damaged road drainage.
-CM-0048,2026-04-07,Farmgate,road,low,resolved,7,Large pothole near the main road in Farmgate causing bike accidents.
-CM-0049,2026-04-01,Mohammadpur,road,low,unresolved,9,Drain cover is missing on a busy road in Mohammadpur.
-CM-0050,2026-04-09,Mirpur,road,high,unresolved,13,"Road repair work is incomplete in Mirpur, creating traffic bottlenecks."
-CM-0051,2026-02-10,Dhanmondi,waste,low,resolved,4,Illegal dumping spotted beside a residential lane in Dhanmondi.
-CM-0052,2026-04-08,Mirpur,road,high,resolved,7,Drain cover is missing on a busy road in Mirpur.
-CM-0053,2026-02-14,Mirpur,waste,high,unresolved,13,Garbage has not been collected for several days in Mirpur.
-CM-0054,2026-04-07,Mohammadpur,road,medium,resolved,2,Street section in Mohammadpur is flooded after rain due to damaged road drainage.
-CM-0055,2026-03-04,Gulshan,traffic,low,resolved,5,Traffic police presence is low in Gulshan during rush hours.
-CM-0056,2026-03-09,Uttara,traffic,medium,unresolved,15,Frequent gridlock near bus stop reported in Uttara.
-CM-0057,2026-03-15,Mirpur,road,high,unresolved,12,Broken pavement and uneven road surface reported in Mirpur.
-CM-0058,2026-03-19,Dhanmondi,waste,low,unresolved,8,Overflowing community bin in Dhanmondi is causing foul smell.
-CM-0059,2026-02-18,Mohammadpur,traffic,medium,unresolved,12,Traffic police presence is low in Mohammadpur during rush hours.
-CM-0060,2026-02-19,Demra,water,low,unresolved,6,Residents in Demra report muddy tap water during morning hours.
-CM-0061,2026-03-06,Demra,road,low,resolved,5,Street section in Demra is flooded after rain due to damaged road drainage.
-CM-0062,2026-03-05,Mirpur,water,medium,unresolved,16,Low water pressure reported in multiple households in Mirpur.
-CM-0063,2026-03-17,Mohammadpur,water,low,resolved,5,No municipal water available in part of Mohammadpur since last night.
-CM-0064,2026-02-13,Mirpur,waste,medium,unresolved,7,Illegal dumping spotted beside a residential lane in Mirpur.
-CM-0065,2026-03-01,Farmgate,water,low,resolved,4,Intermittent water supply disruption observed in Farmgate.
-CM-0066,2026-03-12,Farmgate,traffic,low,unresolved,16,Severe traffic congestion at peak hour in Farmgate intersection.
-CM-0067,2026-02-14,Demra,waste,low,unresolved,17,Waste pile near market area in Demra attracting stray animals.
-CM-0068,2026-02-16,Gulshan,waste,low,unresolved,10,Garbage has not been collected for several days in Gulshan.
-CM-0069,2026-03-08,Mirpur,traffic,high,unresolved,12,Severe traffic congestion at peak hour in Mirpur intersection.
-CM-0070,2026-03-08,Mohammadpur,water,medium,unresolved,15,No municipal water available in part of Mohammadpur since last night.
-CM-0071,2026-03-16,Demra,traffic,low,resolved,1,Severe traffic congestion at peak hour in Demra intersection.
-CM-0072,2026-04-03,Farmgate,traffic,low,unresolved,16,Traffic police presence is low in Farmgate during rush hours.
-CM-0073,2026-03-23,Mirpur,waste,high,unresolved,12,Waste pile near market area in Mirpur attracting stray animals.
-CM-0074,2026-02-23,Mirpur,traffic,high,resolved,6,Traffic police presence is low in Mirpur during rush hours.
-CM-0075,2026-04-09,Mirpur,traffic,high,resolved,5,Frequent gridlock near bus stop reported in Mirpur.
-CM-0076,2026-02-16,Mirpur,road,high,unresolved,17,Large pothole near the main road in Mirpur causing bike accidents.
-CM-0077,2026-02-15,Mohammadpur,water,medium,unresolved,5,No municipal water available in part of Mohammadpur since last night.
-CM-0078,2026-03-05,Gulshan,waste,low,resolved,5,Blocked drain in Gulshan due to accumulated plastic waste.
-CM-0079,2026-02-19,Mohammadpur,water,medium,resolved,5,Low water pressure reported in multiple households in Mohammadpur.
-CM-0080,2026-04-03,Uttara,traffic,low,resolved,4,Severe traffic congestion at peak hour in Uttara intersection.
-CM-0081,2026-04-10,Demra,road,medium,resolved,2,"Road repair work is incomplete in Demra, creating traffic bottlenecks."
-CM-0082,2026-03-05,Mirpur,waste,medium,unresolved,12,Waste pile near market area in Mirpur attracting stray animals.
-CM-0083,2026-02-23,Mirpur,road,medium,resolved,2,Drain cover is missing on a busy road in Mirpur.
-CM-0084,2026-02-22,Demra,water,medium,unresolved,13,Residents in Demra report muddy tap water during morning hours.
-CM-0085,2026-03-26,Farmgate,traffic,low,resolved,5,Unauthorized roadside parking worsening traffic flow in Farmgate.
-CM-0086,2026-03-11,Uttara,water,low,unresolved,20,Residents in Uttara report muddy tap water during morning hours.
-CM-0087,2026-02-22,Mirpur,waste,medium,unresolved,14,Garbage has not been collected for several days in Mirpur.
-CM-0088,2026-03-17,Mirpur,waste,medium,unresolved,9,Illegal dumping spotted beside a residential lane in Mirpur.
-CM-0089,2026-04-05,Uttara,road,low,resolved,5,Drain cover is missing on a busy road in Uttara.
-CM-0090,2026-03-03,Demra,waste,low,resolved,2,Illegal dumping spotted beside a residential lane in Demra.
-CM-0091,2026-02-12,Demra,waste,low,unresolved,13,Garbage has not been collected for several days in Demra.
-CM-0092,2026-02-14,Uttara,water,medium,resolved,4,No municipal water available in part of Uttara since last night.
-CM-0093,2026-04-07,Uttara,road,medium,resolved,1,Large pothole near the main road in Uttara causing bike accidents.
-CM-0094,2026-03-25,Dhanmondi,road,low,unresolved,19,Large pothole near the main road in Dhanmondi causing bike accidents.
-CM-0095,2026-03-17,Mohammadpur,traffic,medium,unresolved,10,Frequent gridlock near bus stop reported in Mohammadpur.
-CM-0096,2026-04-03,Dhanmondi,traffic,low,resolved,3,Signal light malfunction causing long queues in Dhanmondi.
-CM-0097,2026-02-24,Demra,water,low,unresolved,11,Leakage from underground supply line in Demra wasting clean water.
-CM-0098,2026-03-29,Uttara,road,medium,unresolved,19,Street section in Uttara is flooded after rain due to damaged road drainage.
-CM-0099,2026-02-21,Farmgate,traffic,low,unresolved,20,Traffic police presence is low in Farmgate during rush hours.
-CM-0100,2026-03-18,Mirpur,water,high,resolved,7,Low water pressure reported in multiple households in Mirpur.
-CM-0101,2026-02-13,Mirpur,traffic,high,unresolved,5,Severe traffic congestion at peak hour in Mirpur intersection.
-CM-0102,2026-03-12,Farmgate,water,low,unresolved,18,No municipal water available in part of Farmgate since last night.
-CM-0103,2026-03-17,Demra,water,low,resolved,5,Leakage from underground supply line in Demra wasting clean water.
-CM-0104,2026-03-20,Uttara,waste,low,resolved,4,Waste pile near market area in Uttara attracting stray animals.
-CM-0105,2026-03-16,Mohammadpur,waste,low,resolved,7,Overflowing community bin in Mohammadpur is causing foul smell.
-CM-0106,2026-03-21,Uttara,water,low,unresolved,20,No municipal water available in part of Uttara since last night.
-CM-0107,2026-04-10,Demra,road,low,resolved,3,"Road repair work is incomplete in Demra, creating traffic bottlenecks."
-CM-0108,2026-02-14,Uttara,waste,low,unresolved,11,Overflowing community bin in Uttara is causing foul smell.
-CM-0109,2026-02-27,Demra,water,medium,resolved,7,No municipal water available in part of Demra since last night.
-CM-0110,2026-02-24,Mohammadpur,water,low,resolved,4,No municipal water available in part of Mohammadpur since last night.
-CM-0111,2026-02-21,Mirpur,water,high,unresolved,12,Intermittent water supply disruption observed in Mirpur.
-CM-0112,2026-02-11,Mohammadpur,road,low,unresolved,9,Large pothole near the main road in Mohammadpur causing bike accidents.
-CM-0113,2026-02-17,Gulshan,water,low,unresolved,20,Residents in Gulshan report muddy tap water during morning hours.
-CM-0114,2026-03-17,Gulshan,road,low,resolved,2,Street section in Gulshan is flooded after rain due to damaged road drainage.
-CM-0115,2026-04-07,Mohammadpur,road,low,unresolved,10,Street section in Mohammadpur is flooded after rain due to damaged road drainage.
-CM-0116,2026-03-01,Demra,water,low,resolved,3,No municipal water available in part of Demra since last night.
-CM-0117,2026-04-04,Mirpur,road,high,resolved,5,Street section in Mirpur is flooded after rain due to damaged road drainage.
-CM-0118,2026-03-11,Demra,road,low,unresolved,14,"Road repair work is incomplete in Demra, creating traffic bottlenecks."
-CM-0119,2026-03-10,Mirpur,traffic,high,resolved,3,Frequent gridlock near bus stop reported in Mirpur.
-CM-0120,2026-03-06,Dhanmondi,waste,low,resolved,5,Garbage has not been collected for several days in Dhanmondi.
-CM-0121,2026-03-16,Dhanmondi,traffic,low,resolved,6,Frequent gridlock near bus stop reported in Dhanmondi.
-CM-0122,2026-03-17,Mirpur,waste,medium,resolved,6,Illegal dumping spotted beside a residential lane in Mirpur.
-CM-0123,2026-03-28,Dhanmondi,traffic,medium,unresolved,12,Severe traffic congestion at peak hour in Dhanmondi intersection.
-CM-0124,2026-04-06,Mirpur,road,high,resolved,7,Broken pavement and uneven road surface reported in Mirpur.
-CM-0125,2026-02-12,Uttara,traffic,low,unresolved,17,Signal light malfunction causing long queues in Uttara.
-CM-0126,2026-02-16,Mirpur,road,medium,resolved,7,"Road repair work is incomplete in Mirpur, creating traffic bottlenecks."
-CM-0127,2026-04-09,Farmgate,traffic,low,resolved,3,Severe traffic congestion at peak hour in Farmgate intersection.
-CM-0128,2026-04-01,Mohammadpur,road,medium,resolved,5,"Road repair work is incomplete in Mohammadpur, creating traffic bottlenecks."
-CM-0129,2026-02-13,Uttara,water,low,unresolved,20,Intermittent water supply disruption observed in Uttara.
-CM-0130,2026-03-30,Farmgate,road,low,resolved,6,Drain cover is missing on a busy road in Farmgate.
-CM-0131,2026-02-13,Uttara,road,low,unresolved,20,Large pothole near the main road in Uttara causing bike accidents.
-CM-0132,2026-03-27,Mirpur,waste,high,resolved,1,Garbage has not been collected for several days in Mirpur.
-CM-0133,2026-02-23,Mirpur,waste,medium,resolved,1,Blocked drain in Mirpur due to accumulated plastic waste.
-CM-0134,2026-03-23,Dhanmondi,waste,low,unresolved,11,Blocked drain in Dhanmondi due to accumulated plastic waste.
-CM-0135,2026-03-25,Mirpur,waste,high,resolved,4,Illegal dumping spotted beside a residential lane in Mirpur.
-CM-0136,2026-02-23,Mohammadpur,road,low,unresolved,19,Drain cover is missing on a busy road in Mohammadpur.
-CM-0137,2026-02-25,Demra,road,low,resolved,3,Drain cover is missing on a busy road in Demra.
-CM-0138,2026-03-14,Demra,road,low,unresolved,5,Street section in Demra is flooded after rain due to damaged road drainage.
-CM-0139,2026-02-21,Mirpur,road,medium,unresolved,5,Drain cover is missing on a busy road in Mirpur.
-CM-0140,2026-03-27,Farmgate,water,low,resolved,2,No municipal water available in part of Farmgate since last night.
-CM-0141,2026-02-16,Demra,road,low,resolved,6,Broken pavement and uneven road surface reported in Demra.
-CM-0142,2026-02-14,Uttara,water,medium,resolved,6,No municipal water available in part of Uttara since last night.
-CM-0143,2026-04-04,Dhanmondi,traffic,low,resolved,5,Frequent gridlock near bus stop reported in Dhanmondi.
-CM-0144,2026-03-22,Mirpur,road,high,unresolved,16,Large pothole near the main road in Mirpur causing bike accidents.
-CM-0145,2026-03-23,Demra,water,low,unresolved,16,Low water pressure reported in multiple households in Demra.
-CM-0146,2026-03-06,Mirpur,road,high,resolved,6,Drain cover is missing on a busy road in Mirpur.
-CM-0147,2026-02-14,Mohammadpur,road,medium,resolved,1,Broken pavement and uneven road surface reported in Mohammadpur.
-CM-0148,2026-04-03,Mohammadpur,traffic,low,resolved,2,Signal light malfunction causing long queues in Mohammadpur.
-CM-0149,2026-04-03,Mirpur,waste,medium,resolved,3,Garbage has not been collected for several days in Mirpur.
-CM-0150,2026-04-09,Farmgate,waste,low,resolved,5,Waste pile near market area in Farmgate attracting stray animals.
-CM-0151,2026-02-24,Farmgate,waste,low,resolved,5,Overflowing community bin in Farmgate is causing foul smell.
-CM-0152,2026-02-24,Mohammadpur,waste,low,unresolved,5,Waste pile near market area in Mohammadpur attracting stray animals.
-CM-0153,2026-02-13,Uttara,waste,low,resolved,1,Garbage has not been collected for several days in Uttara.
-CM-0154,2026-03-01,Mirpur,traffic,high,unresolved,19,Traffic police presence is low in Mirpur during rush hours.
-CM-0155,2026-03-21,Mohammadpur,road,medium,resolved,4,"Road repair work is incomplete in Mohammadpur, creating traffic bottlenecks."
-CM-0156,2026-03-19,Uttara,traffic,medium,resolved,7,Unauthorized roadside parking worsening traffic flow in Uttara.
-CM-0157,2026-02-28,Mirpur,traffic,high,resolved,7,Severe traffic congestion at peak hour in Mirpur intersection.
-CM-0158,2026-03-29,Gulshan,road,low,resolved,6,"Road repair work is incomplete in Gulshan, creating traffic bottlenecks."
-CM-0159,2026-03-04,Mohammadpur,waste,medium,resolved,3,Overflowing community bin in Mohammadpur is causing foul smell.
-CM-0160,2026-03-17,Farmgate,traffic,low,resolved,3,Signal light malfunction causing long queues in Farmgate.
-CM-0161,2026-03-22,Dhanmondi,road,low,resolved,2,Large pothole near the main road in Dhanmondi causing bike accidents.
-CM-0162,2026-02-12,Mirpur,road,high,unresolved,10,Broken pavement and uneven road surface reported in Mirpur.
-CM-0163,2026-03-13,Mirpur,road,high,resolved,4,Large pothole near the main road in Mirpur causing bike accidents.
-CM-0164,2026-04-08,Uttara,traffic,low,resolved,7,Severe traffic congestion at peak hour in Uttara intersection.
-CM-0165,2026-03-23,Mirpur,road,high,resolved,6,Large pothole near the main road in Mirpur causing bike accidents.
-CM-0166,2026-02-10,Mohammadpur,traffic,medium,unresolved,20,Signal light malfunction causing long queues in Mohammadpur.
-CM-0167,2026-02-21,Farmgate,road,low,unresolved,18,Drain cover is missing on a busy road in Farmgate.
-CM-0168,2026-04-01,Mirpur,road,medium,resolved,4,"Road repair work is incomplete in Mirpur, creating traffic bottlenecks."
-CM-0169,2026-02-19,Mirpur,waste,medium,resolved,3,Garbage has not been collected for several days in Mirpur.
-CM-0170,2026-03-29,Mohammadpur,road,low,resolved,3,Broken pavement and uneven road surface reported in Mohammadpur.
-CM-0171,2026-03-02,Mohammadpur,road,low,unresolved,11,Street section in Mohammadpur is flooded after rain due to damaged road drainage.
-CM-0172,2026-02-27,Mohammadpur,traffic,medium,unresolved,16,Signal light malfunction causing long queues in Mohammadpur.
-CM-0173,2026-04-08,Mirpur,road,medium,resolved,7,Broken pavement and uneven road surface reported in Mirpur.
-CM-0174,2026-03-10,Uttara,water,low,resolved,3,Low water pressure reported in multiple households in Uttara.
-CM-0175,2026-04-05,Mirpur,traffic,high,resolved,4,Signal light malfunction causing long queues in Mirpur.
-CM-0176,2026-03-08,Mirpur,road,high,unresolved,7,Street section in Mirpur is flooded after rain due to damaged road drainage.
-CM-0177,2026-04-06,Dhanmondi,water,low,resolved,4,Leakage from underground supply line in Dhanmondi wasting clean water.
-CM-0178,2026-03-30,Mohammadpur,water,low,resolved,6,Low water pressure reported in multiple households in Mohammadpur.
-CM-0179,2026-03-08,Mohammadpur,waste,low,unresolved,5,Waste pile near market area in Mohammadpur attracting stray animals.
-CM-0180,2026-03-04,Gulshan,traffic,low,unresolved,13,Unauthorized roadside parking worsening traffic flow in Gulshan.
-CM-0181,2026-03-08,Demra,road,low,unresolved,20,Broken pavement and uneven road surface reported in Demra.
-CM-0182,2026-03-14,Mirpur,road,high,resolved,2,Street section in Mirpur is flooded after rain due to damaged road drainage.
-CM-0183,2026-02-26,Dhanmondi,traffic,low,resolved,4,Severe traffic congestion at peak hour in Dhanmondi intersection.
-CM-0184,2026-03-13,Mohammadpur,waste,medium,unresolved,20,Blocked drain in Mohammadpur due to accumulated plastic waste.
-CM-0185,2026-03-24,Mirpur,waste,high,resolved,7,Illegal dumping spotted beside a residential lane in Mirpur.
-CM-0186,2026-03-10,Demra,waste,medium,resolved,6,Waste pile near market area in Demra attracting stray animals.
-CM-0187,2026-04-02,Uttara,water,low,resolved,6,Residents in Uttara report muddy tap water during morning hours.
-CM-0188,2026-03-16,Demra,waste,low,unresolved,9,Garbage has not been collected for several days in Demra.
-CM-0189,2026-04-03,Mirpur,water,high,resolved,5,No municipal water available in part of Mirpur since last night.
-CM-0190,2026-03-22,Mirpur,water,medium,resolved,7,Leakage from underground supply line in Mirpur wasting clean water.
-CM-0191,2026-02-24,Mirpur,road,high,unresolved,7,Street section in Mirpur is flooded after rain due to damaged road drainage.
-CM-0192,2026-02-15,Mirpur,waste,medium,unresolved,14,Waste pile near market area in Mirpur attracting stray animals.
-CM-0193,2026-04-07,Mirpur,waste,medium,resolved,3,Illegal dumping spotted beside a residential lane in Mirpur.
-CM-0194,2026-02-28,Mirpur,waste,high,resolved,3,Illegal dumping spotted beside a residential lane in Mirpur.
-CM-0195,2026-03-22,Mohammadpur,traffic,medium,resolved,3,Unauthorized roadside parking worsening traffic flow in Mohammadpur.
-CM-0196,2026-03-04,Dhanmondi,waste,low,resolved,3,Blocked drain in Dhanmondi due to accumulated plastic waste.
-CM-0197,2026-02-10,Mohammadpur,water,medium,unresolved,17,Leakage from underground supply line in Mohammadpur wasting clean water.
-CM-0198,2026-03-14,Mirpur,waste,medium,unresolved,12,Illegal dumping spotted beside a residential lane in Mirpur.
-CM-0199,2026-03-02,Uttara,road,low,resolved,6,Broken pavement and uneven road surface reported in Uttara.
-CM-0200,2026-04-10,Dhanmondi,traffic,low,resolved,5,Frequent gridlock near bus stop reported in Dhanmondi.
-CM-0201,2026-03-14,Mirpur,waste,medium,unresolved,20,Garbage has not been collected for several days in Mirpur.
-CM-0202,2026-03-16,Demra,traffic,medium,resolved,7,Severe traffic congestion at peak hour in Demra intersection.
-CM-0203,2026-03-13,Gulshan,waste,low,resolved,7,Waste pile near market area in Gulshan attracting stray animals.
-CM-0204,2026-02-20,Mirpur,waste,medium,unresolved,9,Waste pile near market area in Mirpur attracting stray animals.
-CM-0205,2026-04-09,Demra,traffic,medium,resolved,7,Frequent gridlock near bus stop reported in Demra.
-CM-0206,2026-02-26,Mohammadpur,road,medium,unresolved,8,Large pothole near the main road in Mohammadpur causing bike accidents.
-CM-0207,2026-03-22,Demra,waste,low,resolved,6,Blocked drain in Demra due to accumulated plastic waste.
-CM-0208,2026-03-17,Dhanmondi,traffic,low,resolved,2,Traffic police presence is low in Dhanmondi during rush hours.
-CM-0209,2026-02-15,Mirpur,traffic,high,unresolved,6,Signal light malfunction causing long queues in Mirpur.
-CM-0210,2026-04-06,Mirpur,road,medium,resolved,1,Large pothole near the main road in Mirpur causing bike accidents.
-CM-0211,2026-03-21,Demra,water,low,unresolved,7,Residents in Demra report muddy tap water during morning hours.
-CM-0212,2026-02-20,Uttara,traffic,medium,unresolved,13,Frequent gridlock near bus stop reported in Uttara.
-CM-0213,2026-03-29,Mirpur,water,high,resolved,4,Residents in Mirpur report muddy tap water during morning hours.
-CM-0214,2026-03-19,Mirpur,road,high,resolved,6,Large pothole near the main road in Mirpur causing bike accidents.
-CM-0215,2026-04-08,Mirpur,road,high,resolved,6,Street section in Mirpur is flooded after rain due to damaged road drainage.
-CM-0216,2026-04-02,Demra,waste,low,resolved,7,Blocked drain in Demra due to accumulated plastic waste.
-CM-0217,2026-03-04,Mohammadpur,road,medium,resolved,2,Broken pavement and uneven road surface reported in Mohammadpur.
-CM-0218,2026-02-25,Farmgate,water,low,resolved,4,Low water pressure reported in multiple households in Farmgate.
-CM-0219,2026-03-19,Mirpur,waste,medium,unresolved,12,Overflowing community bin in Mirpur is causing foul smell.
-CM-0220,2026-02-24,Mohammadpur,waste,medium,unresolved,7,Illegal dumping spotted beside a residential lane in Mohammadpur.
-CM-0221,2026-03-03,Dhanmondi,water,low,unresolved,15,Low water pressure reported in multiple households in Dhanmondi.
-CM-0222,2026-03-29,Mohammadpur,waste,low,unresolved,6,Illegal dumping spotted beside a residential lane in Mohammadpur.
-CM-0223,2026-03-13,Uttara,traffic,medium,unresolved,5,Unauthorized roadside parking worsening traffic flow in Uttara.
-CM-0224,2026-03-30,Demra,road,low,unresolved,6,Drain cover is missing on a busy road in Demra.
-CM-0225,2026-03-02,Mirpur,road,medium,unresolved,18,Broken pavement and uneven road surface reported in Mirpur.
-CM-0226,2026-04-07,Dhanmondi,waste,low,resolved,6,Blocked drain in Dhanmondi due to accumulated plastic waste.
-CM-0227,2026-02-24,Mohammadpur,road,low,unresolved,6,Drain cover is missing on a busy road in Mohammadpur.
-CM-0228,2026-04-03,Mohammadpur,water,medium,resolved,2,No municipal water available in part of Mohammadpur since last night.
-CM-0229,2026-04-07,Mirpur,waste,high,resolved,3,Blocked drain in Mirpur due to accumulated plastic waste.
-CM-0230,2026-02-21,Mirpur,traffic,high,unresolved,17,Signal light malfunction causing long queues in Mirpur.
-CM-0231,2026-03-02,Farmgate,road,low,unresolved,10,"Road repair work is incomplete in Farmgate, creating traffic bottlenecks."
-CM-0232,2026-02-18,Farmgate,waste,low,unresolved,17,Waste pile near market area in Farmgate attracting stray animals.
-CM-0233,2026-02-26,Mohammadpur,traffic,medium,unresolved,11,Traffic police presence is low in Mohammadpur during rush hours.
-CM-0234,2026-03-07,Uttara,water,low,resolved,7,Residents in Uttara report muddy tap water during morning hours.
-CM-0235,2026-03-23,Dhanmondi,road,low,resolved,2,Street section in Dhanmondi is flooded after rain due to damaged road drainage.
-CM-0236,2026-03-29,Farmgate,traffic,low,unresolved,20,Traffic police presence is low in Farmgate during rush hours.
-CM-0237,2026-02-10,Farmgate,traffic,low,resolved,1,Severe traffic congestion at peak hour in Farmgate intersection.
-CM-0238,2026-02-14,Farmgate,road,low,unresolved,19,Drain cover is missing on a busy road in Farmgate.
-CM-0239,2026-04-01,Mirpur,water,high,resolved,6,Intermittent water supply disruption observed in Mirpur.
-CM-0240,2026-04-10,Gulshan,waste,low,resolved,6,Illegal dumping spotted beside a residential lane in Gulshan.
-CM-0241,2026-03-15,Mirpur,road,high,resolved,6,Broken pavement and uneven road surface reported in Mirpur.
-CM-0242,2026-02-12,Mohammadpur,traffic,low,unresolved,20,Traffic police presence is low in Mohammadpur during rush hours.
-CM-0243,2026-03-18,Dhanmondi,road,low,resolved,6,"Road repair work is incomplete in Dhanmondi, creating traffic bottlenecks."
-CM-0244,2026-02-11,Farmgate,water,low,unresolved,7,Low water pressure reported in multiple households in Farmgate.
-CM-0245,2026-04-06,Gulshan,traffic,medium,resolved,2,Severe traffic congestion at peak hour in Gulshan intersection.
-CM-0246,2026-04-09,Uttara,water,low,resolved,5,Leakage from underground supply line in Uttara wasting clean water.
-CM-0247,2026-04-02,Dhanmondi,water,low,resolved,1,No municipal water available in part of Dhanmondi since last night.
-CM-0248,2026-03-29,Mirpur,road,medium,resolved,4,Street section in Mirpur is flooded after rain due to damaged road drainage.
-CM-0249,2026-03-17,Uttara,traffic,medium,unresolved,20,Traffic police presence is low in Uttara during rush hours.
-CM-0250,2026-02-17,Demra,waste,low,unresolved,8,Illegal dumping spotted beside a residential lane in Demra.
-CM-0251,2026-03-02,Mohammadpur,traffic,medium,resolved,1,Unauthorized roadside parking worsening traffic flow in Mohammadpur.
-CM-0252,2026-02-15,Mirpur,traffic,high,resolved,1,Traffic police presence is low in Mirpur during rush hours.
-CM-0253,2026-04-06,Mirpur,waste,medium,resolved,7,Waste pile near market area in Mirpur attracting stray animals.
-CM-0254,2026-03-15,Mirpur,traffic,high,unresolved,13,Signal light malfunction causing long queues in Mirpur.
-CM-0255,2026-03-01,Mohammadpur,road,low,resolved,7,Large pothole near the main road in Mohammadpur causing bike accidents.
-CM-0256,2026-02-11,Mohammadpur,traffic,medium,unresolved,9,Unauthorized roadside parking worsening traffic flow in Mohammadpur.
-CM-0257,2026-03-29,Uttara,traffic,low,resolved,7,Unauthorized roadside parking worsening traffic flow in Uttara.
-CM-0258,2026-03-14,Dhanmondi,waste,low,unresolved,16,Garbage has not been collected for several days in Dhanmondi.
-CM-0259,2026-03-30,Gulshan,water,low,resolved,7,Residents in Gulshan report muddy tap water during morning hours.
-CM-0260,2026-04-01,Mirpur,traffic,high,unresolved,15,Traffic police presence is low in Mirpur during rush hours.
-CM-0261,2026-03-08,Mohammadpur,road,medium,unresolved,5,Large pothole near the main road in Mohammadpur causing bike accidents.
-CM-0262,2026-03-30,Farmgate,traffic,low,resolved,6,Signal light malfunction causing long queues in Farmgate.
-CM-0263,2026-03-02,Gulshan,traffic,medium,resolved,7,Severe traffic congestion at peak hour in Gulshan intersection.
-CM-0264,2026-04-05,Mirpur,waste,medium,resolved,3,Waste pile near market area in Mirpur attracting stray animals.
-CM-0265,2026-03-05,Uttara,road,low,resolved,3,Large pothole near the main road in Uttara causing bike accidents.
-CM-0266,2026-03-15,Mirpur,water,medium,unresolved,17,Low water pressure reported in multiple households in Mirpur.
-CM-0267,2026-03-10,Mirpur,waste,medium,resolved,4,Overflowing community bin in Mirpur is causing foul smell.
-CM-0268,2026-02-10,Uttara,water,medium,unresolved,16,Intermittent water supply disruption observed in Uttara.
-CM-0269,2026-03-05,Mirpur,waste,high,resolved,1,Illegal dumping spotted beside a residential lane in Mirpur.
-CM-0270,2026-02-16,Uttara,road,low,resolved,6,"Road repair work is incomplete in Uttara, creating traffic bottlenecks."
-CM-0271,2026-03-30,Uttara,water,medium,resolved,6,Intermittent water supply disruption observed in Uttara.
-CM-0272,2026-03-02,Demra,traffic,medium,unresolved,15,Traffic police presence is low in Demra during rush hours.
-CM-0273,2026-03-12,Uttara,traffic,low,unresolved,12,Signal light malfunction causing long queues in Uttara.
-CM-0274,2026-04-03,Mirpur,waste,medium,resolved,6,Overflowing community bin in Mirpur is causing foul smell.
-CM-0275,2026-02-21,Mirpur,traffic,high,unresolved,7,Signal light malfunction causing long queues in Mirpur.
-CM-0276,2026-03-10,Mohammadpur,water,low,resolved,6,Residents in Mohammadpur report muddy tap water during morning hours.
-CM-0277,2026-03-18,Uttara,road,medium,unresolved,9,"Road repair work is incomplete in Uttara, creating traffic bottlenecks."
-CM-0278,2026-03-08,Demra,road,low,unresolved,14,"Road repair work is incomplete in Demra, creating traffic bottlenecks."
-CM-0279,2026-03-15,Gulshan,water,low,unresolved,18,Low water pressure reported in multiple households in Gulshan.
-CM-0280,2026-03-31,Uttara,waste,low,unresolved,7,Overflowing community bin in Uttara is causing foul smell.
-CM-0281,2026-04-10,Mirpur,road,medium,resolved,4,Street section in Mirpur is flooded after rain due to damaged road drainage.
-CM-0282,2026-03-27,Gulshan,traffic,low,resolved,1,Traffic police presence is low in Gulshan during rush hours.
-CM-0283,2026-03-15,Mohammadpur,waste,low,resolved,7,Overflowing community bin in Mohammadpur is causing foul smell.
-CM-0284,2026-03-14,Mirpur,road,high,resolved,4,Drain cover is missing on a busy road in Mirpur.
-CM-0285,2026-03-03,Farmgate,water,low,unresolved,18,Low water pressure reported in multiple households in Farmgate.
-CM-0286,2026-02-22,Mohammadpur,traffic,medium,resolved,2,Signal light malfunction causing long queues in Mohammadpur.
-CM-0287,2026-02-20,Uttara,waste,low,resolved,5,Blocked drain in Uttara due to accumulated plastic waste.
-CM-0288,2026-03-08,Mirpur,road,medium,unresolved,15,Street section in Mirpur is flooded after rain due to damaged road drainage.
-CM-0289,2026-04-10,Uttara,traffic,medium,resolved,5,Signal light malfunction causing long queues in Uttara.
-CM-0290,2026-02-21,Mirpur,traffic,medium,unresolved,20,Traffic police presence is low in Mirpur during rush hours.
-CM-0291,2026-03-21,Mirpur,road,high,unresolved,20,Street section in Mirpur is flooded after rain due to damaged road drainage.
-CM-0292,2026-03-16,Mirpur,water,medium,resolved,6,No municipal water available in part of Mirpur since last night.
-CM-0293,2026-03-07,Mirpur,road,high,resolved,4,Broken pavement and uneven road surface reported in Mirpur.
-CM-0294,2026-03-29,Uttara,traffic,medium,unresolved,10,Frequent gridlock near bus stop reported in Uttara.
-CM-0295,2026-03-31,Dhanmondi,road,low,resolved,2,"Road repair work is incomplete in Dhanmondi, creating traffic bottlenecks."
-CM-0296,2026-02-18,Demra,water,low,resolved,5,Intermittent water supply disruption observed in Demra.
-CM-0297,2026-02-10,Mohammadpur,road,medium,unresolved,16,Drain cover is missing on a busy road in Mohammadpur.
-CM-0298,2026-03-13,Mirpur,road,high,resolved,2,"Road repair work is incomplete in Mirpur, creating traffic bottlenecks."
-CM-0299,2026-03-03,Mohammadpur,water,medium,unresolved,9,Residents in Mohammadpur report muddy tap water during morning hours.
-CM-0300,2026-04-02,Mohammadpur,waste,low,unresolved,15,Overflowing community bin in Mohammadpur is causing foul smell.
-CM-0301,2026-02-22,Mirpur,road,high,resolved,5,Broken pavement and uneven road surface reported in Mirpur.
-CM-0302,2026-02-14,Mohammadpur,traffic,medium,unresolved,18,Traffic police presence is low in Mohammadpur during rush hours.
-CM-0303,2026-03-09,Mirpur,waste,medium,unresolved,17,Garbage has not been collected for several days in Mirpur.
-CM-0304,2026-02-13,Demra,waste,low,resolved,7,Waste pile near market area in Demra attracting stray animals.
-CM-0305,2026-03-04,Gulshan,traffic,low,unresolved,9,Signal light malfunction causing long queues in Gulshan.
-CM-0306,2026-03-11,Uttara,water,low,unresolved,20,No municipal water available in part of Uttara since last night.
-CM-0307,2026-03-24,Mirpur,water,medium,resolved,5,Residents in Mirpur report muddy tap water during morning hours.
-CM-0308,2026-02-22,Mohammadpur,water,medium,resolved,3,Residents in Mohammadpur report muddy tap water during morning hours.
-CM-0309,2026-04-06,Demra,waste,low,unresolved,20,Waste pile near market area in Demra attracting stray animals.
-CM-0310,2026-02-17,Mirpur,water,medium,unresolved,12,No municipal water available in part of Mirpur since last night.
-CM-0311,2026-03-29,Mirpur,water,high,resolved,3,No municipal water available in part of Mirpur since last night.
-CM-0312,2026-02-20,Mirpur,road,medium,resolved,5,Drain cover is missing on a busy road in Mirpur.
-CM-0313,2026-02-20,Mirpur,road,high,unresolved,18,Drain cover is missing on a busy road in Mirpur.
-CM-0314,2026-02-13,Mirpur,water,medium,unresolved,8,Leakage from underground supply line in Mirpur wasting clean water.
-CM-0315,2026-03-09,Mohammadpur,road,medium,resolved,4,"Road repair work is incomplete in Mohammadpur, creating traffic bottlenecks."
-CM-0316,2026-03-28,Mirpur,traffic,high,resolved,3,Frequent gridlock near bus stop reported in Mirpur.
-CM-0317,2026-04-03,Uttara,water,medium,resolved,4,Low water pressure reported in multiple households in Uttara.
-CM-0318,2026-02-16,Gulshan,waste,low,unresolved,9,Blocked drain in Gulshan due to accumulated plastic waste.
-CM-0319,2026-02-20,Mohammadpur,traffic,low,unresolved,10,Severe traffic congestion at peak hour in Mohammadpur intersection.
-CM-0320,2026-04-05,Mirpur,road,high,resolved,1,Large pothole near the main road in Mirpur causing bike accidents.
-CM-0321,2026-04-05,Mohammadpur,waste,low,resolved,6,Overflowing community bin in Mohammadpur is causing foul smell.
-CM-0322,2026-03-03,Uttara,traffic,medium,unresolved,7,Unauthorized roadside parking worsening traffic flow in Uttara.
-CM-0323,2026-02-23,Mirpur,water,high,unresolved,9,Leakage from underground supply line in Mirpur wasting clean water.
-CM-0324,2026-02-19,Dhanmondi,traffic,low,resolved,7,Frequent gridlock near bus stop reported in Dhanmondi.
-CM-0325,2026-03-14,Mirpur,road,medium,resolved,5,Street section in Mirpur is flooded after rain due to damaged road drainage.
-CM-0326,2026-03-07,Mirpur,waste,high,resolved,2,Waste pile near market area in Mirpur attracting stray animals.
-CM-0327,2026-03-04,Mirpur,water,medium,resolved,5,Leakage from underground supply line in Mirpur wasting clean water.
-CM-0328,2026-03-15,Uttara,road,low,unresolved,18,"Road repair work is incomplete in Uttara, creating traffic bottlenecks."
-CM-0329,2026-03-14,Mirpur,water,medium,resolved,4,Intermittent water supply disruption observed in Mirpur.
-CM-0330,2026-03-12,Demra,traffic,medium,resolved,5,Frequent gridlock near bus stop reported in Demra.
-CM-0331,2026-03-17,Demra,road,low,resolved,4,Broken pavement and uneven road surface reported in Demra.
-CM-0332,2026-03-12,Uttara,traffic,medium,unresolved,11,Signal light malfunction causing long queues in Uttara.
-CM-0333,2026-03-03,Mirpur,road,medium,resolved,4,"Road repair work is incomplete in Mirpur, creating traffic bottlenecks."
-CM-0334,2026-04-09,Farmgate,road,low,resolved,3,"Road repair work is incomplete in Farmgate, creating traffic bottlenecks."
-CM-0335,2026-03-23,Dhanmondi,water,low,resolved,3,Residents in Dhanmondi report muddy tap water during morning hours.
-CM-0336,2026-02-15,Uttara,traffic,low,resolved,6,Signal light malfunction causing long queues in Uttara.
-CM-0337,2026-03-01,Mirpur,road,high,unresolved,9,Large pothole near the main road in Mirpur causing bike accidents.
-CM-0338,2026-02-10,Uttara,water,medium,resolved,3,Residents in Uttara report muddy tap water during morning hours.
-CM-0339,2026-03-28,Uttara,traffic,medium,resolved,3,Unauthorized roadside parking worsening traffic flow in Uttara.
-CM-0340,2026-02-10,Mohammadpur,water,low,unresolved,15,Intermittent water supply disruption observed in Mohammadpur.
-CM-0341,2026-03-07,Farmgate,water,low,unresolved,15,No municipal water available in part of Farmgate since last night.
-CM-0342,2026-03-21,Dhanmondi,road,low,unresolved,20,Drain cover is missing on a busy road in Dhanmondi.
-CM-0343,2026-02-10,Mirpur,water,high,unresolved,13,Low water pressure reported in multiple households in Mirpur.
-CM-0344,2026-03-31,Demra,road,low,unresolved,19,Drain cover is missing on a busy road in Demra.
-CM-0345,2026-04-04,Mirpur,traffic,high,resolved,2,Frequent gridlock near bus stop reported in Mirpur.
-CM-0346,2026-03-15,Mirpur,water,high,resolved,4,Low water pressure reported in multiple households in Mirpur.
-CM-0347,2026-03-01,Mohammadpur,waste,low,unresolved,7,Garbage has not been collected for several days in Mohammadpur.
-CM-0348,2026-02-26,Farmgate,traffic,low,unresolved,19,Unauthorized roadside parking worsening traffic flow in Farmgate.
-CM-0349,2026-02-25,Dhanmondi,waste,low,unresolved,5,Overflowing community bin in Dhanmondi is causing foul smell.
-CM-0350,2026-04-09,Uttara,water,low,resolved,4,No municipal water available in part of Uttara since last night.
-CM-0351,2026-02-18,Demra,road,low,unresolved,12,Large pothole near the main road in Demra causing bike accidents.
-CM-0352,2026-04-08,Mirpur,waste,medium,resolved,1,Blocked drain in Mirpur due to accumulated plastic waste.
-CM-0353,2026-03-05,Mohammadpur,road,medium,unresolved,19,Drain cover is missing on a busy road in Mohammadpur.
-CM-0354,2026-02-12,Mirpur,water,high,resolved,2,No municipal water available in part of Mirpur since last night.
-CM-0355,2026-04-06,Uttara,road,low,resolved,6,Drain cover is missing on a busy road in Uttara.
-CM-0356,2026-03-16,Farmgate,road,low,resolved,5,"Road repair work is incomplete in Farmgate, creating traffic bottlenecks."
-CM-0357,2026-02-26,Mohammadpur,waste,low,unresolved,13,Garbage has not been collected for several days in Mohammadpur.
-CM-0358,2026-02-26,Dhanmondi,road,low,unresolved,14,Street section in Dhanmondi is flooded after rain due to damaged road drainage.
-CM-0359,2026-02-13,Demra,road,low,unresolved,18,"Road repair work is incomplete in Demra, creating traffic bottlenecks."
-CM-0360,2026-03-27,Demra,traffic,low,unresolved,15,Traffic police presence is low in Demra during rush hours.
-CM-0361,2026-03-01,Mirpur,road,medium,unresolved,15,Drain cover is missing on a busy road in Mirpur.
-CM-0362,2026-03-13,Gulshan,waste,low,unresolved,16,Illegal dumping spotted beside a residential lane in Gulshan.
-CM-0363,2026-02-21,Mohammadpur,waste,low,unresolved,20,Overflowing community bin in Mohammadpur is causing foul smell.
-CM-0364,2026-02-16,Uttara,road,low,unresolved,7,Large pothole near the main road in Uttara causing bike accidents.
-CM-0365,2026-03-29,Mirpur,road,medium,resolved,4,Broken pavement and uneven road surface reported in Mirpur.
-CM-0366,2026-03-25,Mirpur,waste,high,resolved,6,Garbage has not been collected for several days in Mirpur.
-CM-0367,2026-03-21,Mirpur,road,medium,resolved,4,Large pothole near the main road in Mirpur causing bike accidents.
-CM-0368,2026-03-19,Uttara,water,low,unresolved,17,Residents in Uttara report muddy tap water during morning hours.
-CM-0369,2026-04-05,Uttara,road,medium,resolved,6,Street section in Uttara is flooded after rain due to damaged road drainage.
-CM-0370,2026-03-05,Gulshan,waste,low,resolved,2,Blocked drain in Gulshan due to accumulated plastic waste.
-CM-0371,2026-03-20,Mohammadpur,road,medium,resolved,4,"Road repair work is incomplete in Mohammadpur, creating traffic bottlenecks."
-CM-0372,2026-03-21,Mohammadpur,road,medium,resolved,4,Broken pavement and uneven road surface reported in Mohammadpur.
-CM-0373,2026-03-24,Uttara,traffic,medium,unresolved,12,Frequent gridlock near bus stop reported in Uttara.
-CM-0374,2026-03-11,Mirpur,waste,medium,resolved,7,Blocked drain in Mirpur due to accumulated plastic waste.
-CM-0375,2026-02-26,Mirpur,waste,high,unresolved,18,Illegal dumping spotted beside a residential lane in Mirpur.
-CM-0376,2026-02-18,Dhanmondi,water,low,resolved,5,Residents in Dhanmondi report muddy tap water during morning hours.
-CM-0377,2026-03-08,Mirpur,waste,high,resolved,2,Illegal dumping spotted beside a residential lane in Mirpur.
-CM-0378,2026-03-01,Mirpur,road,high,unresolved,12,Drain cover is missing on a busy road in Mirpur.
-CM-0379,2026-04-07,Dhanmondi,traffic,low,resolved,5,Unauthorized roadside parking worsening traffic flow in Dhanmondi.
-CM-0380,2026-03-21,Mirpur,waste,high,unresolved,15,Waste pile near market area in Mirpur attracting stray animals.
-CM-0381,2026-02-15,Mirpur,water,medium,unresolved,19,Intermittent water supply disruption observed in Mirpur.
-CM-0382,2026-02-27,Mohammadpur,waste,medium,unresolved,18,Illegal dumping spotted beside a residential lane in Mohammadpur.
-CM-0383,2026-03-21,Mirpur,waste,medium,resolved,1,Overflowing community bin in Mirpur is causing foul smell.
-CM-0384,2026-04-08,Mirpur,road,high,resolved,2,Large pothole near the main road in Mirpur causing bike accidents.
-CM-0385,2026-02-11,Dhanmondi,waste,low,unresolved,10,Waste pile near market area in Dhanmondi attracting stray animals.
-CM-0386,2026-04-09,Mirpur,water,high,resolved,1,Intermittent water supply disruption observed in Mirpur.
-CM-0387,2026-04-09,Uttara,waste,medium,resolved,6,Illegal dumping spotted beside a residential lane in Uttara.
-CM-0388,2026-02-16,Uttara,traffic,medium,resolved,1,Traffic police presence is low in Uttara during rush hours.
-CM-0389,2026-03-15,Mirpur,traffic,medium,unresolved,17,Severe traffic congestion at peak hour in Mirpur intersection.
-CM-0390,2026-04-08,Gulshan,traffic,low,resolved,3,Severe traffic congestion at peak hour in Gulshan intersection.
-CM-0391,2026-02-18,Mirpur,waste,medium,unresolved,5,Blocked drain in Mirpur due to accumulated plastic waste.
-CM-0392,2026-03-18,Uttara,traffic,medium,unresolved,19,Unauthorized roadside parking worsening traffic flow in Uttara.
-CM-0393,2026-04-07,Dhanmondi,water,low,resolved,3,Low water pressure reported in multiple households in Dhanmondi.
-CM-0394,2026-04-01,Dhanmondi,water,low,resolved,7,Residents in Dhanmondi report muddy tap water during morning hours.
-CM-0395,2026-03-12,Mohammadpur,water,low,resolved,7,No municipal water available in part of Mohammadpur since last night.
-CM-0396,2026-03-10,Mirpur,water,medium,resolved,2,No municipal water available in part of Mirpur since last night.
-CM-0397,2026-03-19,Mirpur,waste,medium,unresolved,16,Garbage has not been collected for several days in Mirpur.
-CM-0398,2026-02-21,Mirpur,waste,high,unresolved,11,Garbage has not been collected for several days in Mirpur.
-CM-0399,2026-03-26,Mohammadpur,traffic,medium,resolved,2,Signal light malfunction causing long queues in Mohammadpur.
-CM-0400,2026-02-26,Uttara,road,medium,unresolved,9,Drain cover is missing on a busy road in Uttara.
-CM-0401,2026-02-16,Mohammadpur,road,low,resolved,1,Broken pavement and uneven road surface reported in Mohammadpur.
-CM-0402,2026-03-23,Dhanmondi,water,low,resolved,4,No municipal water available in part of Dhanmondi since last night.
-CM-0403,2026-03-05,Mirpur,water,medium,unresolved,6,Low water pressure reported in multiple households in Mirpur.
-CM-0404,2026-03-21,Demra,road,low,resolved,3,Street section in Demra is flooded after rain due to damaged road drainage.
-CM-0405,2026-02-13,Mirpur,road,high,unresolved,10,Street section in Mirpur is flooded after rain due to damaged road drainage.
-CM-0406,2026-04-07,Dhanmondi,waste,low,resolved,5,Overflowing community bin in Dhanmondi is causing foul smell.
-CM-0407,2026-03-27,Demra,waste,low,resolved,3,Garbage has not been collected for several days in Demra.
-CM-0408,2026-03-19,Farmgate,traffic,low,resolved,7,Frequent gridlock near bus stop reported in Farmgate.
-CM-0409,2026-02-10,Mirpur,waste,high,resolved,5,Garbage has not been collected for several days in Mirpur.
-CM-0410,2026-04-05,Farmgate,road,low,resolved,1,"Road repair work is incomplete in Farmgate, creating traffic bottlenecks."
-CM-0411,2026-02-14,Mohammadpur,waste,low,unresolved,14,Illegal dumping spotted beside a residential lane in Mohammadpur.
-CM-0412,2026-02-17,Mirpur,waste,high,unresolved,17,Waste pile near market area in Mirpur attracting stray animals.
-CM-0413,2026-02-16,Uttara,road,low,unresolved,10,"Road repair work is incomplete in Uttara, creating traffic bottlenecks."
-CM-0414,2026-04-05,Mohammadpur,water,low,unresolved,8,No municipal water available in part of Mohammadpur since last night.
-CM-0415,2026-03-29,Demra,water,low,resolved,3,Low water pressure reported in multiple households in Demra.
-CM-0416,2026-02-26,Mirpur,road,medium,resolved,3,"Road repair work is incomplete in Mirpur, creating traffic bottlenecks."
-CM-0417,2026-02-17,Uttara,water,medium,unresolved,11,Intermittent water supply disruption observed in Uttara.
-CM-0418,2026-03-16,Farmgate,traffic,low,resolved,3,Signal light malfunction causing long queues in Farmgate.
-CM-0419,2026-04-02,Mirpur,road,medium,unresolved,9,Street section in Mirpur is flooded after rain due to damaged road drainage.
-CM-0420,2026-03-12,Mohammadpur,road,medium,unresolved,16,Large pothole near the main road in Mohammadpur causing bike accidents.
-CM-0421,2026-03-22,Mirpur,traffic,medium,unresolved,8,Unauthorized roadside parking worsening traffic flow in Mirpur.
-CM-0422,2026-03-12,Farmgate,waste,low,resolved,6,Illegal dumping spotted beside a residential lane in Farmgate.
-CM-0423,2026-02-20,Demra,traffic,low,unresolved,10,Signal light malfunction causing long queues in Demra.
-CM-0424,2026-03-31,Mirpur,water,high,resolved,1,Low water pressure reported in multiple households in Mirpur.
-CM-0425,2026-04-06,Mohammadpur,water,low,unresolved,6,Intermittent water supply disruption observed in Mohammadpur.
-CM-0426,2026-02-18,Mirpur,waste,medium,unresolved,19,Illegal dumping spotted beside a residential lane in Mirpur.
-CM-0427,2026-03-17,Uttara,traffic,medium,resolved,2,Signal light malfunction causing long queues in Uttara.
-CM-0428,2026-03-13,Mohammadpur,water,low,resolved,6,Intermittent water supply disruption observed in Mohammadpur.
-CM-0429,2026-03-26,Dhanmondi,water,low,resolved,4,Leakage from underground supply line in Dhanmondi wasting clean water.
-CM-0430,2026-03-26,Dhanmondi,road,medium,resolved,5,Large pothole near the main road in Dhanmondi causing bike accidents.
-CM-0431,2026-04-05,Demra,water,low,unresolved,8,Low water pressure reported in multiple households in Demra.
-CM-0432,2026-04-08,Gulshan,traffic,low,unresolved,6,Severe traffic congestion at peak hour in Gulshan intersection.
-CM-0433,2026-02-19,Farmgate,traffic,low,unresolved,10,Severe traffic congestion at peak hour in Farmgate intersection.
-CM-0434,2026-02-10,Mirpur,road,high,unresolved,14,Drain cover is missing on a busy road in Mirpur.
-CM-0435,2026-03-13,Gulshan,traffic,low,resolved,7,Unauthorized roadside parking worsening traffic flow in Gulshan.
-CM-0436,2026-03-08,Mirpur,road,high,resolved,7,Street section in Mirpur is flooded after rain due to damaged road drainage.
-CM-0437,2026-02-14,Uttara,water,medium,unresolved,12,No municipal water available in part of Uttara since last night.
-CM-0438,2026-03-10,Mirpur,traffic,high,unresolved,17,Frequent gridlock near bus stop reported in Mirpur.
-CM-0439,2026-02-14,Mirpur,traffic,medium,unresolved,16,Traffic police presence is low in Mirpur during rush hours.
-CM-0440,2026-03-04,Gulshan,traffic,low,resolved,4,Signal light malfunction causing long queues in Gulshan.
-CM-0441,2026-04-07,Demra,traffic,medium,resolved,5,Frequent gridlock near bus stop reported in Demra.
-CM-0442,2026-02-24,Mohammadpur,road,medium,unresolved,10,Drain cover is missing on a busy road in Mohammadpur.
-CM-0443,2026-03-13,Farmgate,road,low,resolved,3,Broken pavement and uneven road surface reported in Farmgate.
-CM-0444,2026-03-02,Demra,water,low,resolved,6,Low water pressure reported in multiple households in Demra.
-CM-0445,2026-02-11,Mirpur,waste,medium,unresolved,18,Overflowing community bin in Mirpur is causing foul smell.
-CM-0446,2026-03-06,Mirpur,water,high,resolved,7,Intermittent water supply disruption observed in Mirpur.
-CM-0447,2026-02-19,Dhanmondi,water,low,resolved,7,Residents in Dhanmondi report muddy tap water during morning hours.
-CM-0448,2026-03-19,Mirpur,road,high,unresolved,19,Street section in Mirpur is flooded after rain due to damaged road drainage.
-CM-0449,2026-02-13,Uttara,road,low,unresolved,6,Street section in Uttara is flooded after rain due to damaged road drainage.
-CM-0450,2026-03-18,Gulshan,traffic,low,unresolved,19,Traffic police presence is low in Gulshan during rush hours.
-CM-0451,2026-02-12,Uttara,road,medium,resolved,7,Street section in Uttara is flooded after rain due to damaged road drainage.
-CM-0452,2026-03-08,Mirpur,water,medium,unresolved,15,Leakage from underground supply line in Mirpur wasting clean water.
-CM-0453,2026-02-27,Mohammadpur,water,medium,unresolved,9,Leakage from underground supply line in Mohammadpur wasting clean water.
-CM-0454,2026-02-13,Uttara,water,low,unresolved,18,Low water pressure reported in multiple households in Uttara.
-CM-0455,2026-03-22,Mirpur,road,medium,unresolved,18,Street section in Mirpur is flooded after rain due to damaged road drainage.
-CM-0456,2026-03-09,Mirpur,road,high,resolved,6,"Road repair work is incomplete in Mirpur, creating traffic bottlenecks."
-CM-0457,2026-02-12,Mohammadpur,road,low,resolved,7,Broken pavement and uneven road surface reported in Mohammadpur.
-CM-0458,2026-03-04,Demra,water,low,resolved,1,No municipal water available in part of Demra since last night.
-CM-0459,2026-04-02,Farmgate,traffic,low,unresolved,11,Signal light malfunction causing long queues in Farmgate.
-CM-0460,2026-03-11,Uttara,waste,low,unresolved,19,Overflowing community bin in Uttara is causing foul smell.
-CM-0461,2026-03-05,Mohammadpur,road,medium,unresolved,10,Broken pavement and uneven road surface reported in Mohammadpur.
-CM-0462,2026-03-12,Demra,traffic,medium,unresolved,20,Severe traffic congestion at peak hour in Demra intersection.
-CM-0463,2026-02-17,Mirpur,waste,high,unresolved,5,Garbage has not been collected for several days in Mirpur.
-CM-0464,2026-02-25,Uttara,water,low,unresolved,16,Low water pressure reported in multiple households in Uttara.
-CM-0465,2026-03-19,Demra,traffic,low,resolved,1,Unauthorized roadside parking worsening traffic flow in Demra.
-CM-0466,2026-02-20,Uttara,water,medium,resolved,7,Low water pressure reported in multiple households in Uttara.
-CM-0467,2026-03-24,Mohammadpur,road,medium,unresolved,18,Broken pavement and uneven road surface reported in Mohammadpur.
-CM-0468,2026-04-10,Uttara,waste,medium,resolved,1,Illegal dumping spotted beside a residential lane in Uttara.
-CM-0469,2026-02-23,Gulshan,traffic,low,unresolved,15,Frequent gridlock near bus stop reported in Gulshan.
-CM-0470,2026-02-15,Mirpur,waste,high,resolved,4,Illegal dumping spotted beside a residential lane in Mirpur.
-CM-0471,2026-02-27,Demra,waste,low,unresolved,17,Illegal dumping spotted beside a residential lane in Demra.
-CM-0472,2026-03-05,Mirpur,water,medium,unresolved,19,No municipal water available in part of Mirpur since last night.
-CM-0473,2026-04-05,Uttara,traffic,medium,resolved,2,Signal light malfunction causing long queues in Uttara.
-CM-0474,2026-02-18,Mohammadpur,traffic,medium,resolved,3,Signal light malfunction causing long queues in Mohammadpur.
-CM-0475,2026-04-02,Mohammadpur,waste,low,resolved,3,Garbage has not been collected for several days in Mohammadpur.
-CM-0476,2026-03-24,Mirpur,road,high,resolved,4,"Road repair work is incomplete in Mirpur, creating traffic bottlenecks."
-CM-0477,2026-03-27,Uttara,waste,medium,unresolved,12,Overflowing community bin in Uttara is causing foul smell.
-CM-0478,2026-03-30,Demra,water,low,resolved,2,Residents in Demra report muddy tap water during morning hours.
-CM-0479,2026-02-14,Mohammadpur,water,low,unresolved,17,Low water pressure reported in multiple households in Mohammadpur.
-CM-0480,2026-02-10,Uttara,traffic,low,unresolved,19,Traffic police presence is low in Uttara during rush hours.
-CM-0481,2026-03-09,Dhanmondi,water,low,unresolved,6,Leakage from underground supply line in Dhanmondi wasting clean water.
-CM-0482,2026-03-18,Dhanmondi,waste,low,resolved,3,Blocked drain in Dhanmondi due to accumulated plastic waste.
-CM-0483,2026-03-18,Mirpur,waste,medium,resolved,4,Overflowing community bin in Mirpur is causing foul smell.
-CM-0484,2026-03-18,Uttara,water,medium,resolved,6,No municipal water available in part of Uttara since last night.
-CM-0485,2026-03-02,Gulshan,waste,low,resolved,6,Garbage has not been collected for several days in Gulshan.
-CM-0486,2026-03-07,Mirpur,water,medium,unresolved,7,Residents in Mirpur report muddy tap water during morning hours.
-CM-0487,2026-03-18,Uttara,traffic,medium,resolved,3,Unauthorized roadside parking worsening traffic flow in Uttara.
-CM-0488,2026-02-17,Mirpur,water,medium,unresolved,19,No municipal water available in part of Mirpur since last night.
-CM-0489,2026-04-09,Demra,waste,low,resolved,3,Garbage has not been collected for several days in Demra.
-CM-0490,2026-03-13,Mohammadpur,road,medium,unresolved,17,Street section in Mohammadpur is flooded after rain due to damaged road drainage.
-CM-0491,2026-02-20,Mirpur,road,medium,resolved,1,Broken pavement and uneven road surface reported in Mirpur.
-CM-0492,2026-03-11,Mohammadpur,road,medium,resolved,7,Street section in Mohammadpur is flooded after rain due to damaged road drainage.
-CM-0493,2026-03-16,Dhanmondi,waste,low,resolved,2,Overflowing community bin in Dhanmondi is causing foul smell.
-CM-0494,2026-04-02,Dhanmondi,traffic,low,unresolved,8,Unauthorized roadside parking worsening traffic flow in Dhanmondi.
-CM-0495,2026-03-06,Dhanmondi,waste,low,unresolved,12,Overflowing community bin in Dhanmondi is causing foul smell.
-CM-0496,2026-02-27,Farmgate,road,low,resolved,2,"Road repair work is incomplete in Farmgate, creating traffic bottlenecks."
-CM-0497,2026-03-31,Dhanmondi,traffic,low,unresolved,8,Traffic police presence is low in Dhanmondi during rush hours.
-CM-0498,2026-04-09,Mirpur,water,medium,resolved,4,No municipal water available in part of Mirpur since last night.
-CM-0499,2026-03-11,Gulshan,traffic,low,resolved,5,Unauthorized roadside parking worsening traffic flow in Gulshan.
-CM-0500,2026-03-02,Mohammadpur,road,medium,unresolved,14,Street section in Mohammadpur is flooded after rain due to damaged road drainage.
-CM-0501,2026-04-07,Uttara,water,medium,resolved,6,Residents in Uttara report muddy tap water during morning hours.
-CM-0502,2026-02-22,Mohammadpur,road,low,resolved,5,"Road repair work is incomplete in Mohammadpur, creating traffic bottlenecks."
-CM-0503,2026-03-10,Uttara,waste,low,unresolved,7,Garbage has not been collected for several days in Uttara.
-CM-0504,2026-03-03,Dhanmondi,road,low,resolved,5,Drain cover is missing on a busy road in Dhanmondi.
-CM-0505,2026-03-09,Mohammadpur,waste,low,unresolved,18,Overflowing community bin in Mohammadpur is causing foul smell.
-CM-0506,2026-02-10,Mohammadpur,waste,low,unresolved,13,Waste pile near market area in Mohammadpur attracting stray animals.
-CM-0507,2026-04-10,Gulshan,traffic,low,unresolved,12,Frequent gridlock near bus stop reported in Gulshan.
-CM-0508,2026-04-03,Mirpur,road,high,resolved,7,Large pothole near the main road in Mirpur causing bike accidents.
-CM-0509,2026-03-29,Mirpur,traffic,high,unresolved,16,Unauthorized roadside parking worsening traffic flow in Mirpur.
-CM-0510,2026-03-08,Mirpur,waste,high,unresolved,17,Overflowing community bin in Mirpur is causing foul smell.
-CM-0511,2026-02-17,Demra,road,low,resolved,7,Large pothole near the main road in Demra causing bike accidents.
-CM-0512,2026-03-14,Mirpur,water,high,resolved,7,Intermittent water supply disruption observed in Mirpur.
-CM-0513,2026-02-24,Uttara,traffic,medium,unresolved,15,Unauthorized roadside parking worsening traffic flow in Uttara.
-CM-0514,2026-03-25,Dhanmondi,road,low,resolved,4,Drain cover is missing on a busy road in Dhanmondi.
-CM-0515,2026-03-19,Mirpur,road,high,unresolved,14,Large pothole near the main road in Mirpur causing bike accidents.
-CM-0516,2026-02-23,Dhanmondi,waste,low,unresolved,11,Overflowing community bin in Dhanmondi is causing foul smell.
-CM-0517,2026-03-14,Gulshan,traffic,low,unresolved,15,Traffic police presence is low in Gulshan during rush hours.
-CM-0518,2026-03-17,Uttara,waste,low,unresolved,18,Garbage has not been collected for several days in Uttara.
-CM-0519,2026-03-24,Uttara,water,medium,unresolved,19,No municipal water available in part of Uttara since last night.
-CM-0520,2026-03-14,Mirpur,road,medium,unresolved,6,Broken pavement and uneven road surface reported in Mirpur.
-CM-0521,2026-03-09,Uttara,water,low,unresolved,5,Residents in Uttara report muddy tap water during morning hours.
-CM-0522,2026-03-09,Dhanmondi,water,low,unresolved,12,No municipal water available in part of Dhanmondi since last night.
-CM-0523,2026-03-30,Mirpur,road,high,resolved,2,"Road repair work is incomplete in Mirpur, creating traffic bottlenecks."
-CM-0524,2026-03-05,Mohammadpur,road,medium,resolved,7,"Road repair work is incomplete in Mohammadpur, creating traffic bottlenecks."
-CM-0525,2026-03-15,Uttara,waste,medium,unresolved,19,Illegal dumping spotted beside a residential lane in Uttara.
-CM-0526,2026-03-19,Demra,traffic,medium,unresolved,11,Unauthorized roadside parking worsening traffic flow in Demra.
-CM-0527,2026-03-10,Demra,road,medium,resolved,4,Broken pavement and uneven road surface reported in Demra.
-CM-0528,2026-04-01,Mirpur,traffic,medium,unresolved,17,Traffic police presence is low in Mirpur during rush hours.
-CM-0529,2026-04-03,Mirpur,road,medium,unresolved,15,Broken pavement and uneven road surface reported in Mirpur.
-CM-0530,2026-02-28,Farmgate,waste,low,resolved,5,Overflowing community bin in Farmgate is causing foul smell.
-CM-0531,2026-02-14,Farmgate,traffic,low,unresolved,15,Frequent gridlock near bus stop reported in Farmgate.
-CM-0532,2026-04-05,Mirpur,road,medium,resolved,1,Street section in Mirpur is flooded after rain due to damaged road drainage.
-CM-0533,2026-02-25,Mirpur,road,high,unresolved,11,Large pothole near the main road in Mirpur causing bike accidents.
-CM-0534,2026-02-12,Mohammadpur,road,medium,unresolved,12,Street section in Mohammadpur is flooded after rain due to damaged road drainage.
-CM-0535,2026-02-28,Uttara,waste,low,unresolved,7,Waste pile near market area in Uttara attracting stray animals.
-CM-0536,2026-02-11,Mirpur,waste,medium,unresolved,10,Overflowing community bin in Mirpur is causing foul smell.
-CM-0537,2026-02-10,Mirpur,waste,medium,unresolved,7,Overflowing community bin in Mirpur is causing foul smell.
-CM-0538,2026-04-03,Mohammadpur,waste,medium,resolved,5,Waste pile near market area in Mohammadpur attracting stray animals.
-CM-0539,2026-03-31,Demra,traffic,medium,resolved,5,Frequent gridlock near bus stop reported in Demra.
-CM-0540,2026-03-05,Mirpur,road,medium,unresolved,19,Large pothole near the main road in Mirpur causing bike accidents.
-CM-0541,2026-02-14,Farmgate,traffic,low,unresolved,18,Traffic police presence is low in Farmgate during rush hours.
-CM-0542,2026-03-08,Uttara,water,medium,unresolved,17,Low water pressure reported in multiple households in Uttara.
-CM-0543,2026-03-13,Mohammadpur,waste,medium,resolved,2,Overflowing community bin in Mohammadpur is causing foul smell.
-CM-0544,2026-02-23,Farmgate,road,low,unresolved,9,Broken pavement and uneven road surface reported in Farmgate.
-CM-0545,2026-03-15,Mohammadpur,water,medium,unresolved,16,Leakage from underground supply line in Mohammadpur wasting clean water.
-CM-0546,2026-02-13,Mirpur,road,medium,unresolved,10,"Road repair work is incomplete in Mirpur, creating traffic bottlenecks."
-CM-0547,2026-03-31,Uttara,water,low,unresolved,10,No municipal water available in part of Uttara since last night.
-CM-0548,2026-02-18,Farmgate,waste,low,resolved,3,Overflowing community bin in Farmgate is causing foul smell.
-CM-0549,2026-04-03,Mirpur,traffic,high,resolved,5,Signal light malfunction causing long queues in Mirpur.
-CM-0550,2026-03-30,Demra,waste,low,resolved,4,Illegal dumping spotted beside a residential lane in Demra.
-CM-0551,2026-03-31,Gulshan,traffic,low,resolved,4,Frequent gridlock near bus stop reported in Gulshan.
-CM-0552,2026-03-27,Mohammadpur,road,medium,resolved,5,"Road repair work is incomplete in Mohammadpur, creating traffic bottlenecks."
-CM-0553,2026-03-30,Uttara,water,low,unresolved,7,Residents in Uttara report muddy tap water during morning hours.
-CM-0554,2026-03-06,Uttara,waste,medium,resolved,1,Illegal dumping spotted beside a residential lane in Uttara.
-CM-0555,2026-04-02,Uttara,road,low,resolved,6,Drain cover is missing on a busy road in Uttara.
-CM-0556,2026-02-12,Gulshan,traffic,low,resolved,5,Signal light malfunction causing long queues in Gulshan.
-CM-0557,2026-02-23,Farmgate,traffic,medium,unresolved,9,Signal light malfunction causing long queues in Farmgate.
-CM-0558,2026-03-02,Gulshan,traffic,low,unresolved,12,Unauthorized roadside parking worsening traffic flow in Gulshan.
-CM-0559,2026-03-18,Uttara,traffic,low,resolved,7,Signal light malfunction causing long queues in Uttara.
-CM-0560,2026-02-12,Uttara,road,low,unresolved,14,Broken pavement and uneven road surface reported in Uttara.
-CM-0561,2026-03-28,Mirpur,traffic,high,resolved,2,Signal light malfunction causing long queues in Mirpur.
-CM-0562,2026-03-03,Demra,waste,low,resolved,1,Blocked drain in Demra due to accumulated plastic waste.
-CM-0563,2026-03-19,Mirpur,road,high,resolved,5,Drain cover is missing on a busy road in Mirpur.
-CM-0564,2026-03-04,Mirpur,water,medium,unresolved,15,Low water pressure reported in multiple households in Mirpur.
-CM-0565,2026-02-22,Dhanmondi,waste,low,unresolved,12,Overflowing community bin in Dhanmondi is causing foul smell.
-CM-0566,2026-03-09,Mirpur,water,medium,resolved,2,No municipal water available in part of Mirpur since last night.
-CM-0567,2026-03-25,Mirpur,road,high,resolved,6,Drain cover is missing on a busy road in Mirpur.
-CM-0568,2026-04-07,Gulshan,water,low,resolved,4,No municipal water available in part of Gulshan since last night.
-CM-0569,2026-03-17,Mirpur,water,high,resolved,5,Low water pressure reported in multiple households in Mirpur.
-CM-0570,2026-02-18,Mirpur,road,medium,unresolved,17,Large pothole near the main road in Mirpur causing bike accidents.
-CM-0571,2026-04-08,Mirpur,road,medium,unresolved,6,Drain cover is missing on a busy road in Mirpur.
-CM-0572,2026-03-23,Mohammadpur,traffic,medium,unresolved,6,Frequent gridlock near bus stop reported in Mohammadpur.
-CM-0573,2026-04-07,Demra,road,low,unresolved,8,Broken pavement and uneven road surface reported in Demra.
-CM-0574,2026-02-10,Demra,water,low,resolved,3,Low water pressure reported in multiple households in Demra.
-CM-0575,2026-02-28,Mohammadpur,waste,medium,unresolved,5,Waste pile near market area in Mohammadpur attracting stray animals.
-CM-0576,2026-03-26,Uttara,road,medium,unresolved,20,"Road repair work is incomplete in Uttara, creating traffic bottlenecks."
-CM-0577,2026-03-07,Mohammadpur,road,medium,unresolved,9,Broken pavement and uneven road surface reported in Mohammadpur.
-CM-0578,2026-03-08,Demra,water,low,unresolved,14,Low water pressure reported in multiple households in Demra.
-CM-0579,2026-03-09,Mirpur,traffic,medium,resolved,6,Frequent gridlock near bus stop reported in Mirpur.
-CM-0580,2026-03-03,Mohammadpur,waste,low,unresolved,8,Garbage has not been collected for several days in Mohammadpur.
-CM-0581,2026-03-31,Mirpur,road,high,resolved,5,"Road repair work is incomplete in Mirpur, creating traffic bottlenecks."
-CM-0582,2026-04-02,Gulshan,water,low,unresolved,6,Residents in Gulshan report muddy tap water during morning hours.
-CM-0583,2026-04-08,Mirpur,water,high,resolved,6,Leakage from underground supply line in Mirpur wasting clean water.
-CM-0584,2026-02-21,Demra,road,low,unresolved,7,Drain cover is missing on a busy road in Demra.
-CM-0585,2026-03-20,Mirpur,waste,medium,unresolved,6,Illegal dumping spotted beside a residential lane in Mirpur.
-CM-0586,2026-02-12,Mirpur,road,high,unresolved,20,Drain cover is missing on a busy road in Mirpur.
-CM-0587,2026-04-03,Mohammadpur,road,medium,resolved,1,Broken pavement and uneven road surface reported in Mohammadpur.
-CM-0588,2026-02-21,Mohammadpur,waste,medium,resolved,3,Overflowing community bin in Mohammadpur is causing foul smell.
-CM-0589,2026-03-25,Uttara,road,low,unresolved,17,Broken pavement and uneven road surface reported in Uttara.
-CM-0590,2026-03-08,Mirpur,road,medium,resolved,1,Drain cover is missing on a busy road in Mirpur.
-CM-0591,2026-03-12,Dhanmondi,waste,low,resolved,2,Overflowing community bin in Dhanmondi is causing foul smell.
-CM-0592,2026-04-02,Mohammadpur,waste,medium,resolved,4,Waste pile near market area in Mohammadpur attracting stray animals.
-CM-0593,2026-03-17,Gulshan,water,low,unresolved,13,Leakage from underground supply line in Gulshan wasting clean water.
-CM-0594,2026-03-02,Mirpur,road,medium,unresolved,18,"Road repair work is incomplete in Mirpur, creating traffic bottlenecks."
-CM-0595,2026-04-08,Demra,waste,low,resolved,1,Waste pile near market area in Demra attracting stray animals.
-CM-0596,2026-02-26,Farmgate,water,low,unresolved,10,Leakage from underground supply line in Farmgate wasting clean water.
-CM-0597,2026-04-03,Uttara,water,low,resolved,1,Intermittent water supply disruption observed in Uttara.
-CM-0598,2026-03-26,Mohammadpur,water,low,unresolved,8,Low water pressure reported in multiple households in Mohammadpur.
-CM-0599,2026-04-04,Farmgate,road,low,resolved,7,"Road repair work is incomplete in Farmgate, creating traffic bottlenecks."
-CM-0600,2026-03-05,Mirpur,road,high,resolved,1,Large pothole near the main road in Mirpur causing bike accidents.
+complaint_id,date,area,category,priority,status,days_to_resolve,complaint_text,resolved
+CM-0001,2026-03-16,Gulshan,water,low,resolved,7,Intermittent water supply disruption observed in Gulshan.,0
+CM-0002,2026-02-11,Gulshan,traffic,low,unresolved,13,Signal light malfunction causing long queues in Gulshan.,0
+CM-0003,2026-03-17,Mohammadpur,waste,low,resolved,6,Garbage has not been collected for several days in Mohammadpur.,0
+CM-0004,2026-03-08,Mirpur,water,medium,resolved,5,Residents in Mirpur report muddy tap water during morning hours.,0
+CM-0005,2026-03-01,Mohammadpur,traffic,medium,unresolved,17,Unauthorized roadside parking worsening traffic flow in Mohammadpur.,0
+CM-0006,2026-04-08,Mirpur,water,medium,resolved,3,Residents in Mirpur report muddy tap water during morning hours.,0
+CM-0007,2026-02-22,Dhanmondi,water,low,unresolved,8,Residents in Dhanmondi report muddy tap water during morning hours.,0
+CM-0008,2026-03-28,Demra,waste,low,resolved,1,Overflowing community bin in Demra is causing foul smell.,0
+CM-0009,2026-02-19,Mohammadpur,water,medium,unresolved,11,Leakage from underground supply line in Mohammadpur wasting clean water.,0
+CM-0010,2026-04-02,Mirpur,road,high,resolved,4,"Road repair work is incomplete in Mirpur, creating traffic bottlenecks.",0
+CM-0011,2026-03-11,Gulshan,water,low,unresolved,14,Intermittent water supply disruption observed in Gulshan.,0
+CM-0012,2026-03-01,Uttara,water,low,resolved,4,Intermittent water supply disruption observed in Uttara.,0
+CM-0013,2026-03-05,Farmgate,waste,low,unresolved,5,Overflowing community bin in Farmgate is causing foul smell.,0
+CM-0014,2026-03-17,Mohammadpur,road,medium,unresolved,19,Broken pavement and uneven road surface reported in Mohammadpur.,0
+CM-0015,2026-03-11,Demra,waste,low,resolved,6,Illegal dumping spotted beside a residential lane in Demra.,0
+CM-0016,2026-02-21,Mirpur,road,medium,unresolved,16,Drain cover is missing on a busy road in Mirpur.,0
+CM-0017,2026-02-13,Mirpur,waste,high,unresolved,7,Garbage has not been collected for several days in Mirpur.,0
+CM-0018,2026-03-19,Mirpur,waste,medium,unresolved,10,Garbage has not been collected for several days in Mirpur.,0
+CM-0019,2026-03-12,Mohammadpur,traffic,medium,unresolved,16,Signal light malfunction causing long queues in Mohammadpur.,0
+CM-0020,2026-02-23,Demra,waste,low,unresolved,12,Blocked drain in Demra due to accumulated plastic waste.,0
+CM-0021,2026-02-26,Uttara,road,low,unresolved,9,Drain cover is missing on a busy road in Uttara.,0
+CM-0022,2026-02-18,Gulshan,traffic,low,unresolved,7,Unauthorized roadside parking worsening traffic flow in Gulshan.,0
+CM-0023,2026-02-24,Demra,road,medium,unresolved,11,Large pothole near the main road in Demra causing bike accidents.,0
+CM-0024,2026-03-22,Mirpur,road,medium,resolved,3,Street section in Mirpur is flooded after rain due to damaged road drainage.,0
+CM-0025,2026-03-05,Farmgate,waste,low,unresolved,14,Illegal dumping spotted beside a residential lane in Farmgate.,0
+CM-0026,2026-03-13,Gulshan,road,medium,resolved,4,Street section in Gulshan is flooded after rain due to damaged road drainage.,0
+CM-0027,2026-02-21,Farmgate,water,low,unresolved,9,No municipal water available in part of Farmgate since last night.,0
+CM-0028,2026-03-15,Mirpur,water,medium,resolved,3,Intermittent water supply disruption observed in Mirpur.,0
+CM-0029,2026-04-03,Mirpur,water,high,resolved,2,No municipal water available in part of Mirpur since last night.,0
+CM-0030,2026-02-23,Mirpur,traffic,medium,unresolved,7,Unauthorized roadside parking worsening traffic flow in Mirpur.,0
+CM-0031,2026-03-14,Dhanmondi,traffic,low,unresolved,17,Frequent gridlock near bus stop reported in Dhanmondi.,0
+CM-0032,2026-03-24,Uttara,waste,low,resolved,4,Garbage has not been collected for several days in Uttara.,0
+CM-0033,2026-04-01,Uttara,traffic,medium,resolved,7,Signal light malfunction causing long queues in Uttara.,0
+CM-0034,2026-02-16,Uttara,waste,low,resolved,3,Overflowing community bin in Uttara is causing foul smell.,0
+CM-0035,2026-03-19,Mirpur,water,medium,resolved,2,Low water pressure reported in multiple households in Mirpur.,0
+CM-0036,2026-04-03,Mohammadpur,road,medium,unresolved,16,Street section in Mohammadpur is flooded after rain due to damaged road drainage.,0
+CM-0037,2026-02-10,Mirpur,road,high,resolved,6,Drain cover is missing on a busy road in Mirpur.,0
+CM-0038,2026-04-02,Mirpur,road,high,unresolved,20,Large pothole near the main road in Mirpur causing bike accidents.,0
+CM-0039,2026-02-24,Uttara,traffic,medium,unresolved,14,Severe traffic congestion at peak hour in Uttara intersection.,0
+CM-0040,2026-02-27,Demra,road,low,unresolved,6,Broken pavement and uneven road surface reported in Demra.,0
+CM-0041,2026-03-11,Mirpur,waste,medium,resolved,5,Blocked drain in Mirpur due to accumulated plastic waste.,0
+CM-0042,2026-02-14,Mirpur,waste,medium,unresolved,16,Garbage has not been collected for several days in Mirpur.,0
+CM-0043,2026-04-01,Uttara,traffic,medium,resolved,5,Unauthorized roadside parking worsening traffic flow in Uttara.,0
+CM-0044,2026-03-13,Gulshan,road,low,unresolved,9,"Road repair work is incomplete in Gulshan, creating traffic bottlenecks.",0
+CM-0045,2026-02-24,Mirpur,waste,high,resolved,5,Overflowing community bin in Mirpur is causing foul smell.,0
+CM-0046,2026-03-17,Dhanmondi,waste,low,resolved,2,Illegal dumping spotted beside a residential lane in Dhanmondi.,0
+CM-0047,2026-02-10,Mirpur,road,high,resolved,6,Street section in Mirpur is flooded after rain due to damaged road drainage.,0
+CM-0048,2026-04-07,Farmgate,road,low,resolved,7,Large pothole near the main road in Farmgate causing bike accidents.,0
+CM-0049,2026-04-01,Mohammadpur,road,low,unresolved,9,Drain cover is missing on a busy road in Mohammadpur.,0
+CM-0050,2026-04-09,Mirpur,road,high,unresolved,13,"Road repair work is incomplete in Mirpur, creating traffic bottlenecks.",0
+CM-0051,2026-02-10,Dhanmondi,waste,low,resolved,4,Illegal dumping spotted beside a residential lane in Dhanmondi.,0
+CM-0052,2026-04-08,Mirpur,road,high,resolved,7,Drain cover is missing on a busy road in Mirpur.,0
+CM-0053,2026-02-14,Mirpur,waste,high,unresolved,13,Garbage has not been collected for several days in Mirpur.,0
+CM-0054,2026-04-07,Mohammadpur,road,medium,resolved,2,Street section in Mohammadpur is flooded after rain due to damaged road drainage.,0
+CM-0055,2026-03-04,Gulshan,traffic,low,resolved,5,Traffic police presence is low in Gulshan during rush hours.,0
+CM-0056,2026-03-09,Uttara,traffic,medium,unresolved,15,Frequent gridlock near bus stop reported in Uttara.,0
+CM-0057,2026-03-15,Mirpur,road,high,unresolved,12,Broken pavement and uneven road surface reported in Mirpur.,0
+CM-0058,2026-03-19,Dhanmondi,waste,low,unresolved,8,Overflowing community bin in Dhanmondi is causing foul smell.,0
+CM-0059,2026-02-18,Mohammadpur,traffic,medium,unresolved,12,Traffic police presence is low in Mohammadpur during rush hours.,0
+CM-0060,2026-02-19,Demra,water,low,resolved,6,Residents in Demra report muddy tap water during morning hours.,1
+CM-0061,2026-03-06,Demra,road,low,resolved,5,Street section in Demra is flooded after rain due to damaged road drainage.,0
+CM-0062,2026-03-05,Mirpur,water,medium,unresolved,16,Low water pressure reported in multiple households in Mirpur.,0
+CM-0063,2026-03-17,Mohammadpur,water,low,resolved,5,No municipal water available in part of Mohammadpur since last night.,0
+CM-0064,2026-02-13,Mirpur,waste,medium,unresolved,7,Illegal dumping spotted beside a residential lane in Mirpur.,0
+CM-0065,2026-03-01,Farmgate,water,low,resolved,4,Intermittent water supply disruption observed in Farmgate.,0
+CM-0066,2026-03-12,Farmgate,traffic,low,unresolved,16,Severe traffic congestion at peak hour in Farmgate intersection.,0
+CM-0067,2026-02-14,Demra,waste,low,unresolved,17,Waste pile near market area in Demra attracting stray animals.,0
+CM-0068,2026-02-16,Gulshan,waste,low,unresolved,10,Garbage has not been collected for several days in Gulshan.,0
+CM-0069,2026-03-08,Mirpur,traffic,high,unresolved,12,Severe traffic congestion at peak hour in Mirpur intersection.,0
+CM-0070,2026-03-08,Mohammadpur,water,medium,unresolved,15,No municipal water available in part of Mohammadpur since last night.,0
+CM-0071,2026-03-16,Demra,traffic,low,resolved,1,Severe traffic congestion at peak hour in Demra intersection.,0
+CM-0072,2026-04-03,Farmgate,traffic,low,unresolved,16,Traffic police presence is low in Farmgate during rush hours.,0
+CM-0073,2026-03-23,Mirpur,waste,high,unresolved,12,Waste pile near market area in Mirpur attracting stray animals.,0
+CM-0074,2026-02-23,Mirpur,traffic,high,resolved,6,Traffic police presence is low in Mirpur during rush hours.,0
+CM-0075,2026-04-09,Mirpur,traffic,high,resolved,5,Frequent gridlock near bus stop reported in Mirpur.,0
+CM-0076,2026-02-16,Mirpur,road,high,unresolved,17,Large pothole near the main road in Mirpur causing bike accidents.,0
+CM-0077,2026-02-15,Mohammadpur,water,medium,unresolved,5,No municipal water available in part of Mohammadpur since last night.,0
+CM-0078,2026-03-05,Gulshan,waste,low,resolved,5,Blocked drain in Gulshan due to accumulated plastic waste.,0
+CM-0079,2026-02-19,Mohammadpur,water,medium,resolved,5,Low water pressure reported in multiple households in Mohammadpur.,0
+CM-0080,2026-04-03,Uttara,traffic,low,resolved,4,Severe traffic congestion at peak hour in Uttara intersection.,0
+CM-0081,2026-04-10,Demra,road,medium,resolved,2,"Road repair work is incomplete in Demra, creating traffic bottlenecks.",0
+CM-0082,2026-03-05,Mirpur,waste,medium,unresolved,12,Waste pile near market area in Mirpur attracting stray animals.,0
+CM-0083,2026-02-23,Mirpur,road,medium,resolved,2,Drain cover is missing on a busy road in Mirpur.,0
+CM-0084,2026-02-22,Demra,water,medium,unresolved,13,Residents in Demra report muddy tap water during morning hours.,0
+CM-0085,2026-03-26,Farmgate,traffic,low,resolved,5,Unauthorized roadside parking worsening traffic flow in Farmgate.,0
+CM-0086,2026-03-11,Uttara,water,low,unresolved,20,Residents in Uttara report muddy tap water during morning hours.,0
+CM-0087,2026-02-22,Mirpur,waste,medium,unresolved,14,Garbage has not been collected for several days in Mirpur.,0
+CM-0088,2026-03-17,Mirpur,waste,medium,unresolved,9,Illegal dumping spotted beside a residential lane in Mirpur.,0
+CM-0089,2026-04-05,Uttara,road,low,resolved,5,Drain cover is missing on a busy road in Uttara.,0
+CM-0090,2026-03-03,Demra,waste,low,resolved,2,Illegal dumping spotted beside a residential lane in Demra.,0
+CM-0091,2026-02-12,Demra,waste,low,unresolved,13,Garbage has not been collected for several days in Demra.,0
+CM-0092,2026-02-14,Uttara,water,medium,resolved,4,No municipal water available in part of Uttara since last night.,0
+CM-0093,2026-04-07,Uttara,road,medium,resolved,1,Large pothole near the main road in Uttara causing bike accidents.,0
+CM-0094,2026-03-25,Dhanmondi,road,low,unresolved,19,Large pothole near the main road in Dhanmondi causing bike accidents.,0
+CM-0095,2026-03-17,Mohammadpur,traffic,medium,unresolved,10,Frequent gridlock near bus stop reported in Mohammadpur.,0
+CM-0096,2026-04-03,Dhanmondi,traffic,low,resolved,3,Signal light malfunction causing long queues in Dhanmondi.,0
+CM-0097,2026-02-24,Demra,water,low,unresolved,11,Leakage from underground supply line in Demra wasting clean water.,0
+CM-0098,2026-03-29,Uttara,road,medium,unresolved,19,Street section in Uttara is flooded after rain due to damaged road drainage.,0
+CM-0099,2026-02-21,Farmgate,traffic,low,unresolved,20,Traffic police presence is low in Farmgate during rush hours.,0
+CM-0100,2026-03-18,Mirpur,water,high,resolved,7,Low water pressure reported in multiple households in Mirpur.,0
+CM-0101,2026-02-13,Mirpur,traffic,high,unresolved,5,Severe traffic congestion at peak hour in Mirpur intersection.,0
+CM-0102,2026-03-12,Farmgate,water,low,unresolved,18,No municipal water available in part of Farmgate since last night.,0
+CM-0103,2026-03-17,Demra,water,low,resolved,5,Leakage from underground supply line in Demra wasting clean water.,0
+CM-0104,2026-03-20,Uttara,waste,low,resolved,4,Waste pile near market area in Uttara attracting stray animals.,0
+CM-0105,2026-03-16,Mohammadpur,waste,low,resolved,7,Overflowing community bin in Mohammadpur is causing foul smell.,0
+CM-0106,2026-03-21,Uttara,water,low,unresolved,20,No municipal water available in part of Uttara since last night.,0
+CM-0107,2026-04-10,Demra,road,low,resolved,3,"Road repair work is incomplete in Demra, creating traffic bottlenecks.",0
+CM-0108,2026-02-14,Uttara,waste,low,unresolved,11,Overflowing community bin in Uttara is causing foul smell.,0
+CM-0109,2026-02-27,Demra,water,medium,resolved,7,No municipal water available in part of Demra since last night.,0
+CM-0110,2026-02-24,Mohammadpur,water,low,resolved,4,No municipal water available in part of Mohammadpur since last night.,0
+CM-0111,2026-02-21,Mirpur,water,high,unresolved,12,Intermittent water supply disruption observed in Mirpur.,0
+CM-0112,2026-02-11,Mohammadpur,road,low,unresolved,9,Large pothole near the main road in Mohammadpur causing bike accidents.,0
+CM-0113,2026-02-17,Gulshan,water,low,unresolved,20,Residents in Gulshan report muddy tap water during morning hours.,0
+CM-0114,2026-03-17,Gulshan,road,low,resolved,2,Street section in Gulshan is flooded after rain due to damaged road drainage.,0
+CM-0115,2026-04-07,Mohammadpur,road,low,unresolved,10,Street section in Mohammadpur is flooded after rain due to damaged road drainage.,0
+CM-0116,2026-03-01,Demra,water,low,resolved,3,No municipal water available in part of Demra since last night.,0
+CM-0117,2026-04-04,Mirpur,road,high,resolved,5,Street section in Mirpur is flooded after rain due to damaged road drainage.,0
+CM-0118,2026-03-11,Demra,road,low,unresolved,14,"Road repair work is incomplete in Demra, creating traffic bottlenecks.",0
+CM-0119,2026-03-10,Mirpur,traffic,high,resolved,3,Frequent gridlock near bus stop reported in Mirpur.,0
+CM-0120,2026-03-06,Dhanmondi,waste,low,resolved,5,Garbage has not been collected for several days in Dhanmondi.,0
+CM-0121,2026-03-16,Dhanmondi,traffic,low,resolved,6,Frequent gridlock near bus stop reported in Dhanmondi.,0
+CM-0122,2026-03-17,Mirpur,waste,medium,resolved,6,Illegal dumping spotted beside a residential lane in Mirpur.,0
+CM-0123,2026-03-28,Dhanmondi,traffic,medium,unresolved,12,Severe traffic congestion at peak hour in Dhanmondi intersection.,0
+CM-0124,2026-04-06,Mirpur,road,high,resolved,7,Broken pavement and uneven road surface reported in Mirpur.,0
+CM-0125,2026-02-12,Uttara,traffic,low,unresolved,17,Signal light malfunction causing long queues in Uttara.,0
+CM-0126,2026-02-16,Mirpur,road,medium,resolved,7,"Road repair work is incomplete in Mirpur, creating traffic bottlenecks.",0
+CM-0127,2026-04-09,Farmgate,traffic,low,resolved,3,Severe traffic congestion at peak hour in Farmgate intersection.,0
+CM-0128,2026-04-01,Mohammadpur,road,medium,resolved,5,"Road repair work is incomplete in Mohammadpur, creating traffic bottlenecks.",0
+CM-0129,2026-02-13,Uttara,water,low,unresolved,20,Intermittent water supply disruption observed in Uttara.,0
+CM-0130,2026-03-30,Farmgate,road,low,resolved,6,Drain cover is missing on a busy road in Farmgate.,0
+CM-0131,2026-02-13,Uttara,road,low,unresolved,20,Large pothole near the main road in Uttara causing bike accidents.,0
+CM-0132,2026-03-27,Mirpur,waste,high,resolved,1,Garbage has not been collected for several days in Mirpur.,0
+CM-0133,2026-02-23,Mirpur,waste,medium,resolved,1,Blocked drain in Mirpur due to accumulated plastic waste.,0
+CM-0134,2026-03-23,Dhanmondi,waste,low,unresolved,11,Blocked drain in Dhanmondi due to accumulated plastic waste.,0
+CM-0135,2026-03-25,Mirpur,waste,high,resolved,4,Illegal dumping spotted beside a residential lane in Mirpur.,0
+CM-0136,2026-02-23,Mohammadpur,road,low,unresolved,19,Drain cover is missing on a busy road in Mohammadpur.,0
+CM-0137,2026-02-25,Demra,road,low,resolved,3,Drain cover is missing on a busy road in Demra.,0
+CM-0138,2026-03-14,Demra,road,low,unresolved,5,Street section in Demra is flooded after rain due to damaged road drainage.,0
+CM-0139,2026-02-21,Mirpur,road,medium,unresolved,5,Drain cover is missing on a busy road in Mirpur.,0
+CM-0140,2026-03-27,Farmgate,water,low,resolved,2,No municipal water available in part of Farmgate since last night.,0
+CM-0141,2026-02-16,Demra,road,low,resolved,6,Broken pavement and uneven road surface reported in Demra.,0
+CM-0142,2026-02-14,Uttara,water,medium,resolved,6,No municipal water available in part of Uttara since last night.,0
+CM-0143,2026-04-04,Dhanmondi,traffic,low,resolved,5,Frequent gridlock near bus stop reported in Dhanmondi.,0
+CM-0144,2026-03-22,Mirpur,road,high,unresolved,16,Large pothole near the main road in Mirpur causing bike accidents.,0
+CM-0145,2026-03-23,Demra,water,low,unresolved,16,Low water pressure reported in multiple households in Demra.,0
+CM-0146,2026-03-06,Mirpur,road,high,resolved,6,Drain cover is missing on a busy road in Mirpur.,0
+CM-0147,2026-02-14,Mohammadpur,road,medium,resolved,1,Broken pavement and uneven road surface reported in Mohammadpur.,0
+CM-0148,2026-04-03,Mohammadpur,traffic,low,resolved,2,Signal light malfunction causing long queues in Mohammadpur.,0
+CM-0149,2026-04-03,Mirpur,waste,medium,resolved,3,Garbage has not been collected for several days in Mirpur.,0
+CM-0150,2026-04-09,Farmgate,waste,low,resolved,5,Waste pile near market area in Farmgate attracting stray animals.,0
+CM-0151,2026-02-24,Farmgate,waste,low,resolved,5,Overflowing community bin in Farmgate is causing foul smell.,0
+CM-0152,2026-02-24,Mohammadpur,waste,low,unresolved,5,Waste pile near market area in Mohammadpur attracting stray animals.,0
+CM-0153,2026-02-13,Uttara,waste,low,resolved,1,Garbage has not been collected for several days in Uttara.,0
+CM-0154,2026-03-01,Mirpur,traffic,high,unresolved,19,Traffic police presence is low in Mirpur during rush hours.,0
+CM-0155,2026-03-21,Mohammadpur,road,medium,resolved,4,"Road repair work is incomplete in Mohammadpur, creating traffic bottlenecks.",0
+CM-0156,2026-03-19,Uttara,traffic,medium,resolved,7,Unauthorized roadside parking worsening traffic flow in Uttara.,0
+CM-0157,2026-02-28,Mirpur,traffic,high,resolved,7,Severe traffic congestion at peak hour in Mirpur intersection.,0
+CM-0158,2026-03-29,Gulshan,road,low,resolved,6,"Road repair work is incomplete in Gulshan, creating traffic bottlenecks.",0
+CM-0159,2026-03-04,Mohammadpur,waste,medium,resolved,3,Overflowing community bin in Mohammadpur is causing foul smell.,0
+CM-0160,2026-03-17,Farmgate,traffic,low,resolved,3,Signal light malfunction causing long queues in Farmgate.,0
+CM-0161,2026-03-22,Dhanmondi,road,low,resolved,2,Large pothole near the main road in Dhanmondi causing bike accidents.,0
+CM-0162,2026-02-12,Mirpur,road,high,unresolved,10,Broken pavement and uneven road surface reported in Mirpur.,0
+CM-0163,2026-03-13,Mirpur,road,high,resolved,4,Large pothole near the main road in Mirpur causing bike accidents.,0
+CM-0164,2026-04-08,Uttara,traffic,low,resolved,7,Severe traffic congestion at peak hour in Uttara intersection.,0
+CM-0165,2026-03-23,Mirpur,road,high,resolved,6,Large pothole near the main road in Mirpur causing bike accidents.,0
+CM-0166,2026-02-10,Mohammadpur,traffic,medium,unresolved,20,Signal light malfunction causing long queues in Mohammadpur.,0
+CM-0167,2026-02-21,Farmgate,road,low,unresolved,18,Drain cover is missing on a busy road in Farmgate.,0
+CM-0168,2026-04-01,Mirpur,road,medium,resolved,4,"Road repair work is incomplete in Mirpur, creating traffic bottlenecks.",0
+CM-0169,2026-02-19,Mirpur,waste,medium,resolved,3,Garbage has not been collected for several days in Mirpur.,0
+CM-0170,2026-03-29,Mohammadpur,road,low,resolved,3,Broken pavement and uneven road surface reported in Mohammadpur.,0
+CM-0171,2026-03-02,Mohammadpur,road,low,unresolved,11,Street section in Mohammadpur is flooded after rain due to damaged road drainage.,0
+CM-0172,2026-02-27,Mohammadpur,traffic,medium,unresolved,16,Signal light malfunction causing long queues in Mohammadpur.,0
+CM-0173,2026-04-08,Mirpur,road,medium,resolved,7,Broken pavement and uneven road surface reported in Mirpur.,0
+CM-0174,2026-03-10,Uttara,water,low,resolved,3,Low water pressure reported in multiple households in Uttara.,0
+CM-0175,2026-04-05,Mirpur,traffic,high,resolved,4,Signal light malfunction causing long queues in Mirpur.,0
+CM-0176,2026-03-08,Mirpur,road,high,unresolved,7,Street section in Mirpur is flooded after rain due to damaged road drainage.,0
+CM-0177,2026-04-06,Dhanmondi,water,low,resolved,4,Leakage from underground supply line in Dhanmondi wasting clean water.,0
+CM-0178,2026-03-30,Mohammadpur,water,low,resolved,6,Low water pressure reported in multiple households in Mohammadpur.,0
+CM-0179,2026-03-08,Mohammadpur,waste,low,unresolved,5,Waste pile near market area in Mohammadpur attracting stray animals.,0
+CM-0180,2026-03-04,Gulshan,traffic,low,unresolved,13,Unauthorized roadside parking worsening traffic flow in Gulshan.,0
+CM-0181,2026-03-08,Demra,road,low,unresolved,20,Broken pavement and uneven road surface reported in Demra.,0
+CM-0182,2026-03-14,Mirpur,road,high,resolved,2,Street section in Mirpur is flooded after rain due to damaged road drainage.,0
+CM-0183,2026-02-26,Dhanmondi,traffic,low,resolved,4,Severe traffic congestion at peak hour in Dhanmondi intersection.,0
+CM-0184,2026-03-13,Mohammadpur,waste,medium,unresolved,20,Blocked drain in Mohammadpur due to accumulated plastic waste.,0
+CM-0185,2026-03-24,Mirpur,waste,high,resolved,7,Illegal dumping spotted beside a residential lane in Mirpur.,0
+CM-0186,2026-03-10,Demra,waste,medium,resolved,6,Waste pile near market area in Demra attracting stray animals.,0
+CM-0187,2026-04-02,Uttara,water,low,resolved,6,Residents in Uttara report muddy tap water during morning hours.,0
+CM-0188,2026-03-16,Demra,waste,low,unresolved,9,Garbage has not been collected for several days in Demra.,0
+CM-0189,2026-04-03,Mirpur,water,high,resolved,5,No municipal water available in part of Mirpur since last night.,0
+CM-0190,2026-03-22,Mirpur,water,medium,resolved,7,Leakage from underground supply line in Mirpur wasting clean water.,0
+CM-0191,2026-02-24,Mirpur,road,high,unresolved,7,Street section in Mirpur is flooded after rain due to damaged road drainage.,0
+CM-0192,2026-02-15,Mirpur,waste,medium,unresolved,14,Waste pile near market area in Mirpur attracting stray animals.,0
+CM-0193,2026-04-07,Mirpur,waste,medium,resolved,3,Illegal dumping spotted beside a residential lane in Mirpur.,0
+CM-0194,2026-02-28,Mirpur,waste,high,resolved,3,Illegal dumping spotted beside a residential lane in Mirpur.,0
+CM-0195,2026-03-22,Mohammadpur,traffic,medium,resolved,3,Unauthorized roadside parking worsening traffic flow in Mohammadpur.,0
+CM-0196,2026-03-04,Dhanmondi,waste,low,resolved,3,Blocked drain in Dhanmondi due to accumulated plastic waste.,0
+CM-0197,2026-02-10,Mohammadpur,water,medium,unresolved,17,Leakage from underground supply line in Mohammadpur wasting clean water.,0
+CM-0198,2026-03-14,Mirpur,waste,medium,unresolved,12,Illegal dumping spotted beside a residential lane in Mirpur.,0
+CM-0199,2026-03-02,Uttara,road,low,resolved,6,Broken pavement and uneven road surface reported in Uttara.,0
+CM-0200,2026-04-10,Dhanmondi,traffic,low,resolved,5,Frequent gridlock near bus stop reported in Dhanmondi.,0
+CM-0201,2026-03-14,Mirpur,waste,medium,unresolved,20,Garbage has not been collected for several days in Mirpur.,0
+CM-0202,2026-03-16,Demra,traffic,medium,resolved,7,Severe traffic congestion at peak hour in Demra intersection.,0
+CM-0203,2026-03-13,Gulshan,waste,low,resolved,7,Waste pile near market area in Gulshan attracting stray animals.,0
+CM-0204,2026-02-20,Mirpur,waste,medium,unresolved,9,Waste pile near market area in Mirpur attracting stray animals.,0
+CM-0205,2026-04-09,Demra,traffic,medium,resolved,7,Frequent gridlock near bus stop reported in Demra.,0
+CM-0206,2026-02-26,Mohammadpur,road,medium,unresolved,8,Large pothole near the main road in Mohammadpur causing bike accidents.,0
+CM-0207,2026-03-22,Demra,waste,low,resolved,6,Blocked drain in Demra due to accumulated plastic waste.,0
+CM-0208,2026-03-17,Dhanmondi,traffic,low,resolved,2,Traffic police presence is low in Dhanmondi during rush hours.,0
+CM-0209,2026-02-15,Mirpur,traffic,high,unresolved,6,Signal light malfunction causing long queues in Mirpur.,0
+CM-0210,2026-04-06,Mirpur,road,medium,resolved,1,Large pothole near the main road in Mirpur causing bike accidents.,0
+CM-0211,2026-03-21,Demra,water,low,unresolved,7,Residents in Demra report muddy tap water during morning hours.,0
+CM-0212,2026-02-20,Uttara,traffic,medium,unresolved,13,Frequent gridlock near bus stop reported in Uttara.,0
+CM-0213,2026-03-29,Mirpur,water,high,resolved,4,Residents in Mirpur report muddy tap water during morning hours.,0
+CM-0214,2026-03-19,Mirpur,road,high,resolved,6,Large pothole near the main road in Mirpur causing bike accidents.,0
+CM-0215,2026-04-08,Mirpur,road,high,resolved,6,Street section in Mirpur is flooded after rain due to damaged road drainage.,0
+CM-0216,2026-04-02,Demra,waste,low,resolved,7,Blocked drain in Demra due to accumulated plastic waste.,0
+CM-0217,2026-03-04,Mohammadpur,road,medium,resolved,2,Broken pavement and uneven road surface reported in Mohammadpur.,0
+CM-0218,2026-02-25,Farmgate,water,low,resolved,4,Low water pressure reported in multiple households in Farmgate.,0
+CM-0219,2026-03-19,Mirpur,waste,medium,unresolved,12,Overflowing community bin in Mirpur is causing foul smell.,0
+CM-0220,2026-02-24,Mohammadpur,waste,medium,unresolved,7,Illegal dumping spotted beside a residential lane in Mohammadpur.,0
+CM-0221,2026-03-03,Dhanmondi,water,low,unresolved,15,Low water pressure reported in multiple households in Dhanmondi.,0
+CM-0222,2026-03-29,Mohammadpur,waste,low,unresolved,6,Illegal dumping spotted beside a residential lane in Mohammadpur.,0
+CM-0223,2026-03-13,Uttara,traffic,medium,unresolved,5,Unauthorized roadside parking worsening traffic flow in Uttara.,0
+CM-0224,2026-03-30,Demra,road,low,unresolved,6,Drain cover is missing on a busy road in Demra.,0
+CM-0225,2026-03-02,Mirpur,road,medium,unresolved,18,Broken pavement and uneven road surface reported in Mirpur.,0
+CM-0226,2026-04-07,Dhanmondi,waste,low,resolved,6,Blocked drain in Dhanmondi due to accumulated plastic waste.,0
+CM-0227,2026-02-24,Mohammadpur,road,low,unresolved,6,Drain cover is missing on a busy road in Mohammadpur.,0
+CM-0228,2026-04-03,Mohammadpur,water,medium,resolved,2,No municipal water available in part of Mohammadpur since last night.,0
+CM-0229,2026-04-07,Mirpur,waste,high,resolved,3,Blocked drain in Mirpur due to accumulated plastic waste.,0
+CM-0230,2026-02-21,Mirpur,traffic,high,unresolved,17,Signal light malfunction causing long queues in Mirpur.,0
+CM-0231,2026-03-02,Farmgate,road,low,unresolved,10,"Road repair work is incomplete in Farmgate, creating traffic bottlenecks.",0
+CM-0232,2026-02-18,Farmgate,waste,low,unresolved,17,Waste pile near market area in Farmgate attracting stray animals.,0
+CM-0233,2026-02-26,Mohammadpur,traffic,medium,unresolved,11,Traffic police presence is low in Mohammadpur during rush hours.,0
+CM-0234,2026-03-07,Uttara,water,low,resolved,7,Residents in Uttara report muddy tap water during morning hours.,0
+CM-0235,2026-03-23,Dhanmondi,road,low,resolved,2,Street section in Dhanmondi is flooded after rain due to damaged road drainage.,0
+CM-0236,2026-03-29,Farmgate,traffic,low,unresolved,20,Traffic police presence is low in Farmgate during rush hours.,0
+CM-0237,2026-02-10,Farmgate,traffic,low,resolved,1,Severe traffic congestion at peak hour in Farmgate intersection.,0
+CM-0238,2026-02-14,Farmgate,road,low,unresolved,19,Drain cover is missing on a busy road in Farmgate.,0
+CM-0239,2026-04-01,Mirpur,water,high,resolved,6,Intermittent water supply disruption observed in Mirpur.,0
+CM-0240,2026-04-10,Gulshan,waste,low,resolved,6,Illegal dumping spotted beside a residential lane in Gulshan.,0
+CM-0241,2026-03-15,Mirpur,road,high,resolved,6,Broken pavement and uneven road surface reported in Mirpur.,0
+CM-0242,2026-02-12,Mohammadpur,traffic,low,unresolved,20,Traffic police presence is low in Mohammadpur during rush hours.,0
+CM-0243,2026-03-18,Dhanmondi,road,low,resolved,6,"Road repair work is incomplete in Dhanmondi, creating traffic bottlenecks.",0
+CM-0244,2026-02-11,Farmgate,water,low,unresolved,7,Low water pressure reported in multiple households in Farmgate.,0
+CM-0245,2026-04-06,Gulshan,traffic,medium,resolved,2,Severe traffic congestion at peak hour in Gulshan intersection.,0
+CM-0246,2026-04-09,Uttara,water,low,resolved,5,Leakage from underground supply line in Uttara wasting clean water.,0
+CM-0247,2026-04-02,Dhanmondi,water,low,resolved,1,No municipal water available in part of Dhanmondi since last night.,0
+CM-0248,2026-03-29,Mirpur,road,medium,resolved,4,Street section in Mirpur is flooded after rain due to damaged road drainage.,0
+CM-0249,2026-03-17,Uttara,traffic,medium,unresolved,20,Traffic police presence is low in Uttara during rush hours.,0
+CM-0250,2026-02-17,Demra,waste,low,unresolved,8,Illegal dumping spotted beside a residential lane in Demra.,0
+CM-0251,2026-03-02,Mohammadpur,traffic,medium,resolved,1,Unauthorized roadside parking worsening traffic flow in Mohammadpur.,0
+CM-0252,2026-02-15,Mirpur,traffic,high,resolved,1,Traffic police presence is low in Mirpur during rush hours.,0
+CM-0253,2026-04-06,Mirpur,waste,medium,resolved,7,Waste pile near market area in Mirpur attracting stray animals.,0
+CM-0254,2026-03-15,Mirpur,traffic,high,unresolved,13,Signal light malfunction causing long queues in Mirpur.,0
+CM-0255,2026-03-01,Mohammadpur,road,low,resolved,7,Large pothole near the main road in Mohammadpur causing bike accidents.,0
+CM-0256,2026-02-11,Mohammadpur,traffic,medium,unresolved,9,Unauthorized roadside parking worsening traffic flow in Mohammadpur.,0
+CM-0257,2026-03-29,Uttara,traffic,low,resolved,7,Unauthorized roadside parking worsening traffic flow in Uttara.,0
+CM-0258,2026-03-14,Dhanmondi,waste,low,unresolved,16,Garbage has not been collected for several days in Dhanmondi.,0
+CM-0259,2026-03-30,Gulshan,water,low,resolved,7,Residents in Gulshan report muddy tap water during morning hours.,0
+CM-0260,2026-04-01,Mirpur,traffic,high,unresolved,15,Traffic police presence is low in Mirpur during rush hours.,0
+CM-0261,2026-03-08,Mohammadpur,road,medium,unresolved,5,Large pothole near the main road in Mohammadpur causing bike accidents.,0
+CM-0262,2026-03-30,Farmgate,traffic,low,resolved,6,Signal light malfunction causing long queues in Farmgate.,0
+CM-0263,2026-03-02,Gulshan,traffic,medium,resolved,7,Severe traffic congestion at peak hour in Gulshan intersection.,0
+CM-0264,2026-04-05,Mirpur,waste,medium,resolved,3,Waste pile near market area in Mirpur attracting stray animals.,0
+CM-0265,2026-03-05,Uttara,road,low,resolved,3,Large pothole near the main road in Uttara causing bike accidents.,0
+CM-0266,2026-03-15,Mirpur,water,medium,unresolved,17,Low water pressure reported in multiple households in Mirpur.,0
+CM-0267,2026-03-10,Mirpur,waste,medium,resolved,4,Overflowing community bin in Mirpur is causing foul smell.,0
+CM-0268,2026-02-10,Uttara,water,medium,unresolved,16,Intermittent water supply disruption observed in Uttara.,0
+CM-0269,2026-03-05,Mirpur,waste,high,resolved,1,Illegal dumping spotted beside a residential lane in Mirpur.,0
+CM-0270,2026-02-16,Uttara,road,low,resolved,6,"Road repair work is incomplete in Uttara, creating traffic bottlenecks.",0
+CM-0271,2026-03-30,Uttara,water,medium,resolved,6,Intermittent water supply disruption observed in Uttara.,0
+CM-0272,2026-03-02,Demra,traffic,medium,unresolved,15,Traffic police presence is low in Demra during rush hours.,0
+CM-0273,2026-03-12,Uttara,traffic,low,unresolved,12,Signal light malfunction causing long queues in Uttara.,0
+CM-0274,2026-04-03,Mirpur,waste,medium,resolved,6,Overflowing community bin in Mirpur is causing foul smell.,0
+CM-0275,2026-02-21,Mirpur,traffic,high,unresolved,7,Signal light malfunction causing long queues in Mirpur.,0
+CM-0276,2026-03-10,Mohammadpur,water,low,resolved,6,Residents in Mohammadpur report muddy tap water during morning hours.,0
+CM-0277,2026-03-18,Uttara,road,medium,unresolved,9,"Road repair work is incomplete in Uttara, creating traffic bottlenecks.",0
+CM-0278,2026-03-08,Demra,road,low,unresolved,14,"Road repair work is incomplete in Demra, creating traffic bottlenecks.",0
+CM-0279,2026-03-15,Gulshan,water,low,unresolved,18,Low water pressure reported in multiple households in Gulshan.,0
+CM-0280,2026-03-31,Uttara,waste,low,unresolved,7,Overflowing community bin in Uttara is causing foul smell.,0
+CM-0281,2026-04-10,Mirpur,road,medium,resolved,4,Street section in Mirpur is flooded after rain due to damaged road drainage.,0
+CM-0282,2026-03-27,Gulshan,traffic,low,resolved,1,Traffic police presence is low in Gulshan during rush hours.,0
+CM-0283,2026-03-15,Mohammadpur,waste,low,resolved,7,Overflowing community bin in Mohammadpur is causing foul smell.,0
+CM-0284,2026-03-14,Mirpur,road,high,resolved,4,Drain cover is missing on a busy road in Mirpur.,0
+CM-0285,2026-03-03,Farmgate,water,low,unresolved,18,Low water pressure reported in multiple households in Farmgate.,0
+CM-0286,2026-02-22,Mohammadpur,traffic,medium,resolved,2,Signal light malfunction causing long queues in Mohammadpur.,0
+CM-0287,2026-02-20,Uttara,waste,low,resolved,5,Blocked drain in Uttara due to accumulated plastic waste.,0
+CM-0288,2026-03-08,Mirpur,road,medium,unresolved,15,Street section in Mirpur is flooded after rain due to damaged road drainage.,0
+CM-0289,2026-04-10,Uttara,traffic,medium,resolved,5,Signal light malfunction causing long queues in Uttara.,0
+CM-0290,2026-02-21,Mirpur,traffic,medium,unresolved,20,Traffic police presence is low in Mirpur during rush hours.,0
+CM-0291,2026-03-21,Mirpur,road,high,unresolved,20,Street section in Mirpur is flooded after rain due to damaged road drainage.,0
+CM-0292,2026-03-16,Mirpur,water,medium,resolved,6,No municipal water available in part of Mirpur since last night.,0
+CM-0293,2026-03-07,Mirpur,road,high,resolved,4,Broken pavement and uneven road surface reported in Mirpur.,0
+CM-0294,2026-03-29,Uttara,traffic,medium,unresolved,10,Frequent gridlock near bus stop reported in Uttara.,0
+CM-0295,2026-03-31,Dhanmondi,road,low,resolved,2,"Road repair work is incomplete in Dhanmondi, creating traffic bottlenecks.",0
+CM-0296,2026-02-18,Demra,water,low,resolved,5,Intermittent water supply disruption observed in Demra.,0
+CM-0297,2026-02-10,Mohammadpur,road,medium,unresolved,16,Drain cover is missing on a busy road in Mohammadpur.,0
+CM-0298,2026-03-13,Mirpur,road,high,resolved,2,"Road repair work is incomplete in Mirpur, creating traffic bottlenecks.",0
+CM-0299,2026-03-03,Mohammadpur,water,medium,unresolved,9,Residents in Mohammadpur report muddy tap water during morning hours.,0
+CM-0300,2026-04-02,Mohammadpur,waste,low,unresolved,15,Overflowing community bin in Mohammadpur is causing foul smell.,0
+CM-0301,2026-02-22,Mirpur,road,high,resolved,5,Broken pavement and uneven road surface reported in Mirpur.,0
+CM-0302,2026-02-14,Mohammadpur,traffic,medium,unresolved,18,Traffic police presence is low in Mohammadpur during rush hours.,0
+CM-0303,2026-03-09,Mirpur,waste,medium,unresolved,17,Garbage has not been collected for several days in Mirpur.,0
+CM-0304,2026-02-13,Demra,waste,low,resolved,7,Waste pile near market area in Demra attracting stray animals.,0
+CM-0305,2026-03-04,Gulshan,traffic,low,unresolved,9,Signal light malfunction causing long queues in Gulshan.,0
+CM-0306,2026-03-11,Uttara,water,low,unresolved,20,No municipal water available in part of Uttara since last night.,0
+CM-0307,2026-03-24,Mirpur,water,medium,resolved,5,Residents in Mirpur report muddy tap water during morning hours.,0
+CM-0308,2026-02-22,Mohammadpur,water,medium,resolved,3,Residents in Mohammadpur report muddy tap water during morning hours.,0
+CM-0309,2026-04-06,Demra,waste,low,unresolved,20,Waste pile near market area in Demra attracting stray animals.,0
+CM-0310,2026-02-17,Mirpur,water,medium,unresolved,12,No municipal water available in part of Mirpur since last night.,0
+CM-0311,2026-03-29,Mirpur,water,high,resolved,3,No municipal water available in part of Mirpur since last night.,0
+CM-0312,2026-02-20,Mirpur,road,medium,resolved,5,Drain cover is missing on a busy road in Mirpur.,0
+CM-0313,2026-02-20,Mirpur,road,high,unresolved,18,Drain cover is missing on a busy road in Mirpur.,0
+CM-0314,2026-02-13,Mirpur,water,medium,unresolved,8,Leakage from underground supply line in Mirpur wasting clean water.,0
+CM-0315,2026-03-09,Mohammadpur,road,medium,resolved,4,"Road repair work is incomplete in Mohammadpur, creating traffic bottlenecks.",0
+CM-0316,2026-03-28,Mirpur,traffic,high,resolved,3,Frequent gridlock near bus stop reported in Mirpur.,0
+CM-0317,2026-04-03,Uttara,water,medium,resolved,4,Low water pressure reported in multiple households in Uttara.,0
+CM-0318,2026-02-16,Gulshan,waste,low,unresolved,9,Blocked drain in Gulshan due to accumulated plastic waste.,0
+CM-0319,2026-02-20,Mohammadpur,traffic,low,unresolved,10,Severe traffic congestion at peak hour in Mohammadpur intersection.,0
+CM-0320,2026-04-05,Mirpur,road,high,resolved,1,Large pothole near the main road in Mirpur causing bike accidents.,0
+CM-0321,2026-04-05,Mohammadpur,waste,low,resolved,6,Overflowing community bin in Mohammadpur is causing foul smell.,0
+CM-0322,2026-03-03,Uttara,traffic,medium,unresolved,7,Unauthorized roadside parking worsening traffic flow in Uttara.,0
+CM-0323,2026-02-23,Mirpur,water,high,unresolved,9,Leakage from underground supply line in Mirpur wasting clean water.,0
+CM-0324,2026-02-19,Dhanmondi,traffic,low,resolved,7,Frequent gridlock near bus stop reported in Dhanmondi.,0
+CM-0325,2026-03-14,Mirpur,road,medium,resolved,5,Street section in Mirpur is flooded after rain due to damaged road drainage.,0
+CM-0326,2026-03-07,Mirpur,waste,high,resolved,2,Waste pile near market area in Mirpur attracting stray animals.,0
+CM-0327,2026-03-04,Mirpur,water,medium,resolved,5,Leakage from underground supply line in Mirpur wasting clean water.,0
+CM-0328,2026-03-15,Uttara,road,low,unresolved,18,"Road repair work is incomplete in Uttara, creating traffic bottlenecks.",0
+CM-0329,2026-03-14,Mirpur,water,medium,resolved,4,Intermittent water supply disruption observed in Mirpur.,0
+CM-0330,2026-03-12,Demra,traffic,medium,resolved,5,Frequent gridlock near bus stop reported in Demra.,0
+CM-0331,2026-03-17,Demra,road,low,resolved,4,Broken pavement and uneven road surface reported in Demra.,0
+CM-0332,2026-03-12,Uttara,traffic,medium,unresolved,11,Signal light malfunction causing long queues in Uttara.,0
+CM-0333,2026-03-03,Mirpur,road,medium,resolved,4,"Road repair work is incomplete in Mirpur, creating traffic bottlenecks.",0
+CM-0334,2026-04-09,Farmgate,road,low,resolved,3,"Road repair work is incomplete in Farmgate, creating traffic bottlenecks.",0
+CM-0335,2026-03-23,Dhanmondi,water,low,resolved,3,Residents in Dhanmondi report muddy tap water during morning hours.,0
+CM-0336,2026-02-15,Uttara,traffic,low,resolved,6,Signal light malfunction causing long queues in Uttara.,0
+CM-0337,2026-03-01,Mirpur,road,high,unresolved,9,Large pothole near the main road in Mirpur causing bike accidents.,0
+CM-0338,2026-02-10,Uttara,water,medium,resolved,3,Residents in Uttara report muddy tap water during morning hours.,0
+CM-0339,2026-03-28,Uttara,traffic,medium,resolved,3,Unauthorized roadside parking worsening traffic flow in Uttara.,0
+CM-0340,2026-02-10,Mohammadpur,water,low,unresolved,15,Intermittent water supply disruption observed in Mohammadpur.,0
+CM-0341,2026-03-07,Farmgate,water,low,unresolved,15,No municipal water available in part of Farmgate since last night.,0
+CM-0342,2026-03-21,Dhanmondi,road,low,unresolved,20,Drain cover is missing on a busy road in Dhanmondi.,0
+CM-0343,2026-02-10,Mirpur,water,high,unresolved,13,Low water pressure reported in multiple households in Mirpur.,0
+CM-0344,2026-03-31,Demra,road,low,unresolved,19,Drain cover is missing on a busy road in Demra.,0
+CM-0345,2026-04-04,Mirpur,traffic,high,resolved,2,Frequent gridlock near bus stop reported in Mirpur.,0
+CM-0346,2026-03-15,Mirpur,water,high,resolved,4,Low water pressure reported in multiple households in Mirpur.,0
+CM-0347,2026-03-01,Mohammadpur,waste,low,unresolved,7,Garbage has not been collected for several days in Mohammadpur.,0
+CM-0348,2026-02-26,Farmgate,traffic,low,unresolved,19,Unauthorized roadside parking worsening traffic flow in Farmgate.,0
+CM-0349,2026-02-25,Dhanmondi,waste,low,unresolved,5,Overflowing community bin in Dhanmondi is causing foul smell.,0
+CM-0350,2026-04-09,Uttara,water,low,resolved,4,No municipal water available in part of Uttara since last night.,0
+CM-0351,2026-02-18,Demra,road,low,unresolved,12,Large pothole near the main road in Demra causing bike accidents.,0
+CM-0352,2026-04-08,Mirpur,waste,medium,resolved,1,Blocked drain in Mirpur due to accumulated plastic waste.,0
+CM-0353,2026-03-05,Mohammadpur,road,medium,unresolved,19,Drain cover is missing on a busy road in Mohammadpur.,0
+CM-0354,2026-02-12,Mirpur,water,high,resolved,2,No municipal water available in part of Mirpur since last night.,0
+CM-0355,2026-04-06,Uttara,road,low,resolved,6,Drain cover is missing on a busy road in Uttara.,0
+CM-0356,2026-03-16,Farmgate,road,low,resolved,5,"Road repair work is incomplete in Farmgate, creating traffic bottlenecks.",0
+CM-0357,2026-02-26,Mohammadpur,waste,low,unresolved,13,Garbage has not been collected for several days in Mohammadpur.,0
+CM-0358,2026-02-26,Dhanmondi,road,low,unresolved,14,Street section in Dhanmondi is flooded after rain due to damaged road drainage.,0
+CM-0359,2026-02-13,Demra,road,low,unresolved,18,"Road repair work is incomplete in Demra, creating traffic bottlenecks.",0
+CM-0360,2026-03-27,Demra,traffic,low,unresolved,15,Traffic police presence is low in Demra during rush hours.,0
+CM-0361,2026-03-01,Mirpur,road,medium,unresolved,15,Drain cover is missing on a busy road in Mirpur.,0
+CM-0362,2026-03-13,Gulshan,waste,low,unresolved,16,Illegal dumping spotted beside a residential lane in Gulshan.,0
+CM-0363,2026-02-21,Mohammadpur,waste,low,unresolved,20,Overflowing community bin in Mohammadpur is causing foul smell.,0
+CM-0364,2026-02-16,Uttara,road,low,unresolved,7,Large pothole near the main road in Uttara causing bike accidents.,0
+CM-0365,2026-03-29,Mirpur,road,medium,resolved,4,Broken pavement and uneven road surface reported in Mirpur.,0
+CM-0366,2026-03-25,Mirpur,waste,high,resolved,6,Garbage has not been collected for several days in Mirpur.,0
+CM-0367,2026-03-21,Mirpur,road,medium,resolved,4,Large pothole near the main road in Mirpur causing bike accidents.,0
+CM-0368,2026-03-19,Uttara,water,low,unresolved,17,Residents in Uttara report muddy tap water during morning hours.,0
+CM-0369,2026-04-05,Uttara,road,medium,resolved,6,Street section in Uttara is flooded after rain due to damaged road drainage.,0
+CM-0370,2026-03-05,Gulshan,waste,low,resolved,2,Blocked drain in Gulshan due to accumulated plastic waste.,0
+CM-0371,2026-03-20,Mohammadpur,road,medium,resolved,4,"Road repair work is incomplete in Mohammadpur, creating traffic bottlenecks.",0
+CM-0372,2026-03-21,Mohammadpur,road,medium,resolved,4,Broken pavement and uneven road surface reported in Mohammadpur.,0
+CM-0373,2026-03-24,Uttara,traffic,medium,unresolved,12,Frequent gridlock near bus stop reported in Uttara.,0
+CM-0374,2026-03-11,Mirpur,waste,medium,resolved,7,Blocked drain in Mirpur due to accumulated plastic waste.,0
+CM-0375,2026-02-26,Mirpur,waste,high,unresolved,18,Illegal dumping spotted beside a residential lane in Mirpur.,0
+CM-0376,2026-02-18,Dhanmondi,water,low,resolved,5,Residents in Dhanmondi report muddy tap water during morning hours.,0
+CM-0377,2026-03-08,Mirpur,waste,high,resolved,2,Illegal dumping spotted beside a residential lane in Mirpur.,0
+CM-0378,2026-03-01,Mirpur,road,high,unresolved,12,Drain cover is missing on a busy road in Mirpur.,0
+CM-0379,2026-04-07,Dhanmondi,traffic,low,resolved,5,Unauthorized roadside parking worsening traffic flow in Dhanmondi.,0
+CM-0380,2026-03-21,Mirpur,waste,high,unresolved,15,Waste pile near market area in Mirpur attracting stray animals.,0
+CM-0381,2026-02-15,Mirpur,water,medium,unresolved,19,Intermittent water supply disruption observed in Mirpur.,0
+CM-0382,2026-02-27,Mohammadpur,waste,medium,unresolved,18,Illegal dumping spotted beside a residential lane in Mohammadpur.,0
+CM-0383,2026-03-21,Mirpur,waste,medium,resolved,1,Overflowing community bin in Mirpur is causing foul smell.,0
+CM-0384,2026-04-08,Mirpur,road,high,resolved,2,Large pothole near the main road in Mirpur causing bike accidents.,0
+CM-0385,2026-02-11,Dhanmondi,waste,low,unresolved,10,Waste pile near market area in Dhanmondi attracting stray animals.,0
+CM-0386,2026-04-09,Mirpur,water,high,resolved,1,Intermittent water supply disruption observed in Mirpur.,0
+CM-0387,2026-04-09,Uttara,waste,medium,resolved,6,Illegal dumping spotted beside a residential lane in Uttara.,0
+CM-0388,2026-02-16,Uttara,traffic,medium,resolved,1,Traffic police presence is low in Uttara during rush hours.,0
+CM-0389,2026-03-15,Mirpur,traffic,medium,unresolved,17,Severe traffic congestion at peak hour in Mirpur intersection.,0
+CM-0390,2026-04-08,Gulshan,traffic,low,resolved,3,Severe traffic congestion at peak hour in Gulshan intersection.,0
+CM-0391,2026-02-18,Mirpur,waste,medium,unresolved,5,Blocked drain in Mirpur due to accumulated plastic waste.,0
+CM-0392,2026-03-18,Uttara,traffic,medium,unresolved,19,Unauthorized roadside parking worsening traffic flow in Uttara.,0
+CM-0393,2026-04-07,Dhanmondi,water,low,resolved,3,Low water pressure reported in multiple households in Dhanmondi.,0
+CM-0394,2026-04-01,Dhanmondi,water,low,resolved,7,Residents in Dhanmondi report muddy tap water during morning hours.,0
+CM-0395,2026-03-12,Mohammadpur,water,low,resolved,7,No municipal water available in part of Mohammadpur since last night.,0
+CM-0396,2026-03-10,Mirpur,water,medium,resolved,2,No municipal water available in part of Mirpur since last night.,0
+CM-0397,2026-03-19,Mirpur,waste,medium,unresolved,16,Garbage has not been collected for several days in Mirpur.,0
+CM-0398,2026-02-21,Mirpur,waste,high,unresolved,11,Garbage has not been collected for several days in Mirpur.,0
+CM-0399,2026-03-26,Mohammadpur,traffic,medium,resolved,2,Signal light malfunction causing long queues in Mohammadpur.,0
+CM-0400,2026-02-26,Uttara,road,medium,unresolved,9,Drain cover is missing on a busy road in Uttara.,0
+CM-0401,2026-02-16,Mohammadpur,road,low,resolved,1,Broken pavement and uneven road surface reported in Mohammadpur.,0
+CM-0402,2026-03-23,Dhanmondi,water,low,resolved,4,No municipal water available in part of Dhanmondi since last night.,0
+CM-0403,2026-03-05,Mirpur,water,medium,unresolved,6,Low water pressure reported in multiple households in Mirpur.,0
+CM-0404,2026-03-21,Demra,road,low,resolved,3,Street section in Demra is flooded after rain due to damaged road drainage.,0
+CM-0405,2026-02-13,Mirpur,road,high,unresolved,10,Street section in Mirpur is flooded after rain due to damaged road drainage.,0
+CM-0406,2026-04-07,Dhanmondi,waste,low,resolved,5,Overflowing community bin in Dhanmondi is causing foul smell.,0
+CM-0407,2026-03-27,Demra,waste,low,resolved,3,Garbage has not been collected for several days in Demra.,0
+CM-0408,2026-03-19,Farmgate,traffic,low,resolved,7,Frequent gridlock near bus stop reported in Farmgate.,0
+CM-0409,2026-02-10,Mirpur,waste,high,resolved,5,Garbage has not been collected for several days in Mirpur.,0
+CM-0410,2026-04-05,Farmgate,road,low,resolved,1,"Road repair work is incomplete in Farmgate, creating traffic bottlenecks.",0
+CM-0411,2026-02-14,Mohammadpur,waste,low,unresolved,14,Illegal dumping spotted beside a residential lane in Mohammadpur.,0
+CM-0412,2026-02-17,Mirpur,waste,high,unresolved,17,Waste pile near market area in Mirpur attracting stray animals.,0
+CM-0413,2026-02-16,Uttara,road,low,unresolved,10,"Road repair work is incomplete in Uttara, creating traffic bottlenecks.",0
+CM-0414,2026-04-05,Mohammadpur,water,low,unresolved,8,No municipal water available in part of Mohammadpur since last night.,0
+CM-0415,2026-03-29,Demra,water,low,resolved,3,Low water pressure reported in multiple households in Demra.,0
+CM-0416,2026-02-26,Mirpur,road,medium,resolved,3,"Road repair work is incomplete in Mirpur, creating traffic bottlenecks.",0
+CM-0417,2026-02-17,Uttara,water,medium,unresolved,11,Intermittent water supply disruption observed in Uttara.,0
+CM-0418,2026-03-16,Farmgate,traffic,low,resolved,3,Signal light malfunction causing long queues in Farmgate.,0
+CM-0419,2026-04-02,Mirpur,road,medium,unresolved,9,Street section in Mirpur is flooded after rain due to damaged road drainage.,0
+CM-0420,2026-03-12,Mohammadpur,road,medium,unresolved,16,Large pothole near the main road in Mohammadpur causing bike accidents.,0
+CM-0421,2026-03-22,Mirpur,traffic,medium,unresolved,8,Unauthorized roadside parking worsening traffic flow in Mirpur.,0
+CM-0422,2026-03-12,Farmgate,waste,low,resolved,6,Illegal dumping spotted beside a residential lane in Farmgate.,0
+CM-0423,2026-02-20,Demra,traffic,low,unresolved,10,Signal light malfunction causing long queues in Demra.,0
+CM-0424,2026-03-31,Mirpur,water,high,resolved,1,Low water pressure reported in multiple households in Mirpur.,0
+CM-0425,2026-04-06,Mohammadpur,water,low,unresolved,6,Intermittent water supply disruption observed in Mohammadpur.,0
+CM-0426,2026-02-18,Mirpur,waste,medium,unresolved,19,Illegal dumping spotted beside a residential lane in Mirpur.,0
+CM-0427,2026-03-17,Uttara,traffic,medium,resolved,2,Signal light malfunction causing long queues in Uttara.,0
+CM-0428,2026-03-13,Mohammadpur,water,low,resolved,6,Intermittent water supply disruption observed in Mohammadpur.,0
+CM-0429,2026-03-26,Dhanmondi,water,low,resolved,4,Leakage from underground supply line in Dhanmondi wasting clean water.,0
+CM-0430,2026-03-26,Dhanmondi,road,medium,resolved,5,Large pothole near the main road in Dhanmondi causing bike accidents.,0
+CM-0431,2026-04-05,Demra,water,low,unresolved,8,Low water pressure reported in multiple households in Demra.,0
+CM-0432,2026-04-08,Gulshan,traffic,low,unresolved,6,Severe traffic congestion at peak hour in Gulshan intersection.,0
+CM-0433,2026-02-19,Farmgate,traffic,low,unresolved,10,Severe traffic congestion at peak hour in Farmgate intersection.,0
+CM-0434,2026-02-10,Mirpur,road,high,unresolved,14,Drain cover is missing on a busy road in Mirpur.,0
+CM-0435,2026-03-13,Gulshan,traffic,low,resolved,7,Unauthorized roadside parking worsening traffic flow in Gulshan.,0
+CM-0436,2026-03-08,Mirpur,road,high,resolved,7,Street section in Mirpur is flooded after rain due to damaged road drainage.,0
+CM-0437,2026-02-14,Uttara,water,medium,unresolved,12,No municipal water available in part of Uttara since last night.,0
+CM-0438,2026-03-10,Mirpur,traffic,high,unresolved,17,Frequent gridlock near bus stop reported in Mirpur.,0
+CM-0439,2026-02-14,Mirpur,traffic,medium,unresolved,16,Traffic police presence is low in Mirpur during rush hours.,0
+CM-0440,2026-03-04,Gulshan,traffic,low,resolved,4,Signal light malfunction causing long queues in Gulshan.,0
+CM-0441,2026-04-07,Demra,traffic,medium,resolved,5,Frequent gridlock near bus stop reported in Demra.,0
+CM-0442,2026-02-24,Mohammadpur,road,medium,unresolved,10,Drain cover is missing on a busy road in Mohammadpur.,0
+CM-0443,2026-03-13,Farmgate,road,low,resolved,3,Broken pavement and uneven road surface reported in Farmgate.,0
+CM-0444,2026-03-02,Demra,water,low,resolved,6,Low water pressure reported in multiple households in Demra.,0
+CM-0445,2026-02-11,Mirpur,waste,medium,unresolved,18,Overflowing community bin in Mirpur is causing foul smell.,0
+CM-0446,2026-03-06,Mirpur,water,high,resolved,7,Intermittent water supply disruption observed in Mirpur.,0
+CM-0447,2026-02-19,Dhanmondi,water,low,resolved,7,Residents in Dhanmondi report muddy tap water during morning hours.,0
+CM-0448,2026-03-19,Mirpur,road,high,unresolved,19,Street section in Mirpur is flooded after rain due to damaged road drainage.,0
+CM-0449,2026-02-13,Uttara,road,low,unresolved,6,Street section in Uttara is flooded after rain due to damaged road drainage.,0
+CM-0450,2026-03-18,Gulshan,traffic,low,unresolved,19,Traffic police presence is low in Gulshan during rush hours.,0
+CM-0451,2026-02-12,Uttara,road,medium,resolved,7,Street section in Uttara is flooded after rain due to damaged road drainage.,0
+CM-0452,2026-03-08,Mirpur,water,medium,unresolved,15,Leakage from underground supply line in Mirpur wasting clean water.,0
+CM-0453,2026-02-27,Mohammadpur,water,medium,unresolved,9,Leakage from underground supply line in Mohammadpur wasting clean water.,0
+CM-0454,2026-02-13,Uttara,water,low,unresolved,18,Low water pressure reported in multiple households in Uttara.,0
+CM-0455,2026-03-22,Mirpur,road,medium,unresolved,18,Street section in Mirpur is flooded after rain due to damaged road drainage.,0
+CM-0456,2026-03-09,Mirpur,road,high,resolved,6,"Road repair work is incomplete in Mirpur, creating traffic bottlenecks.",0
+CM-0457,2026-02-12,Mohammadpur,road,low,resolved,7,Broken pavement and uneven road surface reported in Mohammadpur.,0
+CM-0458,2026-03-04,Demra,water,low,resolved,1,No municipal water available in part of Demra since last night.,0
+CM-0459,2026-04-02,Farmgate,traffic,low,unresolved,11,Signal light malfunction causing long queues in Farmgate.,0
+CM-0460,2026-03-11,Uttara,waste,low,unresolved,19,Overflowing community bin in Uttara is causing foul smell.,0
+CM-0461,2026-03-05,Mohammadpur,road,medium,unresolved,10,Broken pavement and uneven road surface reported in Mohammadpur.,0
+CM-0462,2026-03-12,Demra,traffic,medium,unresolved,20,Severe traffic congestion at peak hour in Demra intersection.,0
+CM-0463,2026-02-17,Mirpur,waste,high,unresolved,5,Garbage has not been collected for several days in Mirpur.,0
+CM-0464,2026-02-25,Uttara,water,low,unresolved,16,Low water pressure reported in multiple households in Uttara.,0
+CM-0465,2026-03-19,Demra,traffic,low,resolved,1,Unauthorized roadside parking worsening traffic flow in Demra.,0
+CM-0466,2026-02-20,Uttara,water,medium,resolved,7,Low water pressure reported in multiple households in Uttara.,0
+CM-0467,2026-03-24,Mohammadpur,road,medium,unresolved,18,Broken pavement and uneven road surface reported in Mohammadpur.,0
+CM-0468,2026-04-10,Uttara,waste,medium,resolved,1,Illegal dumping spotted beside a residential lane in Uttara.,0
+CM-0469,2026-02-23,Gulshan,traffic,low,unresolved,15,Frequent gridlock near bus stop reported in Gulshan.,0
+CM-0470,2026-02-15,Mirpur,waste,high,resolved,4,Illegal dumping spotted beside a residential lane in Mirpur.,0
+CM-0471,2026-02-27,Demra,waste,low,unresolved,17,Illegal dumping spotted beside a residential lane in Demra.,0
+CM-0472,2026-03-05,Mirpur,water,medium,unresolved,19,No municipal water available in part of Mirpur since last night.,0
+CM-0473,2026-04-05,Uttara,traffic,medium,resolved,2,Signal light malfunction causing long queues in Uttara.,0
+CM-0474,2026-02-18,Mohammadpur,traffic,medium,resolved,3,Signal light malfunction causing long queues in Mohammadpur.,0
+CM-0475,2026-04-02,Mohammadpur,waste,low,resolved,3,Garbage has not been collected for several days in Mohammadpur.,0
+CM-0476,2026-03-24,Mirpur,road,high,resolved,4,"Road repair work is incomplete in Mirpur, creating traffic bottlenecks.",0
+CM-0477,2026-03-27,Uttara,waste,medium,unresolved,12,Overflowing community bin in Uttara is causing foul smell.,0
+CM-0478,2026-03-30,Demra,water,low,resolved,2,Residents in Demra report muddy tap water during morning hours.,0
+CM-0479,2026-02-14,Mohammadpur,water,low,unresolved,17,Low water pressure reported in multiple households in Mohammadpur.,0
+CM-0480,2026-02-10,Uttara,traffic,low,unresolved,19,Traffic police presence is low in Uttara during rush hours.,0
+CM-0481,2026-03-09,Dhanmondi,water,low,unresolved,6,Leakage from underground supply line in Dhanmondi wasting clean water.,0
+CM-0482,2026-03-18,Dhanmondi,waste,low,resolved,3,Blocked drain in Dhanmondi due to accumulated plastic waste.,0
+CM-0483,2026-03-18,Mirpur,waste,medium,resolved,4,Overflowing community bin in Mirpur is causing foul smell.,0
+CM-0484,2026-03-18,Uttara,water,medium,resolved,6,No municipal water available in part of Uttara since last night.,0
+CM-0485,2026-03-02,Gulshan,waste,low,resolved,6,Garbage has not been collected for several days in Gulshan.,0
+CM-0486,2026-03-07,Mirpur,water,medium,unresolved,7,Residents in Mirpur report muddy tap water during morning hours.,0
+CM-0487,2026-03-18,Uttara,traffic,medium,resolved,3,Unauthorized roadside parking worsening traffic flow in Uttara.,0
+CM-0488,2026-02-17,Mirpur,water,medium,unresolved,19,No municipal water available in part of Mirpur since last night.,0
+CM-0489,2026-04-09,Demra,waste,low,resolved,3,Garbage has not been collected for several days in Demra.,0
+CM-0490,2026-03-13,Mohammadpur,road,medium,unresolved,17,Street section in Mohammadpur is flooded after rain due to damaged road drainage.,0
+CM-0491,2026-02-20,Mirpur,road,medium,resolved,1,Broken pavement and uneven road surface reported in Mirpur.,0
+CM-0492,2026-03-11,Mohammadpur,road,medium,resolved,7,Street section in Mohammadpur is flooded after rain due to damaged road drainage.,0
+CM-0493,2026-03-16,Dhanmondi,waste,low,resolved,2,Overflowing community bin in Dhanmondi is causing foul smell.,0
+CM-0494,2026-04-02,Dhanmondi,traffic,low,unresolved,8,Unauthorized roadside parking worsening traffic flow in Dhanmondi.,0
+CM-0495,2026-03-06,Dhanmondi,waste,low,unresolved,12,Overflowing community bin in Dhanmondi is causing foul smell.,0
+CM-0496,2026-02-27,Farmgate,road,low,resolved,2,"Road repair work is incomplete in Farmgate, creating traffic bottlenecks.",0
+CM-0497,2026-03-31,Dhanmondi,traffic,low,unresolved,8,Traffic police presence is low in Dhanmondi during rush hours.,0
+CM-0498,2026-04-09,Mirpur,water,medium,resolved,4,No municipal water available in part of Mirpur since last night.,0
+CM-0499,2026-03-11,Gulshan,traffic,low,resolved,5,Unauthorized roadside parking worsening traffic flow in Gulshan.,0
+CM-0500,2026-03-02,Mohammadpur,road,medium,unresolved,14,Street section in Mohammadpur is flooded after rain due to damaged road drainage.,0
+CM-0501,2026-04-07,Uttara,water,medium,resolved,6,Residents in Uttara report muddy tap water during morning hours.,0
+CM-0502,2026-02-22,Mohammadpur,road,low,resolved,5,"Road repair work is incomplete in Mohammadpur, creating traffic bottlenecks.",0
+CM-0503,2026-03-10,Uttara,waste,low,unresolved,7,Garbage has not been collected for several days in Uttara.,0
+CM-0504,2026-03-03,Dhanmondi,road,low,resolved,5,Drain cover is missing on a busy road in Dhanmondi.,0
+CM-0505,2026-03-09,Mohammadpur,waste,low,unresolved,18,Overflowing community bin in Mohammadpur is causing foul smell.,0
+CM-0506,2026-02-10,Mohammadpur,waste,low,unresolved,13,Waste pile near market area in Mohammadpur attracting stray animals.,0
+CM-0507,2026-04-10,Gulshan,traffic,low,unresolved,12,Frequent gridlock near bus stop reported in Gulshan.,0
+CM-0508,2026-04-03,Mirpur,road,high,resolved,7,Large pothole near the main road in Mirpur causing bike accidents.,0
+CM-0509,2026-03-29,Mirpur,traffic,high,unresolved,16,Unauthorized roadside parking worsening traffic flow in Mirpur.,0
+CM-0510,2026-03-08,Mirpur,waste,high,unresolved,17,Overflowing community bin in Mirpur is causing foul smell.,0
+CM-0511,2026-02-17,Demra,road,low,resolved,7,Large pothole near the main road in Demra causing bike accidents.,0
+CM-0512,2026-03-14,Mirpur,water,high,resolved,7,Intermittent water supply disruption observed in Mirpur.,0
+CM-0513,2026-02-24,Uttara,traffic,medium,unresolved,15,Unauthorized roadside parking worsening traffic flow in Uttara.,0
+CM-0514,2026-03-25,Dhanmondi,road,low,resolved,4,Drain cover is missing on a busy road in Dhanmondi.,0
+CM-0515,2026-03-19,Mirpur,road,high,unresolved,14,Large pothole near the main road in Mirpur causing bike accidents.,0
+CM-0516,2026-02-23,Dhanmondi,waste,low,unresolved,11,Overflowing community bin in Dhanmondi is causing foul smell.,0
+CM-0517,2026-03-14,Gulshan,traffic,low,unresolved,15,Traffic police presence is low in Gulshan during rush hours.,0
+CM-0518,2026-03-17,Uttara,waste,low,unresolved,18,Garbage has not been collected for several days in Uttara.,0
+CM-0519,2026-03-24,Uttara,water,medium,unresolved,19,No municipal water available in part of Uttara since last night.,0
+CM-0520,2026-03-14,Mirpur,road,medium,unresolved,6,Broken pavement and uneven road surface reported in Mirpur.,0
+CM-0521,2026-03-09,Uttara,water,low,unresolved,5,Residents in Uttara report muddy tap water during morning hours.,0
+CM-0522,2026-03-09,Dhanmondi,water,low,unresolved,12,No municipal water available in part of Dhanmondi since last night.,0
+CM-0523,2026-03-30,Mirpur,road,high,resolved,2,"Road repair work is incomplete in Mirpur, creating traffic bottlenecks.",0
+CM-0524,2026-03-05,Mohammadpur,road,medium,resolved,7,"Road repair work is incomplete in Mohammadpur, creating traffic bottlenecks.",0
+CM-0525,2026-03-15,Uttara,waste,medium,unresolved,19,Illegal dumping spotted beside a residential lane in Uttara.,0
+CM-0526,2026-03-19,Demra,traffic,medium,unresolved,11,Unauthorized roadside parking worsening traffic flow in Demra.,0
+CM-0527,2026-03-10,Demra,road,medium,resolved,4,Broken pavement and uneven road surface reported in Demra.,0
+CM-0528,2026-04-01,Mirpur,traffic,medium,unresolved,17,Traffic police presence is low in Mirpur during rush hours.,0
+CM-0529,2026-04-03,Mirpur,road,medium,unresolved,15,Broken pavement and uneven road surface reported in Mirpur.,0
+CM-0530,2026-02-28,Farmgate,waste,low,resolved,5,Overflowing community bin in Farmgate is causing foul smell.,0
+CM-0531,2026-02-14,Farmgate,traffic,low,unresolved,15,Frequent gridlock near bus stop reported in Farmgate.,0
+CM-0532,2026-04-05,Mirpur,road,medium,resolved,1,Street section in Mirpur is flooded after rain due to damaged road drainage.,0
+CM-0533,2026-02-25,Mirpur,road,high,unresolved,11,Large pothole near the main road in Mirpur causing bike accidents.,0
+CM-0534,2026-02-12,Mohammadpur,road,medium,unresolved,12,Street section in Mohammadpur is flooded after rain due to damaged road drainage.,0
+CM-0535,2026-02-28,Uttara,waste,low,unresolved,7,Waste pile near market area in Uttara attracting stray animals.,0
+CM-0536,2026-02-11,Mirpur,waste,medium,unresolved,10,Overflowing community bin in Mirpur is causing foul smell.,0
+CM-0537,2026-02-10,Mirpur,waste,medium,unresolved,7,Overflowing community bin in Mirpur is causing foul smell.,0
+CM-0538,2026-04-03,Mohammadpur,waste,medium,resolved,5,Waste pile near market area in Mohammadpur attracting stray animals.,0
+CM-0539,2026-03-31,Demra,traffic,medium,resolved,5,Frequent gridlock near bus stop reported in Demra.,0
+CM-0540,2026-03-05,Mirpur,road,medium,unresolved,19,Large pothole near the main road in Mirpur causing bike accidents.,0
+CM-0541,2026-02-14,Farmgate,traffic,low,unresolved,18,Traffic police presence is low in Farmgate during rush hours.,0
+CM-0542,2026-03-08,Uttara,water,medium,unresolved,17,Low water pressure reported in multiple households in Uttara.,0
+CM-0543,2026-03-13,Mohammadpur,waste,medium,resolved,2,Overflowing community bin in Mohammadpur is causing foul smell.,0
+CM-0544,2026-02-23,Farmgate,road,low,unresolved,9,Broken pavement and uneven road surface reported in Farmgate.,0
+CM-0545,2026-03-15,Mohammadpur,water,medium,unresolved,16,Leakage from underground supply line in Mohammadpur wasting clean water.,0
+CM-0546,2026-02-13,Mirpur,road,medium,unresolved,10,"Road repair work is incomplete in Mirpur, creating traffic bottlenecks.",0
+CM-0547,2026-03-31,Uttara,water,low,unresolved,10,No municipal water available in part of Uttara since last night.,0
+CM-0548,2026-02-18,Farmgate,waste,low,resolved,3,Overflowing community bin in Farmgate is causing foul smell.,0
+CM-0549,2026-04-03,Mirpur,traffic,high,resolved,5,Signal light malfunction causing long queues in Mirpur.,0
+CM-0550,2026-03-30,Demra,waste,low,resolved,4,Illegal dumping spotted beside a residential lane in Demra.,0
+CM-0551,2026-03-31,Gulshan,traffic,low,resolved,4,Frequent gridlock near bus stop reported in Gulshan.,0
+CM-0552,2026-03-27,Mohammadpur,road,medium,resolved,5,"Road repair work is incomplete in Mohammadpur, creating traffic bottlenecks.",0
+CM-0553,2026-03-30,Uttara,water,low,unresolved,7,Residents in Uttara report muddy tap water during morning hours.,0
+CM-0554,2026-03-06,Uttara,waste,medium,resolved,1,Illegal dumping spotted beside a residential lane in Uttara.,0
+CM-0555,2026-04-02,Uttara,road,low,resolved,6,Drain cover is missing on a busy road in Uttara.,0
+CM-0556,2026-02-12,Gulshan,traffic,low,resolved,5,Signal light malfunction causing long queues in Gulshan.,0
+CM-0557,2026-02-23,Farmgate,traffic,medium,unresolved,9,Signal light malfunction causing long queues in Farmgate.,0
+CM-0558,2026-03-02,Gulshan,traffic,low,unresolved,12,Unauthorized roadside parking worsening traffic flow in Gulshan.,0
+CM-0559,2026-03-18,Uttara,traffic,low,resolved,7,Signal light malfunction causing long queues in Uttara.,0
+CM-0560,2026-02-12,Uttara,road,low,unresolved,14,Broken pavement and uneven road surface reported in Uttara.,0
+CM-0561,2026-03-28,Mirpur,traffic,high,resolved,2,Signal light malfunction causing long queues in Mirpur.,0
+CM-0562,2026-03-03,Demra,waste,low,resolved,1,Blocked drain in Demra due to accumulated plastic waste.,0
+CM-0563,2026-03-19,Mirpur,road,high,resolved,5,Drain cover is missing on a busy road in Mirpur.,0
+CM-0564,2026-03-04,Mirpur,water,medium,unresolved,15,Low water pressure reported in multiple households in Mirpur.,0
+CM-0565,2026-02-22,Dhanmondi,waste,low,unresolved,12,Overflowing community bin in Dhanmondi is causing foul smell.,0
+CM-0566,2026-03-09,Mirpur,water,medium,resolved,2,No municipal water available in part of Mirpur since last night.,0
+CM-0567,2026-03-25,Mirpur,road,high,resolved,6,Drain cover is missing on a busy road in Mirpur.,0
+CM-0568,2026-04-07,Gulshan,water,low,resolved,4,No municipal water available in part of Gulshan since last night.,0
+CM-0569,2026-03-17,Mirpur,water,high,resolved,5,Low water pressure reported in multiple households in Mirpur.,0
+CM-0570,2026-02-18,Mirpur,road,medium,unresolved,17,Large pothole near the main road in Mirpur causing bike accidents.,0
+CM-0571,2026-04-08,Mirpur,road,medium,unresolved,6,Drain cover is missing on a busy road in Mirpur.,0
+CM-0572,2026-03-23,Mohammadpur,traffic,medium,unresolved,6,Frequent gridlock near bus stop reported in Mohammadpur.,0
+CM-0573,2026-04-07,Demra,road,low,unresolved,8,Broken pavement and uneven road surface reported in Demra.,0
+CM-0574,2026-02-10,Demra,water,low,resolved,3,Low water pressure reported in multiple households in Demra.,0
+CM-0575,2026-02-28,Mohammadpur,waste,medium,unresolved,5,Waste pile near market area in Mohammadpur attracting stray animals.,0
+CM-0576,2026-03-26,Uttara,road,medium,unresolved,20,"Road repair work is incomplete in Uttara, creating traffic bottlenecks.",0
+CM-0577,2026-03-07,Mohammadpur,road,medium,unresolved,9,Broken pavement and uneven road surface reported in Mohammadpur.,0
+CM-0578,2026-03-08,Demra,water,low,unresolved,14,Low water pressure reported in multiple households in Demra.,0
+CM-0579,2026-03-09,Mirpur,traffic,medium,resolved,6,Frequent gridlock near bus stop reported in Mirpur.,0
+CM-0580,2026-03-03,Mohammadpur,waste,low,unresolved,8,Garbage has not been collected for several days in Mohammadpur.,0
+CM-0581,2026-03-31,Mirpur,road,high,resolved,5,"Road repair work is incomplete in Mirpur, creating traffic bottlenecks.",0
+CM-0582,2026-04-02,Gulshan,water,low,unresolved,6,Residents in Gulshan report muddy tap water during morning hours.,0
+CM-0583,2026-04-08,Mirpur,water,high,resolved,6,Leakage from underground supply line in Mirpur wasting clean water.,0
+CM-0584,2026-02-21,Demra,road,low,unresolved,7,Drain cover is missing on a busy road in Demra.,0
+CM-0585,2026-03-20,Mirpur,waste,medium,unresolved,6,Illegal dumping spotted beside a residential lane in Mirpur.,0
+CM-0586,2026-02-12,Mirpur,road,high,unresolved,20,Drain cover is missing on a busy road in Mirpur.,0
+CM-0587,2026-04-03,Mohammadpur,road,medium,resolved,1,Broken pavement and uneven road surface reported in Mohammadpur.,0
+CM-0588,2026-02-21,Mohammadpur,waste,medium,resolved,3,Overflowing community bin in Mohammadpur is causing foul smell.,0
+CM-0589,2026-03-25,Uttara,road,low,unresolved,17,Broken pavement and uneven road surface reported in Uttara.,0
+CM-0590,2026-03-08,Mirpur,road,medium,resolved,1,Drain cover is missing on a busy road in Mirpur.,0
+CM-0591,2026-03-12,Dhanmondi,waste,low,resolved,2,Overflowing community bin in Dhanmondi is causing foul smell.,0
+CM-0592,2026-04-02,Mohammadpur,waste,medium,resolved,4,Waste pile near market area in Mohammadpur attracting stray animals.,0
+CM-0593,2026-03-17,Gulshan,water,low,unresolved,13,Leakage from underground supply line in Gulshan wasting clean water.,0
+CM-0594,2026-03-02,Mirpur,road,medium,unresolved,18,"Road repair work is incomplete in Mirpur, creating traffic bottlenecks.",0
+CM-0595,2026-04-08,Demra,waste,low,resolved,1,Waste pile near market area in Demra attracting stray animals.,0
+CM-0596,2026-02-26,Farmgate,water,low,unresolved,10,Leakage from underground supply line in Farmgate wasting clean water.,0
+CM-0597,2026-04-03,Uttara,water,low,resolved,1,Intermittent water supply disruption observed in Uttara.,0
+CM-0598,2026-03-26,Mohammadpur,water,low,unresolved,8,Low water pressure reported in multiple households in Mohammadpur.,0
+CM-0599,2026-04-04,Farmgate,road,low,resolved,7,"Road repair work is incomplete in Farmgate, creating traffic bottlenecks.",0
+CM-0600,2026-03-05,Mirpur,road,high,resolved,1,Large pothole near the main road in Mirpur causing bike accidents.,0
