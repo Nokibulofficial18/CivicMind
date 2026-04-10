@@ -17,7 +17,7 @@ from models.escalation import (
 	prepare_features,
 	train_model,
 )
-from models.hotspot import get_area_hotspots, get_category_distribution, get_trend
+from models.hotspot import get_area_hotspots, get_category_distribution, get_hotspot_root_causes, get_trend
 from utils.map_utils import add_area_markers, generate_heatmap
 
 
@@ -486,6 +486,12 @@ def _render_hotspot_tab(df: pd.DataFrame, hotspots: pd.DataFrame) -> None:
 	_style_figure(fig_hotspot, x_title="Hotspot Score", y_title="Area")
 	fig_hotspot.update_traces(hovertemplate="Area: %{y}<br>Hotspot Score: %{x:.2f}<extra></extra>")
 	st.plotly_chart(fig_hotspot, width="stretch")
+
+	root_cause_df = get_hotspot_root_causes(df, hotspots)
+	if not root_cause_df.empty:
+		st.markdown("### 🧭 Root Cause Analysis")
+		for _, row in root_cause_df.iterrows():
+			st.info(f"**{row['area']}** — {row['root_cause']}")
 
 
 def _render_escalation_tab(
