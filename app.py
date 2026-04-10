@@ -27,6 +27,7 @@ APP_TITLE = "CivicMind — Dhaka Urban Intelligence Dashboard"
 DATE_WINDOW_OPTIONS = [7, 14, 30, 60]
 RISK_COLORS = {"High": "#D7263D", "Medium": "#F18F01", "Low": "#2A9D8F"}
 PLOT_TEMPLATE = "plotly_white"
+CATEGORICAL_COLUMNS = ["area", "category", "priority", "status"]
 
 
 AREAS = ["Mirpur", "Dhanmondi", "Uttara", "Farmgate", "Demra", "Gulshan", "Mohammadpur"]
@@ -44,6 +45,32 @@ DEPARTMENT_MAP = {
 def _empty_like(df: pd.DataFrame) -> pd.DataFrame:
 	"""Return an empty DataFrame with same schema."""
 	return df.iloc[0:0].copy()
+
+
+def _optimize_dataframe_memory(df: pd.DataFrame) -> pd.DataFrame:
+	"""Reduce memory usage by applying compact dtypes where appropriate."""
+	optimized_df = df.copy()
+
+	for column in CATEGORICAL_COLUMNS:
+		if column in optimized_df.columns:
+			optimized_df[column] = optimized_df[column].astype("category")
+
+	if "days_to_resolve" in optimized_df.columns:
+		optimized_df["days_to_resolve"] = pd.to_numeric(
+			optimized_df["days_to_resolve"], errors="coerce"
+		).fillna(0).astype("int16")
+
+	if "resolved" in optimized_df.columns:
+		optimized_df["resolved"] = pd.to_numeric(optimized_df["resolved"], errors="coerce").fillna(0).astype(
+			"int8"
+		)
+
+	if "escalation_prob" in optimized_df.columns:
+		optimized_df["escalation_prob"] = pd.to_numeric(
+			optimized_df["escalation_prob"], errors="coerce"
+		).fillna(0).astype("float32")
+
+	return optimized_df
 
 
 def _inject_custom_styles() -> None:
@@ -97,7 +124,7 @@ def load_data() -> pd.DataFrame:
 	if "date" in df.columns:
 		df["date"] = pd.to_datetime(df["date"], errors="coerce")
 
-	return df
+	return _optimize_dataframe_memory(df)
 
 
 @st.cache_resource(show_spinner=False)
@@ -123,13 +150,13 @@ def _build_current_dataset(base_df: pd.DataFrame) -> pd.DataFrame:
 	"""Merge base dataset with in-session submitted complaints."""
 	submitted = st.session_state.get("submitted_complaints", [])
 	if not submitted:
-		return base_df.copy()
+		return _optimize_dataframe_memory(base_df)
 
 	new_df = pd.DataFrame(submitted)
 	merged = pd.concat([base_df, new_df], ignore_index=True)
 	if "date" in merged.columns:
 		merged["date"] = pd.to_datetime(merged["date"], errors="coerce")
-	return merged
+	return _optimize_dataframe_memory(merged)
 
 
 def _normalize_dates(df: pd.DataFrame) -> pd.DataFrame:
@@ -137,7 +164,33 @@ def _normalize_dates(df: pd.DataFrame) -> pd.DataFrame:
 	out = df.copy()
 	if "date" in out.columns:
 		out["date"] = pd.to_datetime(out["date"], errors="coerce")
-	return out
+	return _optimize_dataframe_memory(out)
+
+
+@st.cache_data(show_spinner=False)
+def _compute_cached_views(predicted_df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+	"""Cache derived analytics frames to avoid repeated groupby/pivot computations."""
+	hotspot_df = get_area_hotspots(predicted_df)
+	trend_df = get_trend(predicted_df)
+	category_distribution_df = get_category_distribution(predicted_df).reset_index()
+	action_brief_df = (
+		predicted_df.groupby("area", as_index=False)
+		.agg(
+			complaint_count=("area", "size"),
+			avg_escalation_prob=("escalation_prob", "mean"),
+		)
+		.sort_values(["avg_escalation_prob", "complaint_count"], ascending=[False, False])
+		.head(3)
+	)
+	return hotspot_df, trend_df, category_distribution_df, action_brief_df
+
+
+@st.cache_data(show_spinner=False)
+def _build_heatmap_html(predicted_df: pd.DataFrame, hotspot_df: pd.DataFrame) -> str:
+	"""Cache rendered Folium map HTML to speed up rerenders."""
+	map_obj = generate_heatmap(predicted_df)
+	map_obj = add_area_markers(map_obj, hotspot_df)
+	return map_obj.get_root().render()
 
 
 def _risk_insight(prob: float, priority: str, days_to_resolve: int) -> str:
@@ -163,14 +216,17 @@ def render_submit_complaint(
 	st.sidebar.markdown("---")
 	st.sidebar.subheader("📝 Submit New Complaint")
 
-	with st.sidebar.form("submit_complaint_form", clear_on_submit=False):
-		area = st.selectbox("Area", options=AREAS, index=0)
-		category = st.selectbox("Category", options=CATEGORIES, index=0)
-		priority = st.selectbox("Priority", options=PRIORITIES, index=1)
-		days_to_resolve = st.slider("Days to Resolve", min_value=1, max_value=20, value=7)
+	with st.sidebar.form("submit_complaint_form", clear_on_submit=True):
+		area = st.selectbox("Area", options=AREAS, index=0, key="submit_area")
+		category = st.selectbox("Category", options=CATEGORIES, index=0, key="submit_category")
+		priority = st.selectbox("Priority", options=PRIORITIES, index=1, key="submit_priority")
+		days_to_resolve = st.slider(
+			"Days to Resolve", min_value=1, max_value=20, value=7, key="submit_days_to_resolve"
+		)
 		text = st.text_area(
 			"Complaint description",
 			placeholder="Describe the issue briefly (location, impact, urgency).",
+			key="submit_text",
 		)
 		submitted = st.form_submit_button("🚀 Analyze & Submit", use_container_width=True)
 
@@ -178,6 +234,10 @@ def render_submit_complaint(
 		return
 
 	complaint_text = text.strip() if text and text.strip() else f"Reported {category} issue in {area}."
+	if len(complaint_text) < 10:
+		st.sidebar.warning("Please provide a slightly more detailed complaint description.")
+		return
+
 	current_dt = pd.Timestamp.now()
 	base_count = len(base_df)
 	sub_count = len(st.session_state.get("submitted_complaints", [])) + 1
@@ -208,6 +268,7 @@ def render_submit_complaint(
 
 	st.session_state["submitted_complaints"].append(new_row)
 	st.session_state["last_submission_result"] = {
+		"submitted_at": current_dt,
 		"area": area,
 		"category": category,
 		"priority": priority,
@@ -217,7 +278,7 @@ def render_submit_complaint(
 		"department": dept,
 		"insight": insight,
 	}
-	st.rerun()
+	st.sidebar.success("Complaint analyzed and submitted successfully.")
 
 
 def render_submission_result() -> None:
@@ -334,9 +395,8 @@ def _render_hotspot_tab(df: pd.DataFrame, hotspots: pd.DataFrame) -> None:
 	st.subheader("🗺️ Dhaka Complaint Hotspots")
 
 	try:
-		map_obj = generate_heatmap(df)
-		map_obj = add_area_markers(map_obj, hotspots)
-		st.components.v1.html(map_obj.get_root().render(), height=560)
+		heatmap_html = _build_heatmap_html(df, hotspots)
+		st.components.v1.html(heatmap_html, height=560)
 	except Exception as exc:
 		st.warning(f"Map rendering unavailable: {exc}")
 
@@ -410,12 +470,12 @@ def _render_escalation_tab(
 		feature_importance_df = get_feature_importance(model, feature_names)
 		fig_feature_importance = px.bar(
 			feature_importance_df,
-			x="importance",
-			y="feature",
+			x="importance_score",
+			y="feature_name",
 			orientation="h",
 			title="Model Feature Importance",
-			labels={"importance": "Importance Score", "feature": "Feature"},
-			hover_data={"importance": ":.4f", "feature": True},
+			labels={"importance_score": "Importance Score", "feature_name": "Model Feature"},
+			hover_data={"importance_score": ":.4f", "feature_name": True},
 		)
 		_style_figure(fig_feature_importance, x_title="Importance Score", y_title="Feature")
 		fig_feature_importance.update_traces(
@@ -482,11 +542,10 @@ def _render_department_tab(df: pd.DataFrame) -> None:
 	st.plotly_chart(fig_unresolved, width="stretch")
 
 
-def _render_trends_tab(df: pd.DataFrame) -> None:
+def _render_trends_tab(df: pd.DataFrame, trend_df: pd.DataFrame, category_distribution_df: pd.DataFrame) -> None:
 	"""Render trend and category distribution charts."""
 	st.subheader("📈 Complaint Trends")
 
-	trend_df = get_trend(df)
 	if not trend_df.empty:
 		fig_trend = px.line(
 			trend_df,
@@ -506,7 +565,6 @@ def _render_trends_tab(df: pd.DataFrame) -> None:
 	else:
 		st.info("Trend data not available for current filters.")
 
-	category_distribution_df = get_category_distribution(df).reset_index()
 	category_melt_df = category_distribution_df.melt(
 		id_vars="area", var_name="category", value_name="count"
 	)
@@ -610,35 +668,91 @@ def _render_trends_tab(df: pd.DataFrame) -> None:
 		st.info("💡 No significant week-over-week growth detected across selected filters.")
 
 
-def _render_action_brief(df: pd.DataFrame) -> None:
+def _render_action_brief(action_brief_df: pd.DataFrame) -> None:
 	"""Render top-3 risk action brief cards."""
 	st.markdown("---")
 	st.subheader("🔥 Today's Action Brief")
-
-	action_brief_df = (
-		df.groupby("area", as_index=False)
-		.agg(
-			complaint_count=("area", "size"),
-			avg_escalation_prob=("escalation_prob", "mean"),
-		)
-		.sort_values(["avg_escalation_prob", "complaint_count"], ascending=[False, False])
-		.head(3)
-	)
 
 	if action_brief_df.empty:
 		st.info("No action brief available for current filters.")
 		return
 
 	for _, row in action_brief_df.iterrows():
+		area_name = str(row["area"])
+		complaint_count = int(row["complaint_count"])
+		avg_risk_pct = float(row["avg_escalation_prob"]) * 100
+		recommendation = f"Immediate intervention required in {area_name}."
+
 		st.error(
-			f"{row['area']}: {int(row['complaint_count'])} complaints | "
-			f"Avg escalation risk: {row['avg_escalation_prob'] * 100:.1f}%"
+			"🚨 High-Risk Area Alert\n\n"
+			f"Area: {area_name}\n"
+			f"Total complaints: {complaint_count}\n"
+			f"Average escalation probability: {avg_risk_pct:.1f}%\n\n"
+			f"Recommendation: {recommendation}"
 		)
+
+
+def _generate_ai_insights(df: pd.DataFrame) -> list[str]:
+	"""Generate concise, impact-focused operational insights from complaint data."""
+	insights: list[str] = []
+	if df.empty:
+		return insights
+
+	# 1) Area with highest complaints
+	area_counts = df["area"].value_counts()
+	if not area_counts.empty:
+		top_area = str(area_counts.index[0])
+		top_area_count = int(area_counts.iloc[0])
+		insights.append(f"📍 {top_area} has the highest complaint volume ({top_area_count} cases).")
+
+	# 2) Area with highest escalation risk
+	if "escalation_prob" in df.columns:
+		risk_by_area = (
+			df.groupby("area", as_index=False)["escalation_prob"]
+			.mean()
+			.sort_values("escalation_prob", ascending=False)
+		)
+		if not risk_by_area.empty:
+			risk_area = str(risk_by_area.iloc[0]["area"])
+			risk_score = float(risk_by_area.iloc[0]["escalation_prob"]) * 100
+			insights.append(
+				f"⚠️ {risk_area} shows the highest escalation risk ({risk_score:.1f}% average)."
+			)
+
+	# 3) Category with most unresolved issues
+	unresolved_mask = _resolve_unresolved_mask(df)
+	unresolved_df = df[unresolved_mask]
+	if not unresolved_df.empty:
+		category_counts = unresolved_df["category"].value_counts()
+		if not category_counts.empty:
+			top_category = str(category_counts.index[0])
+			top_category_count = int(category_counts.iloc[0])
+			insights.append(
+				f"🧩 {top_category.title()} issues lead unresolved workload ({top_category_count} open complaints)."
+			)
+
+	return insights[:3]
+
+
+def _render_ai_insights(df: pd.DataFrame) -> None:
+	"""Render AI insights section with concise actionable highlights."""
+	st.markdown("---")
+	st.subheader("🤖 AI Insights")
+	insights = _generate_ai_insights(df)
+
+	if not insights:
+		st.info("No insights available for the current filter selection.")
+		return
+
+	for item in insights:
+		st.info(item)
 
 
 def _render_tabs(
 	predicted_df: pd.DataFrame,
 	hotspot_df: pd.DataFrame,
+	trend_df: pd.DataFrame,
+	category_distribution_df: pd.DataFrame,
 	model: RandomForestClassifier,
 	feature_names: list[str],
 ) -> None:
@@ -657,7 +771,7 @@ def _render_tabs(
 		_render_department_tab(predicted_df)
 
 	with tab_trends:
-		_render_trends_tab(predicted_df)
+		_render_trends_tab(predicted_df, trend_df, category_distribution_df)
 
 
 def main() -> None:
@@ -693,10 +807,12 @@ def main() -> None:
 		st.error(f"Escalation prediction failed: {ex}")
 		return
 
-	hotspot_df = get_area_hotspots(pred_df)
+	pred_df = _optimize_dataframe_memory(pred_df)
+	hotspot_df, trend_df, category_distribution_df, action_brief_df = _compute_cached_views(pred_df)
 	_render_metrics(pred_df)
-	_render_tabs(pred_df, hotspot_df, model, feature_names)
-	_render_action_brief(pred_df)
+	_render_tabs(pred_df, hotspot_df, trend_df, category_distribution_df, model, feature_names)
+	_render_ai_insights(pred_df)
+	_render_action_brief(action_brief_df)
 
 
 if __name__ == "__main__":

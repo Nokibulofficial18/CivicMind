@@ -56,8 +56,8 @@ def generate_heatmap(df: pd.DataFrame) -> folium.Map:
 
 	for _, row in working.iterrows():
 		base_lat, base_lon = AREA_COORDINATES[str(row["area"])]
-		lat = base_lat + float(rng.uniform(-0.008, 0.008))
-		lon = base_lon + float(rng.uniform(-0.008, 0.008))
+		lat = base_lat + float(rng.uniform(-0.005, 0.005))
+		lon = base_lon + float(rng.uniform(-0.005, 0.005))
 		weight = float(np.clip(row["escalation_prob"], 0.0, 1.0))
 		heat_data.append([lat, lon, weight])
 
@@ -66,28 +66,42 @@ def generate_heatmap(df: pd.DataFrame) -> folium.Map:
 		zoom_start=12,
 		tiles="CartoDB positron",
 		control_scale=True,
-	)
-
-	# Keep the map visually balanced around known Dhaka monitoring zones.
-	area_lats = [coords[0] for coords in AREA_COORDINATES.values()]
-	area_lons = [coords[1] for coords in AREA_COORDINATES.values()]
-	map_obj.fit_bounds(
-		[
-			[min(area_lats) - 0.01, min(area_lons) - 0.01],
-			[max(area_lats) + 0.01, max(area_lons) + 0.01],
-		]
+		prefer_canvas=True,
 	)
 
 	HeatMap(
 		data=heat_data,
-		radius=15,
-		blur=20,
+		radius=17,
+		blur=18,
 		max_zoom=13,
-		min_opacity=0.25,
-		gradient={0.2: "#2A9D8F", 0.5: "#F4D35E", 0.8: "#F18F01", 1.0: "#D7263D"},
+		min_opacity=0.35,
+		gradient={
+			0.00: "#2A9D8F",
+			0.30: "#7BC96F",
+			0.55: "#F4D35E",
+			0.75: "#F18F01",
+			1.00: "#D7263D",
+		},
 	).add_to(map_obj)
 
-	folium.LayerControl(position="topright", collapsed=True).add_to(map_obj)
+	title_html = """
+	<div style="
+		position: fixed;
+		top: 14px;
+		left: 50px;
+		z-index: 9999;
+		background: rgba(255,255,255,0.95);
+		border: 1px solid #c9ced6;
+		border-radius: 6px;
+		padding: 8px 12px;
+		font-size: 14px;
+		font-weight: 700;
+		color: #243447;
+	">
+		Dhaka Complaint Risk Heatmap
+	</div>
+	"""
+	map_obj.get_root().html.add_child(folium.Element(title_html))
 
 	legend_html = """
 	<div style="
@@ -95,17 +109,28 @@ def generate_heatmap(df: pd.DataFrame) -> folium.Map:
 		bottom: 40px;
 		left: 40px;
 		z-index: 9999;
-		background-color: white;
+		background-color: rgba(255,255,255,0.95);
 		border: 2px solid #666;
 		border-radius: 6px;
-		padding: 10px 12px;
+		padding: 10px 12px 12px 12px;
 		font-size: 13px;
 		box-shadow: 0 1px 6px rgba(0,0,0,0.2);
 	">
-		<b>Escalation Risk</b><br>
-		<span style="color:#2ecc71;">●</span> Low (0.0–0.3)<br>
-		<span style="color:#f39c12;">●</span> Medium (0.3–0.6)<br>
-		<span style="color:#e74c3c;">●</span> High (0.6–1.0)
+		<b>Escalation Risk (Heat Intensity)</b><br>
+		<div style="
+			margin: 6px 0 8px 0;
+			height: 10px;
+			width: 180px;
+			border-radius: 4px;
+			background: linear-gradient(to right, #2A9D8F, #F4D35E, #D7263D);
+		"></div>
+		<div style="display:flex; justify-content:space-between; width:180px; font-size:11px;">
+			<span>Low</span><span>Medium</span><span>High</span>
+		</div>
+		<div style="margin-top:8px;"><b>Area Marker Color</b></div>
+		<span style="color:#2A9D8F;">●</span> Stable hotspot<br>
+		<span style="color:#F18F01;">●</span> Moderate hotspot<br>
+		<span style="color:#D7263D;">●</span> Severe hotspot
 	</div>
 	"""
 	map_obj.get_root().html.add_child(folium.Element(legend_html))
@@ -158,22 +183,35 @@ def add_area_markers(map_obj: folium.Map, hotspot_df: pd.DataFrame) -> folium.Ma
 			color = "#2A9D8F"
 
 		lat, lon = AREA_COORDINATES[area]
+		if total >= 120:
+			radius = 13
+		elif total >= 80:
+			radius = 11
+		elif total >= 40:
+			radius = 9
+		else:
+			radius = 7
+
+		severity = "Severe" if score > 70 else ("Moderate" if score > 40 else "Stable")
 		popup_text = (
+			"<div style='font-size:13px; line-height:1.35;'>"
 			f"<b>{area}</b><br>"
-			f"Total complaints: {total}<br>"
-			f"Hotspot score: {score:.2f}"
+			f"Total complaints: <b>{total}</b><br>"
+			f"Hotspot score: <b>{score:.2f}</b><br>"
+			f"Severity: <b>{severity}</b>"
+			"</div>"
 		)
 
 		folium.CircleMarker(
 			location=[lat, lon],
-			radius=9,
+			radius=radius,
 			color=color,
 			fill=True,
 			fill_color=color,
 			fill_opacity=0.85,
 			weight=2,
 			popup=folium.Popup(popup_text, max_width=260),
-			tooltip=f"{area} | Score: {score:.1f}",
+			tooltip=f"{area} | Complaints: {total} | Score: {score:.1f}",
 		).add_to(map_obj)
 
 	return map_obj

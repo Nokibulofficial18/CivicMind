@@ -226,7 +226,7 @@ def get_feature_importance(model: RandomForestClassifier, feature_names: list[st
 		feature_names: Ordered feature names corresponding to model input columns.
 
 	Returns:
-		DataFrame with columns `feature` and `importance`, sorted descending.
+		DataFrame with columns `feature_name` and `importance_score`, sorted descending.
 	"""
 	if not hasattr(model, "feature_importances_"):
 		raise TypeError("Model does not expose feature_importances_.")
@@ -235,8 +235,22 @@ def get_feature_importance(model: RandomForestClassifier, feature_names: list[st
 	if len(importances) != len(feature_names):
 		raise ValueError("Length of feature_names must match model feature importances.")
 
-	return (
-		pd.DataFrame({"feature": feature_names, "importance": importances})
-		.sort_values("importance", ascending=False)
-		.reset_index(drop=True)
+	feature_label_map = {
+		"area_enc": "Area (Encoded)",
+		"category_enc": "Category (Encoded)",
+		"priority_enc": "Priority (Encoded)",
+		"days_ago": "Complaint Age (Days)",
+		"days_to_resolve": "Expected Resolution Time (Days)",
+	}
+
+	importance_df = pd.DataFrame(
+		{
+			"feature_name": feature_names,
+			"importance_score": importances,
+		}
 	)
+	importance_df["feature_name"] = importance_df["feature_name"].map(
+		lambda x: feature_label_map.get(x, x)
+	)
+
+	return importance_df.sort_values("importance_score", ascending=False).reset_index(drop=True)
