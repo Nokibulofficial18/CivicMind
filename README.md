@@ -140,17 +140,7 @@ password: admin123
 
 ---
 
-## 🖼️ Screenshots (Placeholder)
 
-Add screenshots/GIFs for:
-
-1. Login screen
-2. Dashboard tab
-3. Hotspot heatmap
-4. Trends tab
-5. Admin Panel tab
-
----
 
 ## 🏆 Hackathon Note
 

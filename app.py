@@ -27,7 +27,11 @@ from models.hotspot import (
 from utils.map_utils import add_area_markers, generate_heatmap
 
 
-st.set_page_config(page_title="CivicMind — Dhaka Urban Intelligence", layout="wide")
+st.set_page_config(
+	page_title="CivicMind — Dhaka Urban Intelligence",
+	page_icon="🏙️",
+	layout="wide",
+)
 
 APP_TITLE = "CivicMind — Dhaka Urban Intelligence Dashboard"
 DATE_WINDOW_OPTIONS = [7, 14, 30, 60]
