@@ -849,6 +849,74 @@ def _render_predicted_risk_areas(df: pd.DataFrame) -> None:
 		)
 
 
+def _generate_recommendations(df: pd.DataFrame) -> list[str]:
+	"""Generate actionable recommendations from complaint load and escalation risk."""
+	if df.empty or "escalation_prob" not in df.columns:
+		return []
+
+	unresolved_mask = _resolve_unresolved_mask(df)
+	area_summary = (
+		df.groupby("area", as_index=False)
+		.agg(
+			complaint_count=("area", "size"),
+			avg_escalation_prob=("escalation_prob", "mean"),
+		)
+		.sort_values(["complaint_count", "avg_escalation_prob"], ascending=[False, False])
+	)
+	if area_summary.empty:
+		return []
+
+	max_count = max(float(area_summary["complaint_count"].max()), 1.0)
+	area_summary["priority_score"] = (
+		(area_summary["complaint_count"] / max_count) * 0.5
+		+ area_summary["avg_escalation_prob"].clip(lower=0, upper=1) * 0.5
+	)
+	top_areas = area_summary.sort_values("priority_score", ascending=False).head(3)
+
+	action_map = {
+		"road": "deploy rapid road maintenance crews and temporary traffic safety control.",
+		"waste": "increase waste collection frequency and place emergency cleanup teams.",
+		"water": "dispatch WASA response units for leak/pressure diagnostics and immediate repair.",
+		"traffic": "coordinate Traffic Police for signal optimization and congestion rerouting.",
+	}
+
+	recommendations: list[str] = []
+	for _, row in top_areas.iterrows():
+		area_name = str(row["area"])
+		complaint_count = int(row["complaint_count"])
+		escalation_pct = float(row["avg_escalation_prob"]) * 100
+
+		area_unresolved = df[(df["area"].astype(str) == area_name) & unresolved_mask]
+		if area_unresolved.empty:
+			area_unresolved = df[df["area"].astype(str) == area_name]
+
+		dominant_category = (
+			str(area_unresolved["category"].mode().iloc[0]) if not area_unresolved.empty else "road"
+		)
+		action = action_map.get(dominant_category, "activate multi-agency rapid response coordination.")
+
+		recommendations.append(
+			f"{area_name}: {complaint_count} complaints with {escalation_pct:.1f}% average escalation risk; "
+			f"recommended action: {action}"
+		)
+
+	return recommendations
+
+
+def _render_recommendation_engine(df: pd.DataFrame) -> None:
+	"""Render actionable authority recommendations."""
+	st.markdown("---")
+	st.subheader("🧭 Recommendation Engine")
+
+	recommendations = _generate_recommendations(df)
+	if not recommendations:
+		st.info("No recommendations available for the current filter selection.")
+		return
+
+	for item in recommendations:
+		st.warning(f"📌 {item}")
+
+
 def _render_tabs(
 	full_df: pd.DataFrame,
 	predicted_df: pd.DataFrame,
@@ -1098,6 +1166,7 @@ def main() -> None:
 	_render_tabs(df, pred_df, hotspot_df, trend_df, category_distribution_df, model, feature_names)
 	_render_ai_insights(pred_df)
 	_render_predicted_risk_areas(pred_df)
+	_render_recommendation_engine(pred_df)
 	_render_action_brief(action_brief_df)
 
 

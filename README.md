@@ -1,67 +1,80 @@
 # 🏙️ CivicMind AI — Dhaka Urban Intelligence Dashboard
 
-CivicMind AI is a data-driven urban governance platform built for hackathon use-cases. It helps city authorities monitor citizen complaints, detect operational hotspots, predict escalation risk, and prioritize action in real time.
+CivicMind AI is a role-based, data-driven civic analytics platform built for hackathon demonstration and smart city operations. It helps authorities in Dhaka detect complaint hotspots, forecast risk, and take proactive action.
 
 ---
 
 ## 🌍 Project Overview
 
-Urban complaint handling is often reactive and fragmented. CivicMind AI brings complaint data, predictive intelligence, and operational workflows into one decision-support dashboard.
+Urban complaint handling is usually reactive and fragmented across departments. CivicMind AI unifies:
 
-It is designed for teams such as:
-- City Corporation
-- WASA
-- Traffic Police
-- Urban control rooms and emergency planners
+- complaint intake,
+- hotspot intelligence,
+- escalation prediction,
+- admin resolution workflow,
+- and actionable recommendations
+
+into one interactive dashboard.
 
 ---
 
 ## ❗ Problem Statement
 
-Dhaka receives high volumes of civic complaints across road damage, waste, water, and traffic. Traditional workflows face:
-- Delayed response to high-risk complaints
-- Limited visibility into area-wise hotspots
-- Weak prioritization across departments
-- No proactive escalation warning system
+Dhaka receives frequent complaints across road, waste, water, and traffic categories. Manual workflows struggle with:
 
-Result: unresolved complaints grow, citizen trust drops, and city operations become inefficient.
+- delayed identification of critical areas,
+- high unresolved complaint backlogs,
+- weak prioritization across departments,
+- limited foresight into near-future risk.
 
 ---
 
 ## ✅ Solution
 
-CivicMind AI provides a role-based analytics dashboard that:
-- Centralizes complaint intelligence
-- Predicts complaint escalation probability
-- Identifies high-risk areas and trends
-- Supports operational decisions with AI-generated insights
-- Enables admins to mark complaints resolved and instantly refresh analytics
+CivicMind AI provides a decision-support system where:
+
+- **Users** submit complaints and monitor city-level intelligence.
+- **Admins** filter complaints, resolve cases, and persist updates.
+- The platform continuously computes:
+  - hotspot severity,
+  - escalation probability,
+  - root-cause analysis,
+  - predicted high-risk areas (next 7 days),
+  - and recommendation actions for authorities.
 
 ---
 
-## 🚀 Key Features
+## 🚀 Core Features
 
-- 🔐 **Role-based authentication** (User / Admin)
-- 📝 **Submit Complaint** workflow with instant risk analysis
-- 🔥 **Hotspot detection** by area
-- 🤖 **Escalation prediction** using Random Forest
-- 🗺️ **Folium heatmap** with weighted risk visualization
-- 📈 **Trend analytics** and growth-rate monitoring
-- 🧩 **Department workload** analysis
-- 💡 **AI Insights** auto-generated from live data
-- 🚨 **Today’s Action Brief** for top high-risk areas
-- 🛠️ **Admin Panel** for filtering and resolving complaints
+- 🔐 **Role-based Authentication** (User / Admin)
+- 📝 **Submit Complaint** with instant escalation scoring
+- 🔥 **Hotspot Ranking** using weighted severity score
+- 🗺️ **Folium Risk Heatmap** (weighted by escalation probability)
+- ⚠️ **Escalation Model** (RandomForestClassifier)
+- 📈 **Trend + Growth Analytics**
+- 🧭 **Root Cause Analysis** per hotspot area:
+  - growth trend,
+  - unresolved ratio,
+  - dominant category
+- 🔮 **Predicted High Risk Areas in Next 7 Days**
+- 📌 **Recommendation Engine** for authority actions
+- 🤖 **AI Insights** and **Today’s Action Brief**
+- 🛠️ **Admin Panel Tab** with:
+  - unresolved highlighting,
+  - advanced filters,
+  - per-row resolve actions,
+  - CSV persistence
 
 ---
 
 ## 🧠 Tech Stack
 
-- **Frontend / App:** Streamlit
-- **Data Processing:** Pandas, NumPy
-- **ML:** scikit-learn (RandomForest, LabelEncoder)
-- **Visualization:** Plotly, Folium
-- **Persistence:** CSV-based dataset storage
-- **Language:** Python 3.x
+- **App/UI:** Streamlit
+- **Data:** Pandas, NumPy
+- **Machine Learning:** scikit-learn
+- **Visualizations:** Plotly, Folium
+- **Storage:** CSV (`data/complaints.csv`)
+- **Language:** Python
 
 ---
 
@@ -74,69 +87,91 @@ CivicMind AI/
 │   ├── generate_data.py
 │   └── complaints.csv
 ├── models/
-│   ├── hotspot.py
-│   └── escalation.py
+│   ├── escalation.py
+│   └── hotspot.py
 ├── utils/
 │   └── map_utils.py
-└── requirements.txt
+├── requirements.txt
+└── README.md
 ```
 
 ---
 
 ## ⚙️ How to Run
 
-### 1) Clone the repository
+### 1) Clone
+
 ```bash
 git clone <your-repo-url>
 cd "cognisor ai"
 ```
 
 ### 2) Install dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3) Start the app
+### 3) Launch
+
 ```bash
 streamlit run app.py
 ```
 
-### 4) Login credentials
-```text
-Normal User:
-  username: user1
-  password: 1234
+If port `8501` is busy:
 
-Admin:
-  username: admin
-  password: admin123
+```bash
+streamlit run app.py --server.port 8502
 ```
 
 ---
 
+## 🔐 Demo Credentials
 
+```text
+Normal User
+username: user1
+password: 1234
 
-## 🏆 Hackathon Context
-
-This project was developed as a **hackathon prototype** to demonstrate how AI + analytics can improve public service delivery in Dhaka.
-
-Focus areas:
-- Smart city governance
-- Predictive civic operations
-- Actionable public-sector intelligence
+Admin
+username: admin
+password: admin123
+```
 
 ---
 
-## 📌 Future Improvements
+## 🖼️ Screenshots (Placeholder)
 
-- Database integration (PostgreSQL / Cloud)
-- Secure password hashing + user management
-- Real-time API ingestion from complaint portals
-- NLP summarization for complaint narratives
-- Deployment with CI/CD and monitoring
+Add screenshots/GIFs for:
+
+1. Login screen
+2. Dashboard tab
+3. Hotspot heatmap
+4. Trends tab
+5. Admin Panel tab
+
+---
+
+## 🏆 Hackathon Note
+
+This project was built as a **hackathon prototype** focused on:
+
+- smart city governance,
+- predictive civic intelligence,
+- and operational decision support for Dhaka.
+
+---
+
+## 📌 Future Enhancements
+
+- secure credential storage + password hashing
+- database backend (PostgreSQL)
+- audit logs for admin actions
+- API integration with live complaint portals
+- cloud deployment + CI/CD
 
 ---
 
 ## 📄 License
 
-This project is for educational and hackathon demonstration purposes.
+For educational and hackathon demonstration use.
